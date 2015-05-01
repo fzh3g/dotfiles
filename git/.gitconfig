@@ -1,0 +1,7 @@
+[user]
+	name = zhengfaxiang
+	email = fxzheng0906@outlook.com
+[credential]
+	helper = cache
+[color]
+	ui = auto
