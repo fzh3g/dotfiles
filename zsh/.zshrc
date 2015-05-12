@@ -104,5 +104,3 @@ alias ev="emacsclient -c -a emacs"
 
 alias v=vim
 alias vi=vim
-
-/usr/bin/screenfetch
