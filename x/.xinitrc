@@ -17,5 +17,4 @@ fi
 # ...or the Window Manager of your choice
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-exec startxfce4
+export XMODIFIERS=@im=fcitx
