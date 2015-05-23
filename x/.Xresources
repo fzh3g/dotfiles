@@ -53,9 +53,9 @@ xterm*borderWidth:          0
 #define _foreground         #b2b2b2
 #define _background         #000000
 #define _cursorColor        #8faf9f
-URxvt*color0         	    : _color0
-URxvt*color1         		: _color1
-URxvt*color2         		: _color2
+URxvt*color0                : _color0
+URxvt*color1                : _color1
+URxvt*color2         	    : _color2
 URxvt*color3         		: _color3
 URxvt*color4         		: _color4
 URxvt*color5         		: _color5
