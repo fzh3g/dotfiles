@@ -21,6 +21,23 @@ xterm*termName:             xterm-256color
 xterm*eightBitInput:        false
 xterm*borderWidth:          0
 
+! urxvt
+
+URxvt.font:                 xft:menlo:size=10:antialias=true
+URxvt.boldfont:             xft:menlo:size=10:bold:antialias=true
+URxvt.loginShell:           true
+URxvt.fading:               0
+URxvt.cursorBlink:          false
+URxvt*cursorUnderline:      false
+URxvt.pointerBlank:         true
+URxvt.lineSpace:            0
+URxvt*letterSpace:          -1
+URxvt*geometry:             80x30
+URxvt*scrollBar:            false
+URxvt*scrollstyle:          rxvt
+URxvt*transparent:          true
+URxvt*saveLines:            12000
+
 !BLK Cursor
 #define _color0             #000000
 #define _color8             #686868
