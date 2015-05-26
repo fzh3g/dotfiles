@@ -23,8 +23,8 @@ xterm*borderWidth:          0
 
 ! urxvt
 
-URxvt.font:                 xft:menlo:size=10:antialias=true
-URxvt.boldfont:             xft:menlo:size=10:bold:antialias=true
+URxvt.font:                 xft:ubuntu mono:size=11:antialias=true
+URxvt.boldfont:             xft:ubuntu mono:size=11:bold:antialias=true
 URxvt.loginShell:           true
 URxvt.fading:               30
 URxvt.cursorBlink:          false
