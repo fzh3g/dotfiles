@@ -23,14 +23,17 @@ xterm*borderWidth:          0
 
 ! urxvt
 
-URxvt.font:                 xft:ubuntu mono:size=11:antialias=true
-URxvt.boldfont:             xft:ubuntu mono:size=11:bold:antialias=true
+URxvt.font:                 xft:menlo:size=10:antialias=true
+URxvt.boldfont:             xft:menlo:size=10:bold:antialias=true
 URxvt.loginShell:           true
 URxvt.fading:               30
 URxvt.cursorBlink:          false
-URxvt*cursorUnderline:      false
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
 URxvt.pointerBlank:         true
 URxvt.lineSpace:            0
+URxvt*cursorUnderline:      false
 URxvt*termName:             screen-256color
 URxvt*letterSpace:          -1
 URxvt*geometry:             80x30
