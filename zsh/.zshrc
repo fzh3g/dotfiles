@@ -79,12 +79,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ -n $EMACS ]]; then
-    export TERM=dumb
-else
-    export TERM=xterm-256color
-fi
-
 # history
 export HISTSIZE=2048
 export SAVEHIST=2048
@@ -104,3 +98,19 @@ alias ev="emacsclient -c -a emacs"
 
 alias v=vim
 alias vi=vim
+
+# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
+DISABLE_AUTO_TITLE=true
+
+# http://stackoverflow.com/questions/25094855/visible-ansi-escape-sequences-when-running-emacs-shell-these-are-not-ansi-color
+if [[ -n $EMACS ]]; then
+    export TERM=dumb
+else
+    export TERM=screen-256color
+fi
+
+# http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
+tmux attach &> /dev/null
+if [[ !$TERM = screen-256color ]]; then
+    exec tmux
+fi
