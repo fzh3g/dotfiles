@@ -10,9 +10,10 @@ Xft.dpi:                    96
 
 ! xterm
 
-XTerm*faceName:             Menlo
+XTerm*faceName:             Monaco
 xterm*faceNameDoublesize:   Microsoft Yahei
 xterm*faceSize:             11
+xterm*letterSpace:          -2
 xterm*vt100*geometry:       80x30
 xterm*saveLines:            30000
 xterm*loginShell:           true
@@ -25,7 +26,7 @@ xterm*borderWidth:          0
 
 URxvt.depth:                0
 URxvt.font:                 xft:Monaco:size=11:style=regular:antialias=true
-URxvt.boldfont:             xft:MonacoB:size=11:style=bold:antialias=true
+URxvt.boldfont:             xft:Monaco:size=11:style=bold:antialias=true
 URxvt.loginShell:           true
 URxvt.fading:               30
 URxvt.cursorBlink:          false
@@ -45,7 +46,7 @@ URxvt*visualBell:           true
 URxvt*saveLines:            30000
 
 !BLK Cursor
-#define _color0             #000000
+#define _color0             #000000 
 #define _color8             #686868
 !RED Tag
 #define _color1             #b21818
@@ -73,9 +74,11 @@ URxvt*saveLines:            30000
 #define _colorUL            #ccdc90
 #define _colorIT            #80d4aa
 !TXT Normal, Normal, Cursor
-#define _foreground         #b2b2b2
+#define _foreground         #87ff5f
+!#define _foreground        #b2b2b2
+!#define _foreground        #e6e6e6
 #define _background         #000000
-#define _cursorColor        #8faf9f
+#define _cursorColor        #1aaa13 !#8faf9f
 URxvt*color0:               _color0
 URxvt*color1:               _color1
 URxvt*color2:               _color2
