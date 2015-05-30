@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Menlo 10
+font pango:Monaco 10
 #font -wenquanyi-wenquanyi bitmap song-bold-r-normal--*-120-75-75-p-*-iso10646-1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -192,7 +192,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -10"
 bar {
         status_command i3status --config ~/.i3status.conf
         position bottom
-        font pango:Menlo 10
+        font pango:Monaco 10
         tray_output primary
         colors {
             background #24364F
