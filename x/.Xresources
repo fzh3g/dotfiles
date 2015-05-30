@@ -12,7 +12,7 @@ Xft.dpi:                    96
 
 XTerm*faceName:             Menlo
 xterm*faceNameDoublesize:   Microsoft Yahei
-xterm*faceSize:             10
+xterm*faceSize:             11
 xterm*vt100*geometry:       80x30
 xterm*saveLines:            30000
 xterm*loginShell:           true
@@ -23,8 +23,9 @@ xterm*borderWidth:          0
 
 ! urxvt
 
-URxvt.font:                 xft:menlo:size=10:antialias=true
-URxvt.boldfont:             xft:menlo:size=10:bold:antialias=true
+URxvt.depth:                0
+URxvt.font:                 xft:Monaco:size=11:style=regular:antialias=true
+URxvt.boldfont:             xft:MonacoB:size=11:style=bold:antialias=true
 URxvt.loginShell:           true
 URxvt.fading:               30
 URxvt.cursorBlink:          false
