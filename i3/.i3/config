@@ -45,6 +45,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Ctrl+g exec google-chrome-unstable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
+bindsym $mod+Shift+f exec thunar
 
 # screen locker (first move to "safe" workspace without any chat app)
 bindsym Control+$mod+l exec i3-msg workspace 1 && i3lock -c 111111 -d
@@ -190,14 +191,14 @@ bindsym XF86MonBrightnessDown exec "xbacklight -10"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status --config ~/.i3status.conf
+        #status_command i3status --config ~/.i3status.conf
+        status_command ~/.i3/conky.sh
         position bottom
-        font pango:Monaco 10
+        font pango:Terminus, FontAwesome 9
         tray_output primary
         colors {
             background #24364F
-            statusline #CCCCCC
-
+            statusline #CCCCCC            
             focused_workspace  #ffffff #285577
             active_workspace   #cccccc #333333
             inactive_workspace #333333 #222222
@@ -218,9 +219,9 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 
 ## Autostart
 exec --no-startup-id urxvt
+exec --no-startup-id mpd
 exec --no-startup-id fcitx
 exec --no-startup-id goldendict
 exec --no-startup-id megasync
 exec --no-startup-id redshift -l 32.1:118.9
-exec pulseaudio --start
 exec --no-startup-id feh --bg-max ~/Pictures/203844120603665747.jpg
