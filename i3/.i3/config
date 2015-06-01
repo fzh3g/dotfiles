@@ -219,6 +219,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 #client.focused          #c10101 #880404 #ffffff #00AA00
 
 ## Autostart
+exec xrandr --output LVDS1 --primary
 exec --no-startup-id urxvt
 exec --no-startup-id mpd
 exec --no-startup-id nm-applet
