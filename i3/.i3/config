@@ -221,6 +221,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 ## Autostart
 exec --no-startup-id urxvt
 exec --no-startup-id mpd
+exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
 exec --no-startup-id goldendict
 exec --no-startup-id megasync
