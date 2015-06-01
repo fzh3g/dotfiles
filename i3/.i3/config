@@ -196,6 +196,7 @@ bar {
         position bottom
         font pango:Terminus, FontAwesome 9
         tray_output primary
+        output LVDS1
         colors {
             background #24364F
             statusline #CCCCCC            
