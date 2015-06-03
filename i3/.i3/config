@@ -226,5 +226,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
 exec --no-startup-id goldendict
 exec --no-startup-id megasync
+exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id redshift -l 32.1:118.9
 exec --no-startup-id feh --bg-max ~/Pictures/203844120603665747.jpg
