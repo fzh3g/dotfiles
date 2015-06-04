@@ -8,6 +8,10 @@ Xft.antialias:              1
 Xft.rgba:                   rgb
 Xft.dpi:                    96
 
+! cursor
+
+Xcursor.theme:              Breeze_Obsidian
+
 ! xterm
 
 XTerm*faceName:             Monaco
