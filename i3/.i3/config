@@ -219,7 +219,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 #client.focused          #c10101 #880404 #ffffff #00AA00
 
 ## Autostart
-exec xrandr --output LVDS1 --primary
+exec --no-startup-id xrandr --output LVDS1 --primary
 exec --no-startup-id urxvt
 exec --no-startup-id mpd
 exec --no-startup-id nm-applet
@@ -229,3 +229,7 @@ exec --no-startup-id megasync
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id redshift -l 32.1:118.9
 exec --no-startup-id feh --bg-max ~/Pictures/203844120603665747.jpg
+
+# https://faq.i3wm.org/question/3862/system-settings-not-working-scrolling-and-touch-click/
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" 279 1
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" 287 1
