@@ -86,6 +86,9 @@ export HISTFILE=~/.history
 setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
+#path
+export PATH=$PATH:$HOME/bin
+
 # emacs
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
