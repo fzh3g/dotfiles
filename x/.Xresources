@@ -29,23 +29,29 @@ xterm*borderWidth:          0
 ! urxvt
 
 URxvt.depth:                32
-URxvt.font:                 xft:Monaco:size=11:style=regular:antialias=true
-URxvt.boldfont:             xft:Monaco:size=11:style=bold:antialias=true
+URxvt.font:                 xft:Monofur for Powerline:size=13,xft:Menlo:size=12
+!URxvt.font:                 xft:Inconsolata for Powerline:size=13:regular:antialias=true
+!URxvt.boldfont:             xft:Inconsolata for Powerline:size=13:bold:antialias=true
+!URxvt.italicFont:           xft:Inconsolata for Powerline:size=13:italic:antialias=true
+!URxvt.bolditalicFont:       xft:Inconsolata for Powerline:size=13:bold:italic:antialias=true
 URxvt.loginShell:           true
 URxvt.fading:               40
 URxvt.cursorBlink:          false
-URxvt.perl-ext-common:      default,matcher
+URxvt.perl-ext-common:      default,matcher,clipboard,url-select
 URxvt.matcher.button:       1
 URxvt.url-launcher:         /usr/bin/google-chrome-unstable
+URxvt.url-select.launcher:  /usr/bin/google-chrome-unstable
 URxvt.pointerBlank:         true
-URxvt.lineSpace:            0
+URxvt.lineSpace:            1
 URxvt*cursorUnderline:      false
-URxvt*termName:             screen-256color
-URxvt*letterSpace:          -1
+URxvt*termName:             rxvt-unicode-256color
+URxvt*letterSpace:          0
 URxvt*geometry:             80x30
 URxvt*scrollBar:            false
 URxvt*scrollstyle:          rxvt
-URxvt*transparent:          true
+!URxvt*transparent:          true
+!URxvt*shading:              50
+!URxvt*blurRadius:           5
 URxvt*visualBell:           true
 URxvt*saveLines:            30000
 
@@ -103,7 +109,8 @@ URxvt*colorBD:              _colorBD
 URxvt*colorIT:              _colorIT
 URxvt*colorUL:              _colorUL
 URxvt*foreground:           _foreground
-URxvt*background:           _background
+!URxvt*background:           _background
+URxvt*background:           rgba:0000/0000/0200/c800
 URxvt*cursorColor:          _cursorColor
 XTerm*color0:               _color0
 XTerm*color1:               _color1
