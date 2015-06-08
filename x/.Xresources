@@ -51,7 +51,7 @@ URxvt*scrollstyle:          rxvt
 !URxvt*transparent:          true
 !URxvt*shading:              50
 !URxvt*blurRadius:           5
-URxvt*visualBell:           true
+URxvt*visualBell:           false
 URxvt*saveLines:            30000
 
 !BLK Cursor
