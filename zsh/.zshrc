@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="pure"
+ZSH_THEME="bullet-train"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -109,7 +109,7 @@ DISABLE_AUTO_TITLE=true
 if [[ -n $EMACS ]]; then
     export TERM=dumb
 else
-    export TERM=screen-256color
+    export TERM=rxvt-unicode-256color
 fi
 
 # http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
