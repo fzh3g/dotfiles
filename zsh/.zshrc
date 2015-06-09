@@ -109,11 +109,11 @@ DISABLE_AUTO_TITLE=true
 if [[ -n $EMACS ]]; then
     export TERM=dumb
 else
-    export TERM=rxvt-unicode-256color
+    export TERM=xterm-256color
 fi
 
 # http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
 tmux attach &> /dev/null
-if [[ !$TERM = screen-256color ]]; then
+if [[ !$TERM = xterm-256color ]]; then
     exec tmux
 fi
