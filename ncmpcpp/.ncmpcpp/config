@@ -493,9 +493,9 @@ color2 = green
 #
 main_window_highlight_color = blue
 #
-progressbar_color = red
+progressbar_color = yellow
 #
-progressbar_elapsed_color = red
+progressbar_elapsed_color = yellow
 #
 statusbar_color = default
 #
