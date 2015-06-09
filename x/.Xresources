@@ -14,10 +14,12 @@ Xcursor.theme:              Breeze_Obsidian
 
 ! xterm
 
-XTerm*faceName:             Monaco
+XTerm*faceName:             Menlo
 xterm*faceNameDoublesize:   Microsoft Yahei
+xterm*locale:               true
+xterm*utf8:                 1
 xterm*faceSize:             11
-xterm*letterSpace:          -2
+xterm*letterSpace:          -1
 xterm*vt100*geometry:       80x30
 xterm*saveLines:            30000
 xterm*loginShell:           true
@@ -43,7 +45,7 @@ URxvt.url-launcher:         /usr/bin/google-chrome-unstable
 URxvt.pointerBlank:         true
 URxvt.lineSpace:            1
 URxvt*cursorUnderline:      false
-URxvt*termName:             rxvt-unicode-256color
+URxvt*termName:             xterm-256color
 URxvt*letterSpace:          0
 URxvt*geometry:             80x30
 URxvt*scrollBar:            false
