@@ -37,8 +37,8 @@ bindsym $mod+t border normal
 bindsym $mod+y border 1pixel
 bindsym $mod+u border none
 
-new_window 1pixel
-new_float 1pixel
+new_window none
+new_float none
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -226,13 +226,13 @@ bindsym XF86MonBrightnessDown exec "xbacklight -10"
 bar {
         #status_command i3status --config ~/.i3status.conf
         status_command ~/.i3/conky.sh
-        position bottom
+        position top
         font pango:Monofur, FontAwesome 10
         tray_output primary
         output LVDS1
         colors {
-            background #24364F
-            statusline #CCCCCC            
+            background rgba:0000/0000/0200/c800
+            statusline rgba:0000/0000/0200/c800
             focused_workspace  #ffffff #285577
             active_workspace   #cccccc #333333
             inactive_workspace #333333 #222222
