@@ -80,16 +80,17 @@ URxvt*saveLines:            30000
 !WHT Search
 #define _color7             #b2b2b2
 #define _color15            #ffffff
-!FMT Include, StatusLine, ErrorMsg
-#define _colorBD            #ffcfaf
-#define _colorUL            #ccdc90
-#define _colorIT            #80d4aa
 !TXT Normal, Normal, Cursor
 #define _foreground         #87ff5f
 !#define _foreground        #b2b2b2
 !#define _foreground        #e6e6e6
 #define _background         #000000
-#define _cursorColor        #1aaa13 !#8faf9f
+#define _cursorColor        #1aaa13
+!FMT Include, StatusLine, ErrorMsg
+#define _colorBD            #ffcfaf
+#define _colorUL            #ccdc90
+#define _colorIT            #80d4aa
+
 URxvt*color0:               _color0
 URxvt*color1:               _color1
 URxvt*color2:               _color2
@@ -110,8 +111,8 @@ URxvt*colorBD:              _colorBD
 URxvt*colorIT:              _colorIT
 URxvt*colorUL:              _colorUL
 URxvt*foreground:           _foreground
-!URxvt*background:           _background
-URxvt*background:           rgba:0000/0000/0200/c800
+URxvt*background:           _background
+!URxvt*background:           rgba:0000/0000/0200/c800
 URxvt*cursorColor:          _cursorColor
 XTerm*color0:               _color0
 XTerm*color1:               _color1
