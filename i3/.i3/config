@@ -141,8 +141,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # for specific window
-for_window [class="mpv|Mpalyer|Sonata|Shutter|Mirage|Goldendict"] floating enable, border none
-for_window [title="irafterm"] floating enable, border none
+for_window [class="mpv|Mpalyer|Sonata|Shutter|Gimp|Mirage|Goldendict|Pidgin|File-roller|Gedit|Thunar|Transmission"] floating enable
+for_window [title="irafterm|Telegram Web"] floating enable
 #for_window [title="SAOImage ds9"] floating enable, move absolute right
 #for_window [title="IRAF"] floating enable, move absolute position 0 0
 for_window [window_role="pop-up"] floating enable, move absolute center
@@ -156,6 +156,7 @@ assign [class="smplayer|mpv"] "5: "
 assign [title="SAOImage ds9"] "7: "
 assign [title="^IRAF$"] "7: "
 assign [class="Thunderbird"] "6: "
+assign [class="Pidgin|telegram"] "8: "
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -254,7 +255,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 exec --no-startup-id i3-msg 'rename workspace 1 to "1: >_"'
 exec --no-startup-id urxvt
 exec --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id feh --bg-scale ~/Pictures/1797744.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/1574437.png
 exec --no-startup-id nm-applet
 exec --no-startup-id mpd
 exec --no-startup-id fcitx
