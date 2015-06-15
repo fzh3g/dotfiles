@@ -88,6 +88,9 @@ unsetopt EXTENDED_HISTORY
 
 #path
 export PATH=$PATH:$HOME/bin
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 
 # emacs
 export ALTERNATE_EDITOR=""
@@ -101,6 +104,8 @@ alias ev="emacsclient -c -a emacs"
 
 alias v=vim
 alias vi=vim
+
+alias pxc=proxychains
 
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
 DISABLE_AUTO_TITLE=true
