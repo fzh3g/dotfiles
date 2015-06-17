@@ -255,7 +255,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 exec --no-startup-id i3-msg 'rename workspace 1 to "1: >_"'
 exec --no-startup-id urxvt
 exec --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id feh --bg-fill ~/Pictures/1574437.png
+exec --no-startup-id feh --bg-fill ~/dotfiles/images/wallpaper.png
 exec --no-startup-id nm-applet
 exec --no-startup-id mpd
 exec --no-startup-id fcitx
