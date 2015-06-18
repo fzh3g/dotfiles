@@ -2,8 +2,6 @@
 
 echo "Installing dotfiles..."
 
-DIR=(~/dotfiles/*/)
-
 declare -a pkgs=(
     'bin'
     'compton'
