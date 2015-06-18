@@ -1,4 +1,4 @@
-# Zhengfaxiang's ArchLinux Desktop Config Files #
+# Zhengfaxiang's ArchLinux Config Files #
 
 ## Introduction ##
 
