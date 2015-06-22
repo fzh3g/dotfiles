@@ -92,6 +92,9 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+# hunspell dict
+export DICPATH=$HOME/hunspell
+
 # emacs
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
