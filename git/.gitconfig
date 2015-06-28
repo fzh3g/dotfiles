@@ -1,8 +1,9 @@
 [user]
 	name = zhengfaxiang
 	email = fxzheng0906@outlook.com
-[credential]
-	helper = cache
+[credential "https://github.com"]
+    username = zhengfaxiang
+    helper = cache
 [color]
 	ui = auto
 [push]
