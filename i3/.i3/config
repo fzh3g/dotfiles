@@ -48,6 +48,7 @@ bindsym $mod+Ctrl+g exec google-chrome-unstable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
 bindsym $mod+Shift+f exec thunar
+bindsym $mod+Ctrl+t exec terminator
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -141,7 +142,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # for specific window
-for_window [class="mpv|Mpalyer|Sonata|Shutter|Gimp|Mirage|Goldendict|Pidgin|File-roller|Gedit|Thunar|Transmission|Evince"] floating enable
+for_window [class="mpv|Mpalyer|Sonata|Shutter|Gimp|Mirage|Goldendict|Pidgin|File-roller|Gedit|Thunar|Transmission|Evince|Terminator"] floating enable
 for_window [title="irafterm|Telegram Web"] floating enable
 #for_window [title="SAOImage ds9"] floating enable, move absolute right
 #for_window [title="IRAF"] floating enable, move absolute position 0 0
