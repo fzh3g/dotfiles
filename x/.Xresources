@@ -83,7 +83,8 @@ URxvt*saveLines:            30000
 !TXT Normal, Normal, Cursor
 !#define _foreground         #87ff5f
 !#define _foreground        #b2b2b2
-#define _foreground         #c6c6c6
+#define _foreground         #00ff7f
+!#define _foreground         #c6c6c6
 #define _background         #000000
 #define _cursorColor        #ff34b3
 !FMT Include, StatusLine, ErrorMsg
