@@ -149,7 +149,7 @@ for_window [window_role="pop-up"] floating enable, move absolute center
 
 # assign to workspace
 #assign [instance="urxvt"] "1: >_"
-assign [class="Thunar"] "4: "
+#assign [class="Thunar"] "4: "
 assign [class="^Emacs$"] "3: "
 assign [class="chrome"] "2: "
 assign [class="smplayer|mpv"] "5: "
@@ -260,11 +260,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id mpd
 exec --no-startup-id fcitx
 exec --no-startup-id megasync
-exec --no-startup-id dropbox
+#exec --no-startup-id dropbox
 exec --no-startup-id goldendict
-exec --no-startup-id compton -b --config ~/.compton.conf
+#exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id redshift -l 32.1:118.9
-exec --no-startup-id google-chrome-unstable
-exec --no-startup-id emacs
-exec --no-startup-id thunderbird
+#exec --no-startup-id google-chrome-unstable
+#exec --no-startup-id emacs
+#exec --no-startup-id thunderbird
 
