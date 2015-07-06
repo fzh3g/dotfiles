@@ -92,6 +92,9 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+# matlab
+export PATH=$PATH:/usr/local/MATLAB/R2015a/bin
+
 # hunspell dict
 export DICPATH=$HOME/hunspell
 
