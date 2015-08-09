@@ -32,4 +32,6 @@ git clone https://github.com/zhengfaxiang/dotfiles ~/.dotfiles
 
 Then `cd ~/.dotfiles` and run the `stow-install.sh`
 
-```./stow_install.sh```
+```
+./stow_install.sh
+```
