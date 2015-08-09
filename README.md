@@ -30,7 +30,7 @@ well as `stow`. Then clone this repo to `~/.dotfiles`
 git clone https://github.com/zhengfaxiang/dotfiles ~/.dotfiles
 ```
 
-Then `cd ~/.dotfiles` and run the `stow-install.sh`
+Then `cd ~/.dotfiles` and run the `stow_install.sh`
 
 ```
 ./stow_install.sh
