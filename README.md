@@ -9,7 +9,7 @@ philosophy of simplicity and humanity.
 
 ## Content ##
 
-This repo contains config files of
+This repo contains my config files of
 
   * [compton](https://github.com/chjj/compton)
   * [git](https://git-scm.com/)
@@ -21,4 +21,16 @@ This repo contains config files of
   * [x](http://www.x.org/wiki/)
   * [oh-my-zsh](http://ohmyz.sh/)
 
+## Installation ##
+
+First thing first, be sure that you have installed packages mentioned above as
+well as `stow`. Then clone this repo to `~/.dotfiles`
+
+```
+git clone https://github.com/zhengfaxiang/dotfiles ~/.dotfiles
+```
+
+Then `cd ~/.dotfiles` and run the `stow-install.sh`
+
+```./stow_install.sh```
 
