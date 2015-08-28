@@ -91,6 +91,7 @@ export PATH=$PATH:$HOME/bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 
 # matlab
 export PATH=$PATH:/usr/local/MATLAB/R2015a/bin
@@ -128,3 +129,4 @@ tmux attach &> /dev/null
 if [[ !$TERM = rxvt-unicode-256color ]]; then
     exec tmux
 fi
+
