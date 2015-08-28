@@ -112,8 +112,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace number 1: >_
-bindsym $mod+2 workspace number 2: 
+bindsym $mod+1 workspace number 1: 
+bindsym $mod+2 workspace number 2: 
 bindsym $mod+3 workspace number 3: 
 bindsym $mod+4 workspace number 4: 
 bindsym $mod+5 workspace number 5: 
@@ -128,8 +128,8 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1: >_
-bindsym $mod+Shift+2 move container to workspace number 2: 
+bindsym $mod+Shift+1 move container to workspace number 1: 
+bindsym $mod+Shift+2 move container to workspace number 2: 
 bindsym $mod+Shift+3 move container to workspace number 3: 
 bindsym $mod+Shift+4 move container to workspace number 4: 
 bindsym $mod+Shift+5 move container to workspace number 5: 
@@ -148,10 +148,10 @@ for_window [class="Thunar"] floating enable, move to absolute center
 for_window [window_role="pop-up"] floating enable, move absolute center
 
 # assign to workspace
-#assign [instance="urxvt"] "1: >_"
+#assign [instance="urxvt"] "1: "
 #assign [class="Thunar"] "4: "
 assign [class="^Emacs$"] "3: "
-assign [class="chrome"] "2: "
+assign [class="chrome"] "2: "
 assign [class="smplayer|mpv"] "5: "
 assign [title="SAOImage ds9"] "7: "
 assign [title="^IRAF$"] "7: "
@@ -252,8 +252,8 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 #client.focused          #c10101 #880404 #ffffff #00AA00
 
 ## Autostart
-exec --no-startup-id i3-msg 'rename workspace 1 to "1: >_"'
-exec --no-startup-id urxvt
+exec --no-startup-id i3-msg 'rename workspace 1 to "1: "'
+#exec --no-startup-id urxvt
 exec --no-startup-id xrandr --output LVDS1 --primary
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper_1.jpg
 exec --no-startup-id nm-applet
