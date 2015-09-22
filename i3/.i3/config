@@ -36,7 +36,7 @@ bindsym $mod+y border 1pixel
 bindsym $mod+u border none
 
 new_window none
-new_float none
+#new_float none
 
 # start a terminal
 bindsym $mod+Return exec urxvt
@@ -140,7 +140,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # for specific window
-for_window [class="mpv|Mpalyer|Sonata|Shutter|Gimp|Mirage|Goldendict|Pidgin|File-roller|Gedit|Transmission|Evince|MATLAB|skype|Terminator"] floating enable
+for_window [class="mpv|Mpalyer|Sonata|Shutter|Gimp|Mirage|Goldendict|Pidgin|File-roller|Gedit|Transmission|Evince|MATLAB|skype|Terminator|ss-qt5"] floating enable
 for_window [title="irafterm|Telegram Web"] floating enable
 for_window [class="Thunar"] floating enable, move to absolute center
 #for_window [title="SAOImage ds9"] floating enable, move absolute right
@@ -244,9 +244,9 @@ bar {
 # Original windows decoration colors
 # class                 border  backgr. text    indicator
 #client.focused          #4c7899 #285577 #ffffff #2e9ef4
-client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused          #008787 #2aa198 #ffffff #2e9ef4
 #client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
+client.unfocused        #333333 #586e75 #888888 #292d2e
 #client.urgent           #2f343a #900000 #ffffff #900000
 #client.unfocused          #4c7899 #24364F #aaaaaa #2e9ef4
 #client.focused          #c10101 #880404 #ffffff #00AA00
@@ -255,7 +255,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e
 exec --no-startup-id i3-msg 'rename workspace 1 to "1: "'
 #exec --no-startup-id urxvt
 exec --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper_1.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/sombrero.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id mpd
 exec --no-startup-id fcitx
@@ -264,7 +264,7 @@ exec --no-startup-id megasync
 exec --no-startup-id goldendict
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id redshift -l 32.1:118.9
-#exec --no-startup-id google-chrome-unstable
+#exec --no-startup-id ss-qt5
 #exec --no-startup-id emacs
 #exec --no-startup-id thunderbird
 
