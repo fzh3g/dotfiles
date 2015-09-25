@@ -45,7 +45,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Ctrl+g exec google-chrome-unstable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
-bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+f exec nautilus
 bindsym $mod+Ctrl+t exec terminator
 
 # Kill focused window
