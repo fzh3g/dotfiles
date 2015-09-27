@@ -26,7 +26,7 @@ export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:/usr/local/MATLAB/R2015a/bin
 
 # hunspell dict
-export DICPATH=$HOME/hunspell
+export DICPATH=$HOME/.hunspell
 
 # emacs
 export ALTERNATE_EDITOR=""
