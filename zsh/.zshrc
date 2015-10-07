@@ -15,15 +15,12 @@ export HISTFILE=~/.history
 setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
-#path
+# path
 export PATH=$PATH:$HOME/bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
-
-# matlab
-export PATH=$PATH:/usr/local/MATLAB/R2015a/bin
 
 # hunspell dict
 export DICPATH=$HOME/.hunspell
@@ -50,12 +47,12 @@ DISABLE_AUTO_TITLE=true
 if [[ -n $EMACS ]]; then
     export TERM=dumb
 else
-    export TERM=rxvt-unicode-256color
+    export TERM=xterm-256color
 fi
 
 # http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
 tmux attach &> /dev/null
-if [[ !$TERM = rxvt-unicode-256color ]]; then
+if [[ !$TERM = xterm-256color ]]; then
     exec tmux
 fi
 
