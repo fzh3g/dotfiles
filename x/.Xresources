@@ -31,10 +31,10 @@ xterm*borderWidth:          0
 ! urxvt
 
 URxvt.depth:                32
-URxvt.font:                 xft:monofur for Powerline:size=13,xft:Menlo:size=12
+URxvt.font:                 xft:monofur for Powerline:size=12,xft:Menlo:size=12
 !URxvt.font:                 xft:Inconsolata for Powerline:size=13:regular:antialias=true
 !URxvt.boldfont:             xft:Inconsolata for Powerline:size=13:bold:antialias=true
-URxvt.italicFont:           xft:monofur for Powerline:size=13:style=italic
+URxvt.italicFont:           xft:monofur for Powerline:size=12:style=italic
 !URxvt.bolditalicFont:       xft:Inconsolata for Powerline:size=13:bold:italic:antialias=true
 URxvt.loginShell:           true
 URxvt.fading:               40
