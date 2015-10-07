@@ -39,7 +39,7 @@ new_window none
 #new_float none
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec terminator
 
 # Some apps
 bindsym $mod+Ctrl+g exec google-chrome-unstable
