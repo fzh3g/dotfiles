@@ -10,7 +10,10 @@ declare -a pkgs=(
     'i3'
     'mpd'
     'ncmpcpp'
+    'redshift'
+    'terminator'
     'tmux'
+    'vim'
     'x'
     'zsh'
 )
