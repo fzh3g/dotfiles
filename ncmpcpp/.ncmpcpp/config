@@ -503,7 +503,7 @@ alternative_ui_separator_color = black
 #
 active_column_color = red
 #
-visualizer_color = cyan
+visualizer_color = blue
 #
 window_border_color = green
 #
