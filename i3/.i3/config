@@ -14,18 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Monofur, FontAwesome 10
-#font -wenquanyi-wenquanyi bitmap song-bold-r-normal--*-120-75-75-p-*-iso10646-1
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -35,8 +24,16 @@ bindsym $mod+t border normal
 bindsym $mod+y border 1pixel
 bindsym $mod+u border none
 
-new_window none
-#new_float none
+new_window pixel 1
+new_float pixel 1
+
+hide_edge_borders both
+
+gaps inner 10
+gaps outer 0
+
+smart_gaps on
+smart_borders on
 
 # start a terminal
 bindsym $mod+Return exec terminator
@@ -52,11 +49,12 @@ bindsym $mod+Ctrl+t exec terminator
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -nb '#191919' -nf '#9ac0cd' -sb '#191919' -sf '#bf3f34' -p 'picklist >> '
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec dmenu_run -nb '#191919' -nf '#9ac0cd' -sb '#191919' -sf '#bf3f34' -p 'Arch Linux >> '
+
+# j4-dmenu-desktop, a near-drop-in replacement for i3-dmenu-desktop,
+# but much faster
+
+bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#1d1f21' -nf '#b294bb' -sb '#008787' -sf '#c5c8c6' -l 16 -p 'Arch Linux >> '"
 
 # change focus
 bindsym $mod+h focus left
@@ -103,13 +101,10 @@ bindsym $mod+e layout default
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+m focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace number 1: 
@@ -140,9 +135,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # for specific window
-for_window [class="mpv|Mpalyer|Sonata|Shutter|Gimp|Mirage|Goldendict|Pidgin|File-roller|Gedit|Transmission|Evince|MATLAB|skype|Terminator|ss-qt5"] floating enable
-for_window [title="irafterm|Telegram Web"] floating enable
-for_window [class="Thunar"] floating enable, move to absolute center
+for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|Goldendict|Pidgin|File-roller|Gedit|Transmission|Evince|MATLAB|Skype|Terminator|Nautilus"] floating enable
+for_window [title="irafterm"] floating enable
 #for_window [title="SAOImage ds9"] floating enable, move absolute right
 #for_window [title="IRAF"] floating enable, move absolute position 0 0
 for_window [window_role="pop-up"] floating enable, move absolute center
@@ -156,7 +150,7 @@ assign [class="smplayer|mpv"] "5: "
 assign [title="SAOImage ds9"] "7: "
 assign [title="^IRAF$"] "7: "
 assign [class="Thunderbird"] "6: "
-assign [class="Pidgin|telegram"] "8: "
+assign [class="Pidgin"] "8: "
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,24 +178,16 @@ bindsym $mod+F2 mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -232,39 +218,31 @@ bar {
         tray_output primary
         output LVDS1
         colors {
-            background #000000
-            statusline #CCCCCC
+            background #1d1f21
+            statusline #b294bb
             focused_workspace  #ffffff #008787
-            inactive_workspace #008787 #000000
+            inactive_workspace #b294bb #1d1f21
             urgent_workspace   #ffffff #900000
         }
 
 }
 
-# Original windows decoration colors
+# Windows decoration colors
 # class                 border  backgr. text    indicator
-#client.focused          #4c7899 #285577 #ffffff #2e9ef4
-client.focused          #008787 #2aa198 #ffffff #2e9ef4
-#client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.focused          #008787 #008787 #ffffff #2e9ef4
 client.unfocused        #333333 #586e75 #888888 #292d2e
-#client.urgent           #2f343a #900000 #ffffff #900000
-#client.unfocused          #4c7899 #24364F #aaaaaa #2e9ef4
-#client.focused          #c10101 #880404 #ffffff #00AA00
 
 ## Autostart
 exec --no-startup-id i3-msg 'rename workspace 1 to "1: "'
-#exec --no-startup-id urxvt
 exec --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id feh --bg-fill ~/Pictures/sombrero.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/archwallpaper.png
 exec --no-startup-id nm-applet
 exec --no-startup-id mpd
 exec --no-startup-id fcitx
 exec --no-startup-id megasync
-#exec --no-startup-id dropbox
 exec --no-startup-id goldendict
 exec --no-startup-id compton -b --config ~/.compton.conf
-exec --no-startup-id redshift -l 32.1:118.9
-#exec --no-startup-id ss-qt5
-#exec --no-startup-id emacs
-#exec --no-startup-id thunderbird
-
+exec --no-startup-id redshift
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
