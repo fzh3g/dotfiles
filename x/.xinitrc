@@ -20,13 +20,9 @@ export XMODIFIERS=@im=fcitx
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
 
 
-setxkbmap -option ctrl:swapcaps
-xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
-xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
-
 # exec gnome-session
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
 
-exec i3
+# exec i3
