@@ -60,6 +60,3 @@ fi
 if [ -f "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh" ]; then
     source "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh"
 fi
-
-# fasd
-eval "$(fasd --init auto)"
