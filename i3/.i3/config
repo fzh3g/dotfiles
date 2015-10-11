@@ -144,7 +144,7 @@ for_window [window_role="pop-up"] floating enable, move absolute center
 # assign to workspace
 #assign [instance="urxvt"] "1: "
 #assign [class="Thunar"] "4: "
-assign [class="^Emacs$"] "3: "
+#assign [class="^Emacs$"] "3: "
 assign [class="chrome"] "2: "
 assign [class="smplayer|mpv"] "5: "
 assign [title="SAOImage ds9"] "7: "
