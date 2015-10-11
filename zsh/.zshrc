@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="bullet-train"
 
-plugins=(git archlinux colorize colored-man zsh-syntax-highlighting tmux)
+plugins=(git archlinux colored-man zsh-syntax-highlighting tmux autojump)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -56,3 +56,10 @@ if [[ !$TERM = xterm-256color ]]; then
     exec tmux
 fi
 
+# enhancd
+if [ -f "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh" ]; then
+    source "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh"
+fi
+
+# fasd
+eval "$(fasd --init auto)"
