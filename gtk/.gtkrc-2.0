@@ -1,14 +1,8 @@
 # Configs for GTK2 programs 
 
-include "/usr/share/themes/Orion/gtk-2.0/gtkrc"
-style "user-font" 
-{
-	font_name="Helvetica LT"
-}
-widget_class "*" style "user-font"
-gtk-font-name="Helvetica LT 10"
-gtk-theme-name="Orion"
-gtk-icon-theme-name="breeze"
+gtk-font-name="Cantarell 10"
+gtk-theme-name="Arc-Darker"
+gtk-icon-theme-name="Adwaita"
 gtk-fallback-icon-theme="Adwaita"
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-menu-images=1
