@@ -57,8 +57,8 @@ if [[ !$TERM = xterm-256color ]]; then
 fi
 
 # enhancd
-if [ -f "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh" ]; then
-    source "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh"
+if [ -f "~/.enhancd/zsh/enhancd.zsh" ]; then
+    source "~/.enhancd/zsh/enhancd.zsh"
 fi
 
 # heasoft
@@ -67,3 +67,6 @@ alias heainit=". $HEADAS/headas-init.sh"
 
 # XMM SAS
 alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
+
+# CIAO
+alias ciao="source ~/ciao-4.7/bin/ciao.bash"
