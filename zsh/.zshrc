@@ -60,3 +60,10 @@ fi
 if [ -f "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh" ]; then
     source "/home/zhengfaxiang/.enhancd/zsh/enhancd.zsh"
 fi
+
+# heasoft
+export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
+alias heainit=". $HEADAS/headas-init.sh"
+
+# XMM SAS
+alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
