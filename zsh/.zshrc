@@ -2,16 +2,14 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="bullet-train"
 
-plugins=(git archlinux colored-man zsh-syntax-highlighting tmux autojump)
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+plugins=(git archlinux zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # history
 export HISTSIZE=2048
 export SAVEHIST=2048
-export HISTFILE=~/.history
+export HISTFILE=$HOME/.history
 setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
@@ -57,8 +55,8 @@ if [[ !$TERM = xterm-256color ]]; then
 fi
 
 # enhancd
-if [ -f "~/.enhancd/zsh/enhancd.zsh" ]; then
-    source "~/.enhancd/zsh/enhancd.zsh"
+if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
+    source "$HOME/.enhancd/zsh/enhancd.zsh"
 fi
 
 # heasoft
@@ -69,4 +67,4 @@ alias heainit=". $HEADAS/headas-init.sh"
 alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
 
 # CIAO
-alias ciao="source ~/ciao-4.7/bin/ciao.bash"
+alias ciao="source $HOME/ciao-4.7/bin/ciao.bash"
