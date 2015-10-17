@@ -67,7 +67,7 @@ alias heainit=". $HEADAS/headas-init.sh"
 alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
 
 # CALDB
-export CALDB=/usr/local/caldb
+export CALDB=$HOME/caldb
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
