@@ -19,7 +19,7 @@
     background_image = None
   [[tomorrow-night]]
     background_color = "#1d1f21"
-    background_darkness = 0.8
+    background_darkness = 0.9
     background_image = None
     background_type = transparent
     cursor_blink = False
