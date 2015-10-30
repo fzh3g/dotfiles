@@ -38,6 +38,8 @@ alias vi=vim
 
 alias pxc=proxychains
 
+alias sz="source $HOME/.zshrc"
+
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
 DISABLE_AUTO_TITLE=true
 
