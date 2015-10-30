@@ -38,6 +38,7 @@ alias vi=vim
 
 alias pxc=proxychains
 
+alias xo=xdg-open
 alias sz="source $HOME/.zshrc"
 
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
