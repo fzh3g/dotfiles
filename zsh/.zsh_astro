@@ -1,0 +1,32 @@
+# Heasoft
+export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
+alias heainit=". $HEADAS/headas-init.sh"
+
+# XMM SAS
+alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
+
+# CALDB
+export CALDB=$HOME/caldb
+export CALDBCONFIG=$CALDB/software/tools/caldb.config
+export CALDBALIAS=$CALDB/software/tools/alias_config.fits
+
+# CIAO
+alias ciao="source $HOME/ciao-4.7/bin/ciao.bash"
+
+# IDL
+export IDL_DIR=/usr/local/exelis/idl
+export PUBDIR=$HOME/lib/pub
+export IDL_STARTUP=$PUBDIR/xrayidl/xraysysv.pro
+export ZDEF=$PUBDIR/xrayidl/def
+export ZAUX=$PUBDIR/xrayidl/aux
+export EXPLIB=$PUBDIR/xrayidl/experimental
+export IDL_PATH='<IDL_DEFAULT>'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/idladd/idlastronlib/pro'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/idladd/rosatidl'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/atomdb_idl_2.00'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/tara'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/ae'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/pan'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/xrayidl'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/ljtastro'
+export IDL_PATH=$IDL_PATH:+'$PUBDIR/Zhiyuanprocedure'

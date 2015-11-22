@@ -13,6 +13,9 @@ export HISTFILE=$HOME/.history
 setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
+# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
+DISABLE_AUTO_TITLE=true
+
 # path
 export PATH=$PATH:$HOME/bin
 export GOPATH=$HOME/go
@@ -41,8 +44,6 @@ alias pxc=proxychains
 alias xo=xdg-open
 alias sz="source $HOME/.zshrc"
 
-# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
-DISABLE_AUTO_TITLE=true
 
 # http://stackoverflow.com/questions/25094855/visible-ansi-escape-sequences-when-running-emacs-shell-these-are-not-ansi-color
 if [[ -n $EMACS ]]; then
@@ -62,17 +63,7 @@ if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
     source "$HOME/.enhancd/zsh/enhancd.zsh"
 fi
 
-# heasoft
-export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
-alias heainit=". $HEADAS/headas-init.sh"
-
-# XMM SAS
-alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
-
-# CALDB
-export CALDB=$HOME/caldb
-export CALDBCONFIG=$CALDB/software/tools/caldb.config
-export CALDBALIAS=$CALDB/software/tools/alias_config.fits
-
-# CIAO
-alias ciao="source $HOME/ciao-4.7/bin/ciao.bash"
+# zsh settings for astronomy
+if [ -f "$HOME/.zsh_astro" ]; then
+    source "$HOME/.zsh_astro"
+fi
