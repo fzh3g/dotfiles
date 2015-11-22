@@ -5,21 +5,22 @@
 This is a repository with my configuration files of my ArchLinux, following the
 philosophy of simplicity and humanity. 
 
-![screenshot](https://github.com/zhengfaxiang/dotfiles/blob/master/images/screenshot.png?raw=true)
-
 ## Content ##
 
 This repo contains my config files of
 
-  * [compton](https://github.com/chjj/compton)
-  * [git](https://git-scm.com/)
-  * [gtk](http://www.gtk.org/)
-  * [i3wm](https://i3wm.org/)
-  * [mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki)
-  * [ncmpcpp](http://ncmpcpp.rybczak.net/)
-  * [tmux](http://tmux.github.io/)
-  * [x](http://www.x.org/wiki/)
-  * [oh-my-zsh](http://ohmyz.sh/)
+  * [Compton](https://github.com/chjj/compton)
+  * [Git](https://git-scm.com/)
+  * [Gtk](http://www.gtk.org/)
+  * [I3wm](https://i3wm.org/)
+  * [Mpd](http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki)
+  * [Ncmpcpp](http://ncmpcpp.rybczak.net/)
+  * [Redshift](http://jonls.dk/redshift/)
+  * [Terminator](http://gnometerminator.blogspot.com/p/introduction.html)
+  * [Tmux](http://tmux.github.io/)
+  * [Vim](http://www.vim.org/)
+  * [X](http://www.x.org/wiki/)
+  * [Oh-my-zsh](http://ohmyz.sh/)
 
 ## Installation ##
 
