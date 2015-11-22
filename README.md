@@ -3,7 +3,7 @@
 ## Introduction ##
 
 This is a repository with my configuration files of my ArchLinux, following the
-philosophy of simplicity and humanity. 
+philosophy of simplicity, efficiency and humanity.
 
 ## Content ##
 
