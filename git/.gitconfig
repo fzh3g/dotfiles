@@ -2,7 +2,7 @@
 	name = zhengfaxiang
 	email = fxzheng0906@outlook.com
 [credential "https://github.com"]
-        username = Faxiang Zheng
+        username = zhengfaxiang
         helper = cache
 [color]
 	ui = auto
