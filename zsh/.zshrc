@@ -36,8 +36,9 @@ alias e="emacsclient -t"
 alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias ev="emacsclient -c -a emacs"
 
-alias v=vim
-alias vi=vim
+alias v=nvim
+alias vi=nvim
+alias vim=nvim
 
 alias pxc=proxychains
 
