@@ -1,10 +1,9 @@
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
 
+# Fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-
-
-
-
+# Makes fonts darker and thicker
+export INFINALITY_FT_BRIGHTNESS="-20"
