@@ -18,10 +18,16 @@ DISABLE_AUTO_TITLE=true
 
 # path
 export PATH=$PATH:$HOME/bin
+
+# Go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
+
+# Ruby gem
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_PATH=$GEM_HOME
+export PATH=$PATH:$GEM_HOME/bin
 
 # hunspell dict
 export DICPATH=$HOME/.hunspell
@@ -44,7 +50,7 @@ alias pxc=proxychains
 
 alias xo=xdg-open
 alias sz="source $HOME/.zshrc"
-
+alias lpo="l | peco"
 
 # http://stackoverflow.com/questions/25094855/visible-ansi-escape-sequences-when-running-emacs-shell-these-are-not-ansi-color
 if [[ -n $EMACS ]]; then
