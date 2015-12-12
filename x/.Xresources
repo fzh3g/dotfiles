@@ -2,7 +2,7 @@
 
 Xft.autohint:               0
 Xft.lcdfilter:              lcddefault
-Xft.hintstyle:              hintfull
+Xft.hintstyle:              hintslight
 Xft.hinting:                1
 Xft.antialias:              1
 Xft.rgba:                   rgb
@@ -14,11 +14,11 @@ Xcursor.theme:              Breeze_Obsidian
 
 ! xterm
 
-XTerm*faceName:             Menlo
+XTerm*faceName:             Monaco
 xterm*faceNameDoublesize:   Microsoft Yahei
 xterm*locale:               true
 xterm*utf8:                 1
-xterm*faceSize:             11
+xterm*faceSize:             10
 xterm*letterSpace:          -1
 xterm*vt100*geometry:       80x30
 xterm*saveLines:            30000
@@ -31,7 +31,7 @@ xterm*borderWidth:          0
 ! urxvt
 
 URxvt.depth:                32
-URxvt.font:                 xft:monofur for Powerline:size=12,xft:Menlo:size=12
+URxvt.font:                 xft:Monaco for Powerline:size=10,xft:Monaco:size=10
 !URxvt.font:                 xft:Inconsolata for Powerline:size=13:regular:antialias=true
 !URxvt.boldfont:             xft:Inconsolata for Powerline:size=13:bold:antialias=true
 URxvt.italicFont:           xft:monofur for Powerline:size=12:style=italic
