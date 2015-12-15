@@ -20,7 +20,7 @@ DISABLE_AUTO_TITLE=true
 export PATH=$PATH:$HOME/bin
 
 # Go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
