@@ -70,6 +70,9 @@ if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
     source "$HOME/.enhancd/zsh/enhancd.zsh"
 fi
 
+# fuck
+eval $(thefuck --alias)
+
 # zsh settings for astronomy
 if [ -f "$HOME/.zsh_astro" ]; then
     source "$HOME/.zsh_astro"
