@@ -235,7 +235,7 @@ client.unfocused        #333333 #586e75 #888888 #292d2e
 ## Autostart
 exec --no-startup-id i3-msg 'rename workspace 1 to "1: "'
 exec --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id feh --bg-fill ~/Pictures/archwallpaper.png
+exec --no-startup-id feh --bg-fill ~/Pictures/159924-arch-linux-wide-linux-desktop-wallpapers-27390.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id mpd
 exec --no-startup-id fcitx
