@@ -7,3 +7,5 @@ export XMODIFIERS=@im=fcitx
 
 # Makes fonts darker and thicker
 export INFINALITY_FT_BRIGHTNESS="-20"
+
+export LC_CTYPE=zh_CN.UTF-8
