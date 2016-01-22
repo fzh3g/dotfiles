@@ -1,8 +1,8 @@
 # Configs for GTK2 programs 
 
-gtk-font-name="PingFang SC 10"
-gtk-theme-name="Arc-Darker"
-gtk-icon-theme-name="Numix Circle"
+gtk-font-name="Noto Sans CJK SC 9"
+gtk-theme-name="Breeze"
+gtk-icon-theme-name="Breeze"
 gtk-fallback-icon-theme="Adwaita"
 gtk-toolbar-style=GTK_TOOLBAR_ICONS
 gtk-menu-images=1
