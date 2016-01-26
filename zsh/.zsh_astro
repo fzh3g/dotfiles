@@ -18,6 +18,9 @@ export GAG_ROOT_DIR=$HOME/app/gildas-exe-dec15a
 export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
 source $GAG_ROOT_DIR/etc/bash_profile
 
+# KARMA
+source /usr/local/karma/.karmarc
+
 # IDL
 #source /usr/local/itt/idl/bin/idl_setup.bash
 #export IDL_DIR=/usr/local/exelis/idl
