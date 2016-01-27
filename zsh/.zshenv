@@ -1,17 +1,3 @@
-# Path
-export PATH=$PATH:$HOME/bin
-
-# Go
-export GOPATH=$HOME/.go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
-
-# Ruby gem
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export GEM_PATH=$GEM_HOME
-export PATH=$PATH:$GEM_HOME/bin
-
-# Astronomy software
 # Heasoft
 export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
 alias heainit=". $HEADAS/headas-init.sh"
@@ -38,18 +24,22 @@ source /usr/local/karma/.karmarc
 # IDL
 #source /usr/local/itt/idl/bin/idl_setup.bash
 #export IDL_DIR=/usr/local/exelis/idl
-export PUBDIR=$HOME/lib/pub
+export PUB_DIR=$HOME/lib/pub
+export IDL_LIB_DIR=$HOME/lib/idl
 #export IDL_STARTUP=$PUBDIR/xrayidl/xraysysv.pro
 #export ZDEF=$PUBDIR/xrayidl/def
 #export ZAUX=$PUBDIR/xrayidl/aux
 #export EXPLIB=$PUBDIR/xrayidl/experimental
 export IDL_PATH='<IDL_DEFAULT>'
-export IDL_PATH=$IDL_PATH:+'$PUBDIR/idladd/idlastronlib/pro'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/idladd/rosatidl'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/atomdb_idl_2.00'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/tara'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/ae'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/pan'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/xrayidl'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/ljtastro'
-#export IDL_PATH=$IDL_PATH:+'$PUBDIR/Zhiyuanprocedure'
+export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/astrolib/pro'
+export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/idl_coyote/coyote'
+export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/idl_coyote/retired_coyote_library'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/idlastronlib/pro'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/rosatidl'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/atomdb_idl_2.00'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/tara'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/ae'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/pan'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/xrayidl'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/ljtastro'
+#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/Zhiyuanprocedure'
