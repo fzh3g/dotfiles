@@ -1,3 +1,17 @@
+# Path
+export PATH=$PATH:$HOME/bin
+
+# Go
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# Ruby gem
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_PATH=$GEM_HOME
+export PATH=$PATH:$GEM_HOME/bin
+
+# Astronomy software
 # Heasoft
 export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
 alias heainit=". $HEADAS/headas-init.sh"
