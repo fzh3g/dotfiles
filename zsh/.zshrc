@@ -16,6 +16,19 @@ unsetopt EXTENDED_HISTORY
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
 DISABLE_AUTO_TITLE=true
 
+# Path
+export PATH=$PATH:$HOME/bin
+
+# Go
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# Ruby gem
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_PATH=$GEM_HOME
+export PATH=$PATH:$GEM_HOME/bin
+
 # hunspell dict
 export DICPATH=$HOME/.hunspell
 
