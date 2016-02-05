@@ -26,6 +26,7 @@ source /usr/local/karma/.karmarc
 #export IDL_DIR=/usr/local/exelis/idl
 export PUB_DIR=$HOME/lib/pub
 export IDL_LIB_DIR=$HOME/lib/idl
+export IDL_START_DIR=$HOME/coding/idl
 #export IDL_STARTUP=$PUBDIR/xrayidl/xraysysv.pro
 #export ZDEF=$PUBDIR/xrayidl/def
 #export ZAUX=$PUBDIR/xrayidl/aux
@@ -34,6 +35,7 @@ export IDL_PATH='<IDL_DEFAULT>'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/astrolib/pro'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/idl_coyote/coyote'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/idl_coyote/retired_coyote_library'
+export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/motley'
 #export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/idlastronlib/pro'
 #export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/rosatidl'
 #export IDL_PATH=$IDL_PATH:+'$PUB_DIR/atomdb_idl_2.00'
