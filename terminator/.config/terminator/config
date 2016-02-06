@@ -13,6 +13,7 @@
     [[[window0]]]
       parent = ""
       type = Window
+      size = 650, 400
 [plugins]
 [profiles]
   [[default]]
@@ -23,7 +24,7 @@
     background_image = None
     background_type = transparent
     cursor_blink = False
-    font = Monaco for Powerline 10
+    font = Monaco for Powerline 11
     foreground_color = "#c5c8c6"
     login_shell = True
     palette = "#000000:#912226:#778900:#ae7b00:#1d2594:#682a9b:#2b6651:#929593:#666666:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ecebec"
