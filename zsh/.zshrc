@@ -54,12 +54,7 @@ alias xo=xdg-open
 alias sz="source $HOME/.zshrc"
 alias lpo="l | peco"
 
-# http://stackoverflow.com/questions/25094855/visible-ansi-escape-sequences-when-running-emacs-shell-these-are-not-ansi-color
-if [[ -n $EMACS ]]; then
-    export TERM=dumb
-else
-    export TERM=xterm-256color
-fi
+export TERM=xterm-256color
 
 # http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
 tmux attach &> /dev/null
