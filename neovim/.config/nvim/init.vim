@@ -134,13 +134,12 @@ nnoremap <leader>rn :call NumberToggle()<cr>
 " ================= Visual ===========================
 
 set background=dark
-" set guioptions-=m       " Removes top menubar
-" set guioptions-=T       " Removes top toolbar
-" set guioptions-=r       " Removes right hand scroll bar
-" set go-=L               " Removes left hand scroll bar
+set guioptions-=m       " Removes top menubar
+set guioptions-=T       " Removes top toolbar
+set guioptions-=r       " Removes right hand scroll bar
+set go-=L               " Removes left hand scroll bar
 
 set t_Co=256
-set guioptions=egmrti
 set gfn=Monospace\ 10
 
 " status bar
@@ -151,25 +150,15 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-" status line
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
-
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
-
-" terminal
+" font
 if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Monaco:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-endif
-
-if &term =~ '256color'
-  set t_ut=
+    if has("gui_mac") || has("gui_macvim")
+        set guifont=Fira\ Mono\ for\ Powerline:h12
+    elseif has("gui_win32")
+        set guifont=Fira_Mono_for_Powerline:h12:cANSI
+    else
+        set guifont=Fira\ Mono\ for\ Powerline\ 10
+    endif
 endif
 
 " syntax highlighting
@@ -195,7 +184,7 @@ call plug#begin('~/.config/nvim/plugged')
   " easymotion for fast jump.
   Plug 'easymotion/vim-easymotion'
   " color scheme
-  Plug 'morhetz/gruvbox'
+  Plug 'w0ng/vim-hybrid'
   " auto-pairs
   Plug 'jiangmiao/auto-pairs'
   " tagbar
@@ -234,19 +223,18 @@ let g:ctrlp_match_window_reversed = 0
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_open = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
 " Airline
-let g:airline_theme = 'powerlineish'
+"let g:airline_theme = 'hybrid'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -272,10 +260,9 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-map <leader>nn :NERDTreeToggle<CR>
-map <leader>nf :NERDTreeFind<CR>
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+noremap <F3> :NERDTreeToggle<CR>
 
 " vim-python
 augroup vimrc-python
@@ -290,40 +277,14 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
-"let g:jedi#usages_command = "<leader>n"
-"let g:jedi#rename_command = "<leader>r"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
 let g:syntastic_python_flake8_post_args='--ignore=W391'
-
-" ================= Mapping ==========================
-
-" Split
-noremap <leader>h :<C-u>split<CR>
-noremap <leader>v :<C-u>vsplit<CR>
-
-" use ; for commands.
-nnoremap ; :
-
-" smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
-
-" move to beginning/end of line
-nnoremap B ^
-nnoremap E $
-
-" highlight last inserted text
-nnoremap gV `[v`]
 
 " ================= Mapping ==========================
 
@@ -372,7 +333,7 @@ noremap <leader>] :bn<CR>
 noremap <leader>[ :bp<CR>
 
 " Close buffer
-map <leader>bd :bd<CR>
+noremap <leader>bd :bd<CR>
 
 " Tabs
 map <leader>tn :tabnew<cr>
@@ -395,5 +356,5 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " color scheme
-let g:gruvbox_italic = 1
-colorscheme gruvbox
+let g:hybrid_custom_term_colors = 1
+colorscheme hybrid
