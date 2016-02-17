@@ -85,11 +85,6 @@ set magic
 " Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
 
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-endif
-
 " ================ Scrolling ========================
 
 " redraw only when we need to
@@ -174,8 +169,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'easymotion/vim-easymotion'
   " color scheme
   Plug 'w0ng/vim-hybrid'
-  " auto-pairs
-  Plug 'jiangmiao/auto-pairs'
+  " surround
+  Plug 'tpope/vim-surround'
   " tagbar
   Plug 'majutsushi/tagbar'
   " syntastic
@@ -186,6 +181,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'sheerun/vim-polyglot'
   " Python
   Plug 'davidhalter/jedi-vim'
+  " auto complete
+  Plug 'Shougo/neocomplete.vim'
   " Indent line
   Plug 'Yggdroot/indentLine'
   " fugitive, a git wrapper
@@ -274,6 +271,61 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
+" neocomplete
+
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_select = 0
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#max_list = 15
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+set completeopt=longest,menuone
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    "For no inserting <CR> key.
+    "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=jedi#completions
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\)\w*'
+
 " vim-python
 augroup vimrc-python
   autocmd!
@@ -284,13 +336,14 @@ augroup END
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first=0
+let g:jedi#auto_vim_configuration = 0
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
@@ -309,6 +362,12 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " move to beginning/end of line
 nnoremap B ^
 nnoremap E $
@@ -324,6 +383,7 @@ nmap <leader>q :q!<CR>
 
 
 " Copy/Paste/Cut
+set clipboard=unnamed
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif
