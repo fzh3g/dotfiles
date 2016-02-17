@@ -64,7 +64,7 @@ fi
 
 # enhancd
 if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
-    export ENHANCD_COMMAND=cde
+    export ENHANCD_COMMAND=ecd
     source "$HOME/.enhancd/zsh/enhancd.zsh"
 fi
 
