@@ -42,9 +42,8 @@ alias e="emacsclient -t"
 alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias ev="emacsclient -c -a emacs"
 
-alias v=nvim
-alias vi=nvim
-alias vim=nvim
+alias v=vim
+alias vi=vim
 
 alias gedit="kate"
 
