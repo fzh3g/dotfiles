@@ -274,8 +274,8 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
+map <leader>nn :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
 
 " vim-python
 augroup vimrc-python
@@ -290,8 +290,8 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
+"let g:jedi#usages_command = "<leader>n"
+"let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 
@@ -307,6 +307,12 @@ noremap <leader>v :<C-u>vsplit<CR>
 
 " use ; for commands.
 nnoremap ; :
+
+" smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " move vertically by visual line
 nnoremap j gj
@@ -366,12 +372,13 @@ noremap <leader>] :bn<CR>
 noremap <leader>[ :bp<CR>
 
 " Close buffer
-noremap <leader>c :bd<CR>
+map <leader>bd :bd<CR>
 
 " Tabs
-nnoremap <Tab> :tabnext<CR>
-nnoremap <S-Tab> :tabprevious<CR>
-nnoremap <silent> <C-t> :tabnew<CR>
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
 
 " Opens an edit command with the path of the currently edited file filled in
 noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
