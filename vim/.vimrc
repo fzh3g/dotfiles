@@ -254,10 +254,11 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_aggregate_errors = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_checkers=['pyflakes', 'pylint']
 let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
 
 " pythonsyntax
