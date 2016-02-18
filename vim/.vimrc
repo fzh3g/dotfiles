@@ -183,6 +183,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'davidhalter/jedi-vim'
   " auto complete
   Plug 'Shougo/neocomplete.vim'
+  " snippets
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
   " Indent line
   Plug 'Yggdroot/indentLine'
   " fugitive, a git wrapper
@@ -273,16 +276,20 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
-" neocomplete
+" snippets
+let g:UltiSnipsExpandTrigger="<c-cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+let g:ulti_expand_or_jump_res = 0
 
+" neocomplete
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-let g:neocomplete#max_list = 15
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-set completeopt=longest,menuone
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
@@ -295,14 +302,14 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-    "For no inserting <CR> key.
+    " For no inserting <CR> key.
     "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
@@ -364,12 +371,6 @@ nnoremap ; :
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " move to beginning/end of line
 nnoremap B ^
