@@ -1,4 +1,4 @@
-" ================ General Config ====================
+" =================== General Config =================
 
 set number                      " Line numbers
 set rnu                         " Relative line numbers
@@ -25,16 +25,28 @@ let mapleader = ','
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set termencoding=utf-8
 
-" ================ Turn Off Swap Files ==============
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
 
+" formatoptions
+set formatoptions+=m
+set formatoptions+=B
+
+" filetype
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+
+" Turn Off Swap Files
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
-
+" Persistent Undo
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 if has('persistent_undo') && !isdirectory(expand('~').'/.cache/vim')
@@ -43,38 +55,44 @@ if has('persistent_undo') && !isdirectory(expand('~').'/.cache/vim')
   set undofile
 endif
 
-" ================ Indentation ======================
-
+" Indentation
 set smarttab
 set tabstop=4
-set softtabstop=2
+set softtabstop=4
 set expandtab
 set autoindent
 set shiftwidth=4
 set smartindent
-
-" load filetype-specific indent files
-filetype plugin indent on
+set shiftround
 
 " wrap lines
 set wrap
 set wm=2
 set textwidth=0
 
-" ================ Folds ============================
-
+" Folds
 set foldenable
-set foldlevelstart=10
-set foldnestmax=3
 set foldmethod=indent
+set foldlevel=99
+" <leader>zz to toggle fold
+let g:FoldMethod = 0
+map <leader>zz :call ToggleFold()<cr>
+function! ToggleFold()
+    if g:FoldMethod == 0
+        exe "normal! zM"
+        let g:FoldMethod = 1
+    else
+        exe "normal! zR"
+        let g:FoldMethod = 0
+    endif
+endfunction
 
-" ================ Completion =======================
-
+" Completion
 set wildmenu
 set wildmode=list:longest
+set completeopt=longest,menu
 
-" ================ Search ===========================
-
+" Search
 set showmatch
 set ignorecase
 set smartcase
@@ -85,22 +103,20 @@ set magic
 " Clean search (highlight)
 nnoremap <silent> <leader>l :noh<cr>
 
-" ================ Scrolling ========================
-
+" Scrolling
 " redraw only when we need to
 set lazyredraw
 set scrolloff=5
 
-" ================ Split ============================
-
+" Split
 set splitbelow
 set splitright
 
 " For regular expressions turn magic on
 set magic
 
-" ============== Relative numbering =================
-
+" Relative numbering
+nnoremap <leader>rn :call NumberToggle()<cr>
 function! NumberToggle()
   if(&relativenumber == 1)
     set nornu
@@ -110,26 +126,22 @@ function! NumberToggle()
   endif
 endfunction
 
-nnoremap <leader>rn :call NumberToggle()<cr>
-
-" ================= Visual ===========================
-
+" Visual
 set background=dark
 set guioptions-=m       " Removes top menubar
 set guioptions-=T       " Removes top toolbar
 set guioptions-=r       " Removes right hand scroll bar
 set go-=L               " Removes left hand scroll bar
-
 set t_Co=256
 set gfn=Monospace\ 10
-
-" status bar
-set laststatus=2
 
 " title
 set title
 set titleold="Terminal"
 set titlestring=%F
+
+" status bar
+set laststatus=2
 
 " font
 if has("gui_running")
@@ -138,7 +150,7 @@ if has("gui_running")
         set guifont=Monac\ for\ Powerline:h12
     elseif has("gui_win32")
         set guifont=Monaco_for_Powerline:h12:cANSI
-    else
+    elseif has("gui_gtk2")
         set guifont=Monaco\ for\ Powerline\ 10
     endif
 endif
@@ -146,7 +158,7 @@ endif
 " syntax highlighting
 syntax enable
 
-"Toggle menubar
+" <leader>m to toggle menubar
 nnoremap <leader>m :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 
 " ================== Plugins =========================
@@ -236,14 +248,17 @@ let g:airline_detected_modified = 1
 let g:airline_powerline_fonts = 1
 
 " syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers=['python', 'flake8']
-let g:syntastic_python_flake8_post_args='--ignore=W391'
+let g:syntastic_python_checkers=['pylint']
+let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
 
 " pythonsyntax
 let python_highlight_all = 1
@@ -324,12 +339,13 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
+" key-mappings.
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" <CR>: choose current item
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" <s-CR>: close popup and save indent.
+inoremap <silent> <s-CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
     " For no inserting <CR> key.
@@ -373,8 +389,8 @@ let g:jedi#show_call_signatures = "0"
 " vim-python
 augroup vimrc-python
   autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
+  autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab colorcolumn=79
+      \ formatoptions+=croq
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
@@ -395,8 +411,20 @@ nnoremap j gj
 nnoremap k gk
 
 " move to beginning/end of line
-nnoremap B ^
-nnoremap E $
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+map <space> /
+
+" Keep search pattern at the center of the screen.
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -413,29 +441,59 @@ set clipboard=unnamed
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif
-
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
-
 if has('macunix')
   " pbcopy for OSX copy/paste
   vmap <C-x> :!pbcopy<CR>
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
+set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
+                                "    paste mode, where you can paste mass data
+                                "    that won't be autoindented
+" disbale paste mode when leaving insert mode
+au InsertLeave * set nopaste
+" Automatically set paste mode in Vim when pasting in insert mode
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Buffer nav
-noremap <leader>] :bn<CR>
-noremap <leader>[ :bp<CR>
+nnoremap [b :bprevious<cr>
+nnoremap ]b :bnext<cr>
 
 " Close buffer
 noremap <leader>bd :bd<CR>
 
 " Tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
+noremap <leader>to :tabonly<cr>
+noremap <leader>tc :tabclose<cr>
+noremap <leader>tm :tabmove
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+" Toggles between the active and last active tab "
+" The first tab is always 1 "
+let g:last_active_tab = 1
+" nnoremap <leader>gt :execute 'tabnext ' . g:last_active_tab<cr>
+" nnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
+" vnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
+nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
+autocmd TabLeave * let g:last_active_tab = tabpagenr()
 
 " Opens an edit command with the path of the currently edited file filled in
 noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -446,6 +504,12 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
+
+" select all
+map <Leader>sa ggVG"
+
+" remap U to <C-r> for easier redo
+nnoremap U <C-r>
 
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
