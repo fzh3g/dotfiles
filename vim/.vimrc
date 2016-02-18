@@ -83,7 +83,7 @@ set hlsearch
 set magic
 
 " Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <leader>l :noh<cr>
 
 " ================ Scrolling ========================
 
@@ -108,7 +108,7 @@ function! NumberToggle()
   else
     set rnu
   endif
-endfunc
+endfunction
 
 nnoremap <leader>rn :call NumberToggle()<cr>
 
@@ -135,11 +135,11 @@ set titlestring=%F
 if has("gui_running")
     set lines=32 columns=128
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Fira\ Mono\ for\ Powerline:h12
+        set guifont=Monac\ for\ Powerline:h12
     elseif has("gui_win32")
-        set guifont=Fira_Mono_for_Powerline:h12:cANSI
+        set guifont=Monaco_for_Powerline:h12:cANSI
     else
-        set guifont=Fira\ Mono\ for\ Powerline\ 10
+        set guifont=Monaco\ for\ Powerline\ 10
     endif
 endif
 
@@ -151,7 +151,7 @@ nnoremap <leader>m :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<
 
 " ================== Plugins =========================
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Plugins {
   " ctrl-p is a fuzzy file finder.
@@ -164,13 +164,15 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
   " comment
-  Plug 'tpope/vim-commentary'
+  Plug 'scrooloose/nerdcommenter'
   " easymotion for fast jump.
   Plug 'easymotion/vim-easymotion'
   " color scheme
   Plug 'w0ng/vim-hybrid'
   " surround
   Plug 'tpope/vim-surround'
+  " auto close pairs
+  Plug 'Raimondi/delimitMate'
   " tagbar
   Plug 'majutsushi/tagbar'
   " syntastic
@@ -179,8 +181,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
   " a solid language pack
   Plug 'sheerun/vim-polyglot'
-  " Python
+  " python
   Plug 'davidhalter/jedi-vim'
+  Plug 'hdima/python-syntax'
   " auto complete
   Plug 'Shougo/neocomplete.vim'
   " snippets
@@ -197,6 +200,71 @@ call plug#begin('~/.config/nvim/plugged')
 call plug#end()
 
 " ============== Plugin Settings =====================
+
+" nerdcommenter
+let g:NERDSpaceDelims=1
+
+" delimitMate
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+
+" Easymotion
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <leader><Leader>j <Plug>(easymotion-j)
+map <leader><Leader>k <Plug>(easymotion-k)
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>. <Plug>(easymotion-repeat)
+let g:Easymotion_smartcase = 1
+
+" trailingwhitespace
+map <leader><space> :FixWhitespace<cr>
+
+" Tagbar
+nmap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_width = 28
+
+" Airline
+"let g:airline_theme = 'hybrid'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline_detected_modified = 1
+let g:airline_powerline_fonts = 1
+
+" syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_python_checkers=['python', 'flake8']
+let g:syntastic_python_flake8_post_args='--ignore=W391'
+
+" pythonsyntax
+let python_highlight_all = 1
+
+" fugitive
+if exists("*fugitive#statusline")
+  set statusline+=%{fugitive#statusline()}
+endif
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gd :Gvdiff<CR>
+" noremap <Leader>ga :Gwrite<CR>
+" noremap <Leader>gc :Gcommit<CR>
+" noremap <Leader>gsh :Gpush<CR>
+" noremap <Leader>gll :Gpull<CR>
+" noremap <Leader>gb :Gblame<CR>
+" noremap <Leader>gr :Gremove<CR>
+
+" gitgutter
+let g:gitgutter_map_keys = 0
+let g:gitgutter_highlight_lines = 0
+nnoremap <leader>gg :GitGutterToggle<CR>
 
 " CtrlP
 set wildmode=list:longest,list:full
@@ -217,64 +285,19 @@ let g:ctrlp_mruf_max = 500
 let g:ctrlp_max_hight = 15
 let g:ctrlp_match_window_reversed = 0
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_width = 28
-
-" Airline
-"let g:airline_theme = 'hybrid'
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline_detected_modified = 1
-let g:airline_powerline_fonts = 1
-
-" Easymotion
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map <Leader><Leader>l <Plug>(easymotion-lineforward)
-map <leader><Leader>j <Plug>(easymotion-j)
-map <leader><Leader>k <Plug>(easymotion-k)
-map <Leader><Leader>h <Plug>(easymotion-linebackward)
-map <Leader><Leader>. <Plug>(easymotion-repeat)
-let g:Easymotion_smartcase = 1
-
-" git
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
-
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
-
 " NERDTree
 let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.o$', '\.so$', '\.pyo$', '^\.git$', '^\.svn$', '^\.hg$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
+let NERDTreeHighlightCursorline=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeWinSize = 28
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+let g:nerdtree_tabs_open_on_console_startup=0
+let g:nerdtree_tabs_open_on_gui_startup=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
+map <F3> <plug>NERDTreeTabsToggle<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<c-cr>"
@@ -335,14 +358,6 @@ let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
-" vim-python
-augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
-
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first=0
@@ -355,11 +370,18 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 
-" syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
-let g:syntastic_python_flake8_post_args='--ignore=W391'
+" vim-python
+augroup vimrc-python
+  autocmd!
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+      \ formatoptions+=croq softtabstop=4 smartindent
+      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+augroup END
 
 " ================= Mapping ==========================
+
+" set working directory
+nnoremap <leader>. :lcd %:p:h<CR>
 
 " Split
 noremap <leader>h :<C-u>split<CR>
