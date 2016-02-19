@@ -1,8 +1,10 @@
 " =================== General Config =================
 
+set nocompatible                " Be iMproved
 set number                      " Line numbers
 set rnu                         " Relative line numbers
 set backspace=indent,eol,start  " Allow backspace in insert mode
+set whichwrap+=<,>,h,l          " Automatically wrap left and right
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
 set showmode                    " Show current mode down the bottom
@@ -14,22 +16,18 @@ set noerrorbells                " No beeps.
 set modeline                    " Enable modeline.
 set esckeys                     " Cursor keys in insert mode.
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
-
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-set hidden
+set hidden                      " buffers can exist in the background without being in a window.
+set ffs=unix,dos,mac            " Use Unix as the standard file type
 
 " leader
 let mapleader = ','
+let g:mapleader = ','
 
 " Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
 
 " formatoptions
 set formatoptions+=m
@@ -112,9 +110,6 @@ set scrolloff=5
 set splitbelow
 set splitright
 
-" For regular expressions turn magic on
-set magic
-
 " Relative numbering
 nnoremap <leader>rn :call NumberToggle()<cr>
 function! NumberToggle()
@@ -128,26 +123,33 @@ endfunction
 
 " Visual
 set background=dark
-set guioptions-=m       " Removes top menubar
-set guioptions-=T       " Removes top toolbar
-set guioptions-=r       " Removes right hand scroll bar
-set go-=L               " Removes left hand scroll bar
+set gfn=Monospace\ 11
 set t_Co=256
-set gfn=Monospace\ 10
+
+" syntax highlighting
+syntax enable
 
 " title
 set title
-set titleold="Terminal"
 set titlestring=%F
 
 " status bar
 set laststatus=2
 
+" Use modeline overrides
+set modeline
+set modelines=10
+
 " font
 if has("gui_running")
-    set lines=32 columns=128
+    set guioptions-=m       " Removes top menubar
+    set guioptions-=T       " Removes top toolbar
+    set guioptions-=r       " Removes right hand scroll bar
+    set go-=L               " Removes left hand scroll bar
+    set lines=32 columns=86
+    set guitablabel=%M\ %t
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Monac\ for\ Powerline:h12
+        set guifont=Monaco\ for\ Powerline:h12
     elseif has("gui_win32")
         set guifont=Monaco_for_Powerline:h12:cANSI
     elseif has("gui_gtk2")
@@ -155,8 +157,6 @@ if has("gui_running")
     endif
 endif
 
-" syntax highlighting
-syntax enable
 
 " <leader>m to toggle menubar
 nnoremap <leader>m :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
@@ -196,6 +196,7 @@ call plug#begin('~/.vim/plugged')
   " python
   Plug 'davidhalter/jedi-vim'
   Plug 'hdima/python-syntax'
+  Plug 'hynek/vim-python-pep8-indent'
   " auto complete
   Plug 'Shougo/neocomplete.vim'
   " snippets
@@ -258,8 +259,8 @@ let g:syntastic_aggregate_errors = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_python_checkers=['pyflakes', 'pylint']
-let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
+let g:syntastic_python_checkers=['pyflakes', 'pep8']
+let g:syntastic_python_pep8_args='--ignore=E501,E225,E124,E712'
 
 " pythonsyntax
 let python_highlight_all = 1
@@ -380,11 +381,11 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first=0
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
+let g:jedi#goto_assignments_command = "<leader>jga"
+let g:jedi#goto_definitions_command = "<leader>jgd"
+let g:jedi#documentation_command = "<leader>jd"
+let g:jedi#usages_command = "<leader>ju"
+let g:jedi#rename_command = "<leader>jr"
 let g:jedi#show_call_signatures = "0"
 
 " vim-python
@@ -398,7 +399,7 @@ augroup END
 " ================= Mapping ==========================
 
 " set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
+nnoremap <leader>cd :lcd %:p:h<CR>
 
 " Split
 noremap <leader>h :<C-u>split<CR>
@@ -411,15 +412,6 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
-" move to beginning/end of line
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L $
-
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-
 " Keep search pattern at the center of the screen.
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -427,15 +419,18 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
-" highlight last inserted text
-nnoremap gV `[v`]
+" Emacs like keys
+map <C-A>		<Home>
+map <C-E>		<End>
+cnoremap <C-P>  <Up>
+cnoremap <C-N>  <Down>
+cnoremap <C-K>	<C-U>
 
 " fast saving
 nmap <leader>w :w!<CR>
 
 " fast quit
 nmap <leader>q :q!<CR>
-
 
 " Copy/Paste/Cut
 set clipboard=unnamed
@@ -466,45 +461,32 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " Buffer nav
 nnoremap [b :bprevious<cr>
 nnoremap ]b :bnext<cr>
+noremap <left> :bprevious<CR>
+noremap <right> :bnext<CR>
 
-" Close buffer
-noremap <leader>bd :bd<CR>
+" Close the current buffer
+map <leader>bd :bd<cr>
+
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
 
 " Tabs
-nnoremap <C-t> :tabnew<CR>
-inoremap <C-t> <Esc>:tabnew<CR>
-noremap <leader>to :tabonly<cr>
-noremap <leader>tc :tabclose<cr>
-noremap <leader>tm :tabmove
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
+map <C-t> :tabnew<CR>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
-" Toggles between the active and last active tab "
-" The first tab is always 1 "
-let g:last_active_tab = 1
-" nnoremap <leader>gt :execute 'tabnext ' . g:last_active_tab<cr>
-" nnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
-" vnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
-nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
-autocmd TabLeave * let g:last_active_tab = tabpagenr()
+" Let 'tt' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 " Opens an edit command with the path of the currently edited file filled in
 noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Vmap for maintain Visual Mode after shifting > and <
-vmap < <gv
-vmap > >gv
 
 " select all
 map <Leader>sa ggVG"
