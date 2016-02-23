@@ -146,7 +146,7 @@ if has("gui_running")
     set guioptions-=T       " Removes top toolbar
     set guioptions-=r       " Removes right hand scroll bar
     set go-=L               " Removes left hand scroll bar
-    set lines=32 columns=86
+    set lines=30 columns=120
     set guitablabel=%M\ %t
     if has("gui_mac") || has("gui_macvim")
         set guifont=Monaco\ for\ Powerline:h12
