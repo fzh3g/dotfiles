@@ -291,7 +291,6 @@ let g:gitgutter_highlight_lines = 0
 nnoremap <leader>gg :GitGutterToggle<CR>
 
 " CtrlP
-set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn|DS_Store))$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
