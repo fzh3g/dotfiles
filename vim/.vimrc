@@ -404,9 +404,6 @@ augroup END
 
 " ================= Mapping ==========================
 
-" set working directory
-nnoremap <leader>cd :lcd %:p:h<CR>
-
 " Split
 noremap <leader>h :<C-u>split<CR>
 noremap <leader>v :<C-u>vsplit<CR>
