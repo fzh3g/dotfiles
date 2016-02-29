@@ -16,8 +16,10 @@ set noerrorbells                " No beeps.
 set modeline                    " Enable modeline.
 set esckeys                     " Cursor keys in insert mode.
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
-set hidden                      " buffers can exist in the background without being in a window.
+set hidden                      " Buffers can exist in the background without being in a window.
 set ffs=unix,dos,mac            " Use Unix as the standard file type
+set acd                         " Change the current working directory whenever you open a file
+set confirm                     " Get a dialog when :q, :w, or :wq fails
 
 " leader
 let mapleader = ','
@@ -87,7 +89,7 @@ endfunction
 
 " Completion
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,list:full
 set completeopt=longest,menu
 
 " Search
@@ -157,11 +159,16 @@ if has("gui_running")
     endif
 endif
 
-
 " <leader>m to toggle menubar
 nnoremap <leader>m :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 
 " ================== Plugins =========================
+" Automatic installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
 
 call plug#begin('~/.vim/plugged')
 
