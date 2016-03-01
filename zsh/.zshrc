@@ -5,6 +5,7 @@ ZSH_THEME="bullet-train"
 plugins=(archlinux zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.zshenv
 
 # history
 export HISTSIZE=2048
