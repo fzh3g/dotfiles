@@ -54,6 +54,8 @@ alias xo=xdg-open
 alias sz="source $HOME/.zshrc"
 alias lpo="l | peco"
 
+alias down='aria2c --conf-path=$HOME/.aria2/aria2.conf'
+
 export TERM=xterm-256color
 
 # http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
