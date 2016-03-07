@@ -15,7 +15,7 @@ setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
 # http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
-DISABLE_AUTO_TITLE=true
+# DISABLE_AUTO_TITLE=true
 
 # Path
 export PATH=$PATH:$HOME/bin
@@ -29,6 +29,10 @@ export PATH=$PATH:$GOBIN
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export GEM_PATH=$GEM_HOME
 export PATH=$PATH:$GEM_HOME/bin
+
+# node.js
+export PATH=$PATH:$HOME/.node_modules/bin
+export npm_config_prefix=$HOME/.node_modules
 
 # hunspell dict
 export DICPATH=$HOME/.hunspell
