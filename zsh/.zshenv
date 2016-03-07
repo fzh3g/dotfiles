@@ -27,26 +27,26 @@ source $GAG_ROOT_DIR/etc/bash_profile
 source /usr/local/karma/.karmarc
 
 # IDL
-#source /usr/local/itt/idl/bin/idl_setup.bash
-#export IDL_DIR=/usr/local/exelis/idl
+# source /usr/local/itt/idl/bin/idl_setup.bash
+# export IDL_DIR=/usr/local/exelis/idl
 export PUB_DIR=$HOME/lib/pub
 export IDL_LIB_DIR=$HOME/lib/idl
 export IDL_START_DIR=$HOME/coding/idl
-#export IDL_STARTUP=$PUBDIR/xrayidl/xraysysv.pro
-#export ZDEF=$PUBDIR/xrayidl/def
-#export ZAUX=$PUBDIR/xrayidl/aux
-#export EXPLIB=$PUBDIR/xrayidl/experimental
+# export IDL_STARTUP=$PUBDIR/xrayidl/xraysysv.pro
+# export ZDEF=$PUBDIR/xrayidl/def
+# export ZAUX=$PUBDIR/xrayidl/aux
+# export EXPLIB=$PUBDIR/xrayidl/experimental
 export IDL_PATH='<IDL_DEFAULT>'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/astrolib/pro'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/idl_coyote/coyote'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/idl_coyote/retired_coyote_library'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/motley'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/idlastronlib/pro'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/rosatidl'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/atomdb_idl_2.00'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/tara'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/ae'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/pan'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/xrayidl'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/ljtastro'
-#export IDL_PATH=$IDL_PATH:+'$PUB_DIR/Zhiyuanprocedure'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/idlastronlib/pro'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/idladd/rosatidl'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/atomdb_idl_2.00'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/tara'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/ae'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/pan'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/xrayidl'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/ljtastro'
+# export IDL_PATH=$IDL_PATH:+'$PUB_DIR/Zhiyuanprocedure'
