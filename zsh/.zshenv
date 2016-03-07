@@ -1,3 +1,8 @@
+# VLFEAT
+export VLFEATROOT=$HOME/src/vlfeat
+export PATH=$PATH:$VLFEATROOT/bin/glnxa64
+export MANPATH=$MANPATH:$VLFEATROOT/src
+
 # Heasoft
 export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
 alias heainit=". $HEADAS/headas-init.sh"
