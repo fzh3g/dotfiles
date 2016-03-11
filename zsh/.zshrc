@@ -49,6 +49,7 @@ alias ev="emacsclient -c -a emacs"
 
 alias v=vim
 alias vi=vim
+alias vs="SUDO_EDITOR=\"vim\" sudoedit"
 
 alias gedit="kate"
 
