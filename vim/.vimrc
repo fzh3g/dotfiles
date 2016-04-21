@@ -187,7 +187,7 @@ call plug#begin('~/.vim/plugged')
   " easymotion for fast jump.
   Plug 'easymotion/vim-easymotion'
   " color scheme
-  Plug 'w0ng/vim-hybrid'
+  Plug 'morhetz/gruvbox'
   " surround
   Plug 'tpope/vim-surround'
   " auto close pairs
@@ -503,7 +503,7 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " color scheme
 try
-    colorscheme hybrid
-    let g:hybrid_custom_term_colors = 1
+    let g:gruvbox_italic=1
+    colorscheme gruvbox
 catch
 endtry
