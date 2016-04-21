@@ -187,7 +187,7 @@ call plug#begin('~/.vim/plugged')
   " easymotion for fast jump.
   Plug 'easymotion/vim-easymotion'
   " color scheme
-  Plug 'morhetz/gruvbox'
+  Plug 'w0ng/vim-hybrid'
   " surround
   Plug 'tpope/vim-surround'
   " auto close pairs
@@ -278,12 +278,6 @@ if exists("*fugitive#statusline")
 endif
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gd :Gvdiff<CR>
-" noremap <Leader>ga :Gwrite<CR>
-" noremap <Leader>gc :Gcommit<CR>
-" noremap <Leader>gsh :Gpush<CR>
-" noremap <Leader>gll :Gpull<CR>
-" noremap <Leader>gb :Gblame<CR>
-" noremap <Leader>gr :Gremove<CR>
 
 " gitgutter
 let g:gitgutter_map_keys = 0
@@ -435,22 +429,6 @@ nmap <leader>w :w!<CR>
 " fast quit
 nmap <leader>q :q!<CR>
 
-" Copy/Paste/Cut
-set clipboard=unnamed
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-endif
-noremap YY "+y<CR>
-noremap <leader>p "+gP<CR>
-noremap XX "+x<CR>
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
-set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
 " disbale paste mode when leaving insert mode
 au InsertLeave * set nopaste
 " Automatically set paste mode in Vim when pasting in insert mode
@@ -480,30 +458,16 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
 
-" Let 'tt' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tt :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
-" Opens an edit command with the path of the currently edited file filled in
-noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
 " select all
 map <Leader>sa ggVG"
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 
-" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
 " color scheme
 try
-    let g:gruvbox_italic=1
-    colorscheme gruvbox
+    let g:hybrid_custom_term_colors = 1
+    let g:hybrid_reduced_contrast = 1
+    colorscheme hybrid
 catch
 endtry
