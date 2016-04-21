@@ -14,9 +14,6 @@ export HISTFILE=$HOME/.history
 setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
 
-# http://superuser.com/questions/306028/tmux-and-zsh-custom-prompt-bug-with-window-name
-# DISABLE_AUTO_TITLE=true
-
 # Path
 export PATH=$PATH:$HOME/bin
 
@@ -62,12 +59,6 @@ alias lpo="l | peco"
 alias down='aria2c --conf-path=$HOME/.aria2/aria2.conf'
 
 export TERM=xterm-256color
-
-# http://stackoverflow.com/questions/11068965/how-can-i-make-tmux-be-active-whenever-i-start-a-new-shell-session
-tmux attach &> /dev/null
-if [[ !$TERM = xterm-256color ]]; then
-    exec tmux
-fi
 
 # enhancd
 if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
