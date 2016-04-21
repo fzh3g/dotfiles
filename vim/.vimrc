@@ -246,7 +246,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
 " Airline
-"let g:airline_theme = 'hybrid'
+" let g:airline_theme = 'hybrid'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -289,7 +289,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn|DS_Store))$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
-noremap <leader>b :CtrlPBuffer<CR>
+noremap <leader>bl :CtrlPBuffer<CR>
 noremap <leader>f :CtrlPMRU<CR>
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
@@ -440,8 +440,8 @@ endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Buffer nav
-nnoremap [b :bprevious<cr>
-nnoremap ]b :bnext<cr>
+nnoremap <leader>bp :bprevious<cr>
+nnoremap <leader>bn :bnext<cr>
 noremap <left> :bprevious<CR>
 noremap <right> :bnext<CR>
 
@@ -450,13 +450,6 @@ map <leader>bd :bd<cr>
 
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
-
-" Tabs
-map <C-t> :tabnew<CR>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
 
 " select all
 map <Leader>sa ggVG"
