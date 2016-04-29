@@ -4,8 +4,8 @@ export PATH=$PATH:$VLFEATROOT/bin/glnxa64
 export MANPATH=$MANPATH:$VLFEATROOT/src
 
 # Heasoft
-export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
-alias heainit=". $HEADAS/headas-init.sh"
+# export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
+# alias heainit=". $HEADAS/headas-init.sh"
 
 # XMM SAS
 # alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
@@ -19,12 +19,13 @@ alias heainit=". $HEADAS/headas-init.sh"
 # alias ciao="source $HOME/app/ciao-4.7/bin/ciao.bash"
 
 # GILDAS
-export GAG_ROOT_DIR=$HOME/app/gildas-exe-dec15a
+export GAG_ROOT_DIR=$HOME/app/gildas-exe-apr16a
 export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
 source $GAG_ROOT_DIR/etc/bash_profile
 
 # KARMA
-source /usr/local/karma/.karmarc
+export KARMABASE=/usr/local/karma
+export PATH=$PATH:$KARMABASE/bin
 
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
