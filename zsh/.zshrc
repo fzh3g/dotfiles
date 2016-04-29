@@ -31,9 +31,6 @@ export PATH=$PATH:$GEM_HOME/bin
 export PATH=$PATH:$HOME/.node_modules/bin
 export npm_config_prefix=$HOME/.node_modules
 
-# hunspell dict
-export DICPATH=$HOME/.hunspell
-
 # emacs
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
