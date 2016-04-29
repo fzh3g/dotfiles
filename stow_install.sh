@@ -3,6 +3,7 @@
 echo "Installing dotfiles..."
 
 declare -a pkgs=(
+    'aria2'
     'bin'
     'compton'
     'git'
@@ -11,6 +12,7 @@ declare -a pkgs=(
     'mpd'
     'ncmpcpp'
     'redshift'
+    'ssh'
     'terminator'
     'tmux'
     'vim'
