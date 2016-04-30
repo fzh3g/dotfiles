@@ -63,10 +63,8 @@ if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
     source "$HOME/.enhancd/zsh/enhancd.zsh"
 fi
 
-# fzf
-if [ -f "/etc/profile.d/fzf.zsh" ]; then
-    . /etc/profile.d/fzf.zsh
-fi
-
 # fuck
 eval $(thefuck --alias)
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

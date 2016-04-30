@@ -215,6 +215,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " gitgutter
   Plug 'airblade/vim-gitgutter'
+  " fzf
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 " }
 
 call plug#end()
