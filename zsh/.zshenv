@@ -27,6 +27,9 @@ source $GAG_ROOT_DIR/etc/bash_profile
 export KARMABASE=/usr/local/karma
 export PATH=$PATH:$KARMABASE/bin
 
+# Miriad
+source /usr/local/miriad/miriad_cvs/miriad_start.sh
+
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
 # export IDL_DIR=/usr/local/exelis/idl
