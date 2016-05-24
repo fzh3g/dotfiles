@@ -28,7 +28,7 @@ export KARMABASE=/usr/local/karma
 export PATH=$PATH:$KARMABASE/bin
 
 # Miriad
-source /usr/local/miriad/miriad_cvs/miriad_start.sh
+alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
 
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
