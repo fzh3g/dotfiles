@@ -159,9 +159,6 @@ if has("gui_running")
     endif
 endif
 
-" <leader>m to toggle menubar
-nnoremap <leader>m :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-
 " ================== Plugins =========================
 " Automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -173,9 +170,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Plugins {
-  " ctrl-p is a fuzzy file finder.
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'FelikZ/ctrlp-py-matcher'
   " airline is a better status line and a tab-bar for nvim.
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -249,7 +243,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
 " Airline
-" let g:airline_theme = 'hybrid'
+let g:airline_theme = 'hybrid'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -266,9 +260,6 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_aggregate_errors = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_python_checkers=['pyflakes', 'pep8']
 let g:syntastic_python_pep8_args='--ignore=E501,E225,E124,E712'
 
@@ -286,24 +277,6 @@ noremap <Leader>gd :Gvdiff<CR>
 let g:gitgutter_map_keys = 0
 let g:gitgutter_highlight_lines = 0
 nnoremap <leader>gg :GitGutterToggle<CR>
-
-" CtrlP
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn|DS_Store))$'
-let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 1
-noremap <leader>bl :CtrlPBuffer<CR>
-noremap <leader>f :CtrlPMRU<CR>
-let g:ctrlp_map = '<leader>e'
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore '+ g:ctrlp_custom_ignore +' -g ""'
-endif
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_mruf_max = 500
-let g:ctrlp_max_hight = 15
-let g:ctrlp_match_window_reversed = 0
 
 " NERDTree
 let g:NERDTreeChDirMode=2
@@ -398,6 +371,25 @@ augroup vimrc-python
       \ formatoptions+=croq
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
+
+" fzf
+set rtp+=~/.fzf
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_nvim_statusline = 0
+let g:fzf_buffers_jump = 1
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>. :Lines<CR>
+nnoremap <silent> <leader>e :History<CR>
+nnoremap <silent> <leader>ft :Filetypes<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> <leader>C :Colors<CR>
+nnoremap <silent> <leader>m :Marks<CR>
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
 
 " ================= Mapping ==========================
 
