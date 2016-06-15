@@ -27,4 +27,4 @@ do
 done
 
 echo -e "\e[3;93mStow finished! Enjoy your journey!\e[0m"
-       
+
