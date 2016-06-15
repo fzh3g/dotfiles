@@ -378,10 +378,11 @@ let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_nvim_statusline = 0
 let g:fzf_buffers_jump = 1
 nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <Leader>; :Command<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
-nnoremap <silent> <leader>; :BLines<CR>
-nnoremap <silent> <leader>. :Lines<CR>
+nnoremap <silent> <leader>lb :BLines<CR>
+nnoremap <silent> <leader>ll :Lines<CR>
 nnoremap <silent> <leader>e :History<CR>
 nnoremap <silent> <leader>ft :Filetypes<CR>
 nnoremap <silent> <leader>o :BTags<CR>
