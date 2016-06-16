@@ -27,6 +27,9 @@ source $GAG_ROOT_DIR/etc/bash_profile
 export KARMABASE=/usr/local/karma
 export PATH=$PATH:$KARMABASE/bin
 
+# CASA
+export PATH=$PATH:$HOME/app/casa/bin
+
 # Miriad
 alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
 
