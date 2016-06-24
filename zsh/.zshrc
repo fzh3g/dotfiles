@@ -58,9 +58,9 @@ alias down='aria2c --conf-path=$HOME/.aria2/aria2.conf'
 export TERM=xterm-256color
 
 # enhancd
-if [ -f "$HOME/.enhancd/zsh/enhancd.zsh" ]; then
+if [ -f "$HOME/.enhancd/init.sh" ]; then
     export ENHANCD_COMMAND=ecd
-    source "$HOME/.enhancd/zsh/enhancd.zsh"
+    source "$HOME/.enhancd/init.sh"
 fi
 
 # fuck
