@@ -9,6 +9,7 @@ declare -a pkgs=(
     'git'
     'gtk'
     'i3'
+    'idl'
     'mpd'
     'ncmpcpp'
     'redshift'
