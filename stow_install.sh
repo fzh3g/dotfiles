@@ -23,8 +23,7 @@ declare -a pkgs=(
 for dir in "${pkgs[@]}"
 do
     echo -e "\e[1;36m==>\e[0m \e[1;31mstowing $dir\e[0m"
-    stow -R $dir
+    stow -R $dir --ignore='^\.directory'
 done
 
 echo -e "\e[3;93mStow finished! Enjoy your journey!\e[0m"
-
