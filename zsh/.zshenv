@@ -47,5 +47,6 @@ export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/gumley'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/mperrin'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/textoidl'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/slug_idl'
+export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/fx-idl'
 
 alias xidl='source ~/.xrayidl.sh'
