@@ -37,9 +37,10 @@ export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
 # alias
-alias e="emacsclient -t"
-alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+alias e="emacsclient"
+alias em="emacsclient -t"
 alias ev="emacsclient -c -a emacs"
+alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
 alias v=vim
 alias vi=vim
