@@ -1,11 +1,22 @@
 # Configs for GTK2 programs
 
-include "/usr/share/themes/Adwaita/gtk-2.0/gtkrc"
-
-gtk-font-name="Noto Sans CJK SC Regular 9"
-gtk-theme-name="Adwaita"
+include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
+style "user-font"
+{
+    font_name="Noto Sans Regular"
+}
+widget_class "*" style "user-font"
+gtk-font-name="Noto Sans Regular 10"
+gtk-theme-name="Breeze"
 gtk-icon-theme-name="breeze"
-gtk-fallback-icon-theme="gnome"
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-fallback-icon-theme="oxygen"
+gtk-cursor-theme-name="breeze_cursors"
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-menu-images=1
 gtk-button-images=1
+
+# fix vim border
+style "vimfix" {
+  bg[NORMAL] = "#282828" # this matches my gvim theme 'Normal' bg color.
+}
+widget "vim-main-window.*GtkForm" style "vimfix"
