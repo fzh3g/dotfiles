@@ -384,7 +384,7 @@ nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 nnoremap <silent> <leader>lb :BLines<CR>
 nnoremap <silent> <leader>ll :Lines<CR>
-nnoremap <silent> <leader>e :History<CR>
+nnoremap <silent> <leader>r :History<CR>
 nnoremap <silent> <leader>ft :Filetypes<CR>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>O :Tags<CR>
