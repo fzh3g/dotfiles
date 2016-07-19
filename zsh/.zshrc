@@ -8,8 +8,8 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zshenv
 
 # history
-export HISTSIZE=2048
-export SAVEHIST=2048
+export HISTSIZE=4096
+export SAVEHIST=4096
 export HISTFILE=$HOME/.history
 setopt INC_APPEND_HISTORY
 unsetopt EXTENDED_HISTORY
@@ -45,7 +45,9 @@ alias v=vim
 alias vi=vim
 alias vs="SUDO_EDITOR=\"vim\" sudoedit"
 
-alias gedit="kate"
+if [[ $(which kate > /dev/null 2>&1) -eq 0 ]]; then
+    alias gedit="kate"
+fi
 
 alias pxc=proxychains
 
@@ -64,7 +66,15 @@ if [ -f "$HOME/.enhancd/init.sh" ]; then
 fi
 
 # fuck
-eval $(thefuck --alias)
+if [[ $(which fuck > /dev/null 2>&1) -eq 0 ]]; then
+    eval $(thefuck --alias)
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fortune and cowsay
+if [[ $(which cowsay > /dev/null 2>&1) -eq 0 ]] &&
+       [[ $(which fortune > /dev/null 2>&1) -eq 0 ]]; then
+    fortune | cowsay
+fi
