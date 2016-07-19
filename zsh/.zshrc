@@ -19,6 +19,15 @@ export PATH=$PATH:$HOME/bin
 # Terminal
 export TERM=xterm-256color
 
+# Emacs
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -c -a emacs"
+alias e="emacsclient"
+alias em="emacsclient -t"
+alias ev="emacsclient -c -a emacs"
+alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+
 # Go
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
@@ -63,17 +72,7 @@ export PATH=$PATH:$KARMABASE/bin
 # CASA
 export PATH=$PATH:$HOME/app/casa/bin
 
-# emacs
-export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -c -a emacs"
-
 # alias
-alias e="emacsclient"
-alias em="emacsclient -t"
-alias ev="emacsclient -c -a emacs"
-alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
-
 alias v=vim
 alias vi=vim
 alias vs="SUDO_EDITOR=\"vim\" sudoedit"
