@@ -181,7 +181,8 @@ call plug#begin('~/.vim/plugged')
   " easymotion for fast jump.
   Plug 'easymotion/vim-easymotion'
   " color scheme
-  Plug 'w0ng/vim-hybrid'
+  " Plug 'w0ng/vim-hybrid'
+  Plug 'sickill/vim-monokai'
   " surround
   Plug 'tpope/vim-surround'
   " auto close pairs
@@ -243,7 +244,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
 " Airline
-let g:airline_theme = 'hybrid'
+" let g:airline_theme = 'hybrid'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -456,8 +457,9 @@ nnoremap U <C-r>
 
 " color scheme
 try
-    let g:hybrid_custom_term_colors = 1
-    let g:hybrid_reduced_contrast = 1
-    colorscheme hybrid
+    " let g:hybrid_custom_term_colors = 1
+    " let g:hybrid_reduced_contrast = 1
+    " colorscheme hybrid
+    colorscheme monokai
 catch
 endtry
