@@ -377,6 +377,7 @@ set rtp+=~/.fzf
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_nvim_statusline = 0
 let g:fzf_buffers_jump = 1
+let g:fzf_launcher='xterm -geometry 100x15 -e bash -ic %s'
 nnoremap <silent> <leader>f :Files<CR>
 nnoremap <silent> <Leader>; :Command<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
