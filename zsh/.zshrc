@@ -5,7 +5,6 @@ ZSH_THEME="bullet-train"
 plugins=(archlinux zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zshenv
 
 # history
 export HISTSIZE=4096
@@ -16,6 +15,9 @@ unsetopt EXTENDED_HISTORY
 
 # Path
 export PATH=$PATH:$HOME/bin
+
+# Terminal
+export TERM=xterm-256color
 
 # Go
 export GOPATH=$HOME/.go
@@ -30,6 +32,36 @@ export PATH=$PATH:$GEM_HOME/bin
 # node.js
 export PATH=$PATH:$HOME/.node_modules/bin
 export npm_config_prefix=$HOME/.node_modules
+
+# Heasoft
+# export HEADAS=/usr/local/heasoft-6.17/x86_64-unknown-linux-gnu-libc2.22
+# alias heainit=". $HEADAS/headas-init.sh"
+
+# XMM SAS
+# alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
+
+# CALDB
+# export CALDB=$HOME/app/caldb
+# export CALDBCONFIG=$CALDB/software/tools/caldb.config
+# export CALDBALIAS=$CALDB/software/tools/alias_config.fits
+
+# CIAO
+# alias ciao="source $HOME/app/ciao-4.7/bin/ciao.bash"
+
+# Miriad
+alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
+
+# GILDAS
+export GAG_ROOT_DIR=$HOME/app/gildas-exe-apr16a
+export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
+source $GAG_ROOT_DIR/etc/bash_profile
+
+# KARMA
+export KARMABASE=/usr/local/karma
+export PATH=$PATH:$KARMABASE/bin
+
+# CASA
+export PATH=$PATH:$HOME/app/casa/bin
 
 # emacs
 export ALTERNATE_EDITOR=""
@@ -58,17 +90,10 @@ alias lpo="l | peco"
 
 alias down='aria2c --conf-path=$HOME/.aria2/aria2.conf'
 
-export TERM=xterm-256color
-
 # enhancd
 if [ -f "$HOME/.enhancd/init.sh" ]; then
     export ENHANCD_COMMAND=ecd
     source "$HOME/.enhancd/init.sh"
-fi
-
-# fuck
-if [[ $(which fuck > /dev/null 2>&1) -eq 0 ]]; then
-    eval $(thefuck --alias)
 fi
 
 # fzf
