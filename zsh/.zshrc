@@ -89,6 +89,8 @@ alias lpo="l | peco"
 
 alias down='aria2c --conf-path=$HOME/.aria2/aria2.conf'
 
+alias pipup="pip freeze | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U"
+
 # enhancd
 if [ -f "$HOME/.enhancd/init.sh" ]; then
     export ENHANCD_COMMAND=ecd
