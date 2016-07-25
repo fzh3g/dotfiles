@@ -24,7 +24,7 @@ declare -a pkgs=(
 
 for dir in "${pkgs[@]}"
 do
-    echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mstowing $dir\e[0m"
+    echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mstowing $dir ...\e[0m"
     stow -R $dir --ignore='^\.directory'
 done
 
