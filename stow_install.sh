@@ -1,18 +1,19 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo "Installing dotfiles..."
+echo -e "\e[38;5;226mInstalling dotfiles...\e[0m"
 
 declare -a pkgs=(
     'aria2'
     'bin'
-    'compton'
+    # 'compton'
+    'gem'
     'git'
     'gtk'
-    'i3'
+    # 'i3'
     'idl'
-    'mpd'
-    'ncmpcpp'
-    'redshift'
+    # 'mpd'
+    # 'ncmpcpp'
+    # 'redshift'
     'ssh'
     'terminator'
     'tmux'
@@ -23,8 +24,8 @@ declare -a pkgs=(
 
 for dir in "${pkgs[@]}"
 do
-    echo -e "\e[1;36m==>\e[0m \e[1;31mstowing $dir\e[0m"
+    echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mstowing $dir\e[0m"
     stow -R $dir --ignore='^\.directory'
 done
 
-echo -e "\e[3;93mStow finished! Enjoy your journey!\e[0m"
+echo -e "\e[38;5;226mStow finished!\e[0m"
