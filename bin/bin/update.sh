@@ -65,7 +65,6 @@ else
     cd ~/.fzf/ && git pull origin master
 fi
 ~/.fzf/install --all
-rm ~/.bashrc ~/.fzf.bash
 
 # IDL
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating IDL libraries...\e[0m"
