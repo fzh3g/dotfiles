@@ -4,7 +4,7 @@ set nocompatible                " Be iMproved
 set number                      " Line numbers
 set rnu                         " Relative line numbers
 set backspace=indent,eol,start  " Allow backspace in insert mode
-set whichwrap+=<,>,h,l          " Automatically wrap left and right
+set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
 set showmode                    " Show current mode down the bottom
@@ -20,6 +20,13 @@ set hidden                      " Buffers can exist in the background without be
 set ffs=unix,dos,mac            " Use Unix as the standard file type
 set acd                         " Change the current working directory whenever you open a file
 set confirm                     " Get a dialog when :q, :w, or :wq fails
+set mouse=a                     " Automatically enable mouse usage
+set mousehide                   " Hide the mouse cursor while typing
+set linespace=0                 " No extra spaces between rows
+set winminheight=0              " Windows can be 0 line high
+set foldenable                  " Auto fold code
+
+syntax on                       " syntax highlighting
 
 " leader
 let mapleader = ','
@@ -31,15 +38,8 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
 
-" formatoptions
-set formatoptions+=m
-set formatoptions+=B
-
 " filetype
-filetype on
-filetype indent on
-filetype plugin on
-filetype plugin indent on
+filetype plugin indent on   " Automatically detect file types.
 
 " Turn Off Swap Files
 set noswapfile
@@ -53,64 +53,52 @@ if has('persistent_undo') && !isdirectory(expand('~').'/.cache/vim')
   silent !mkdir ~/.cache/vim > /dev/null 2>&1
   set undodir=~/.cache/vim
   set undofile
+  set undolevels=1000         " Maximum number of changes that can be undone
+  set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
 " Indentation
-set smarttab
-set tabstop=4
-set softtabstop=4
-set expandtab
-set autoindent
-set shiftwidth=4
-set smartindent
-set shiftround
+set tabstop=4                   " An indentation every four columns
+set softtabstop=4               " Let backspace delete indent
+set expandtab                   " Tabs are spaces, not tabs
+set autoindent                  " Indent at the same level of the previous line
+set shiftwidth=4                " Use indents of 4 spaces
 
-" wrap lines
-set wrap
-set wm=2
-set textwidth=0
-
-" Folds
-set foldenable
-set foldmethod=indent
-set foldlevel=99
-" <leader>zz to toggle fold
-let g:FoldMethod = 0
-map <leader>zz :call ToggleFold()<cr>
-function! ToggleFold()
-    if g:FoldMethod == 0
-        exe "normal! zM"
-        let g:FoldMethod = 1
-    else
-        exe "normal! zR"
-        let g:FoldMethod = 0
-    endif
-endfunction
+set nowrap                      " Do not wrap long lines
 
 " Completion
-set wildmenu
-set wildmode=list:longest,list:full
+set wildmenu                    " Show list instead of just completing
+set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
 set completeopt=longest,menu
 
 " Search
-set showmatch
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-set magic
+set showmatch                   " Show matching brackets/parenthesis
+set ignorecase                  " Case insensitive search
+set smartcase                   " Case sensitive when uc present
+set incsearch                   " Find as you type search
+set hlsearch                    " Highlight search terms
+
+" Clipboard
+if has('clipboard')
+    if has('unnamedplus')  " When possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
 
 " Clean search (highlight)
-nnoremap <silent> <leader>l :noh<cr>
+nnoremap <silent> <leader>/ :noh<cr>
 
 " Scrolling
 " redraw only when we need to
 set lazyredraw
-set scrolloff=5
+set scrolloff=3                 " Minimum lines to keep above and below cursor
+set scrolljump=5                " Lines to scroll when cursor leaves screen
 
 " Split
-set splitbelow
-set splitright
+set splitbelow                  " Puts new split windows to the bottom of the current
+set splitright                  " Puts new vsplit windows to the right of the current
 
 " Relative numbering
 nnoremap <leader>rn :call NumberToggle()<cr>
@@ -125,36 +113,45 @@ endfunction
 
 " Visual
 set background=dark
-set gfn=Monospace\ 11
-set t_Co=256
+if &term == 'xterm' || &term == 'screen'
+    set t_Co=256                    " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
+endif
 
-" syntax highlighting
-syntax enable
-
-" title
-set title
-set titlestring=%F
+set tabpagemax=15               " Only show 15 tabs
+highlight clear SignColumn      " SignColumn should match background
+highlight clear LineNr          " Current line number row will have same background color in relative mode
 
 " status bar
 set laststatus=2
+set statusline=%<%f\                     " Filename
+set statusline+=%w%h%m%r                 " Options
+set statusline+=\ [%{&ff}/%Y]            " Filetype
+set statusline+=\ [%{getcwd()}]          " Current dir
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
+set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set virtualedit=onemore             " Allow for cursor beyond last character
+set iskeyword-=.                    " '.' is an end of word designator
+set iskeyword-=#                    " '#' is an end of word designator
+set iskeyword-=-                    " '-' is an end of word designator
 
 " Use modeline overrides
 set modeline
 set modelines=10
 
-" font
+" gui
 if has("gui_running")
     set guioptions-=m       " Removes top menubar
     set guioptions-=T       " Removes top toolbar
     set guioptions-=r       " Removes right hand scroll bar
     set go-=L               " Removes left hand scroll bar
     set lines=30 columns=120
-    set guitablabel=%M\ %t
-    if has("gui_mac") || has("gui_macvim")
+    if has("macunix")
         set guifont=Monaco\ for\ Powerline:h12
-    elseif has("gui_win32")
+    elseif has("win32") || has("win64")
         set guifont=Monaco_for_Powerline:h12:cANSI
-    elseif has("gui_gtk2")
+    elseif has("unix") && !has("macunix") && !has("win32unix")
         set guifont=Monaco\ for\ Powerline\ 10
     endif
 endif
@@ -170,6 +167,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Plugins {
+  " ctrl-p is a fuzzy file finder.
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'FelikZ/ctrlp-py-matcher'
   " airline is a better status line and a tab-bar for nvim.
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -209,14 +209,29 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " gitgutter
   Plug 'airblade/vim-gitgutter'
-  " fzf
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
 " }
 
 call plug#end()
 
 " ============== Plugin Settings =====================
+
+" CtrlP
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|tox|ico|git|hg|svn|DS_Store))$'
+let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
+let g:ctrlp_use_caching = 1
+noremap <leader>bl :CtrlPBuffer<CR>
+noremap <leader>f :CtrlPMRU<CR>
+let g:ctrlp_map = '<leader>e'
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+    let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
+endif
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_mruf_max = 500
+let g:ctrlp_max_hight = 15
+let g:ctrlp_match_window_reversed = 0
 
 " nerdcommenter
 let g:NERDSpaceDelims=1
@@ -236,6 +251,8 @@ let g:Easymotion_smartcase = 1
 
 " trailingwhitespace
 map <leader><space> :FixWhitespace<cr>
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -290,6 +307,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 map <F3> :NERDTreeToggle<CR>
 map <F3> <plug>NERDTreeTabsToggle<CR>
+nmap <leader>nt :NERDTreeFind<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<c-cr>"
@@ -304,6 +322,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#max_list = 15
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
@@ -371,27 +390,6 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
-" fzf
-set rtp+=~/.fzf
-let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_nvim_statusline = 0
-let g:fzf_buffers_jump = 1
-let g:fzf_launcher='xterm -geometry 100x15 -e zsh -ic %s'
-nnoremap <silent> <leader>f :Files<CR>
-nnoremap <silent> <Leader>; :Command<CR>
-nnoremap <silent> <leader>a :Buffers<CR>
-nnoremap <silent> <leader>A :Windows<CR>
-nnoremap <silent> <leader>lb :BLines<CR>
-nnoremap <silent> <leader>ll :Lines<CR>
-nnoremap <silent> <leader>r :History<CR>
-nnoremap <silent> <leader>ft :Filetypes<CR>
-nnoremap <silent> <leader>o :BTags<CR>
-nnoremap <silent> <leader>O :Tags<CR>
-nnoremap <silent> <leader>C :Colors<CR>
-nnoremap <silent> <leader>m :Marks<CR>
-nnoremap <silent> <leader>gl :Commits<CR>
-nnoremap <silent> <leader>ga :BCommits<CR>
-
 " ================= Mapping ==========================
 
 " Split
@@ -400,6 +398,12 @@ noremap <leader>v :<C-u>vsplit<CR>
 
 " use ; for commands.
 nnoremap ; :
+
+" Easier moving in tabs and windows
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
 
 " move vertically by visual line
 nnoremap j gj
@@ -417,23 +421,12 @@ map <C-A>		<Home>
 map <C-E>		<End>
 cnoremap <C-P>  <Up>
 cnoremap <C-N>  <Down>
-cnoremap <C-K>	<C-U>
 
 " fast saving
 nmap <leader>w :w!<CR>
 
 " fast quit
 nmap <leader>q :q!<CR>
-
-" disbale paste mode when leaving insert mode
-au InsertLeave * set nopaste
-" Automatically set paste mode in Vim when pasting in insert mode
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Buffer nav
 nnoremap <leader>bp :bprevious<cr>
