@@ -127,7 +127,7 @@ set statusline=%<%f\                     " Filename
 set statusline+=%w%h%m%r                 " Options
 set statusline+=\ [%{&ff}/%Y]            " Filetype
 set statusline+=\ [%{getcwd()}]          " Current dir
-set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+set statusline+=%=%-14.(%l,%c%V%)\ %P    " Right aligned file nav info
 
 set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
@@ -222,16 +222,18 @@ let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore
 let g:ctrlp_use_caching = 1
 noremap <leader>bl :CtrlPBuffer<CR>
 noremap <leader>f :CtrlPMRU<CR>
+noremap <leader>l :CtrlPLine<CR>
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
-    let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
+    let s:ctrlp_user_command = 'ag %s --nocolor -l --ignore '+ g:ctrlp_custom_ignore +' -g ""'
 endif
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_max_hight = 15
 let g:ctrlp_match_window_reversed = 0
+
 
 " nerdcommenter
 let g:NERDSpaceDelims=1
@@ -260,6 +262,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
 " Airline
+let g:airline_theme = 'powerlineish'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -310,7 +313,7 @@ map <F3> <plug>NERDTreeTabsToggle<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 
 " snippets
-let g:UltiSnipsExpandTrigger="<c-cr>"
+let g:UltiSnipsExpandTrigger="<cr>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
@@ -375,11 +378,11 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first=0
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#goto_assignments_command = "<leader>jga"
-let g:jedi#goto_definitions_command = "<leader>jgd"
-let g:jedi#documentation_command = "<leader>jd"
-let g:jedi#usages_command = "<leader>ju"
-let g:jedi#rename_command = "<leader>jr"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 
 " vim-python
