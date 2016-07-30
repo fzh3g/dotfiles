@@ -18,9 +18,11 @@ gem cleanup
 
 # npm
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating npm...\e[0m"
-npm -g update
+npm-check -gu
 npm ddp -g
-cd ~/Web/blog/ && ncu -u && npm install && npm ddp
+cd ~/Web/blog
+npm-check -uE
+npm ddp
 
 # oh-my-zsh
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating oh-my-zsh...\e[0m"
