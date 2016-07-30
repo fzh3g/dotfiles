@@ -20,7 +20,7 @@ export KARMABASE=/usr/local/karma
 
 path=($HOME/bin
       $GOPATH/bin
-      $HOME/.node_modules
+      $HOME/.node_modules/bin
       $VLFEATROOT/bin/glnxa64
       $KARMABASE/bin
       $HOME/app/casa/bin
