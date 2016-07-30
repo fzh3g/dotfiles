@@ -20,3 +20,6 @@ alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
 export GAG_ROOT_DIR=$HOME/app/gildas-exe-apr16a
 export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
 source $GAG_ROOT_DIR/etc/bash_profile
+
+# xidl
+alias xidl='source ~/.xrayidl.sh'
