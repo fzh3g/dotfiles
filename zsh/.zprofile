@@ -1,7 +1,33 @@
+typeset -U path
+typeset -U manpath
+
+# Go
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+
+# node.js
+export npm_config_prefix=$HOME/.node_modules
+
+# Ruby gem
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_PATH=$GEM_HOME
+
 # VLFEAT
 export VLFEATROOT=$HOME/src/vlfeat
-export PATH=$PATH:$VLFEATROOT/bin/glnxa64
-export MANPATH=$MANPATH:$VLFEATROOT/src
+
+# KARMA
+export KARMABASE=/usr/local/karma
+
+path=($HOME/bin
+      $GOPATH/bin
+      $HOME/.node_modules
+      $VLFEATROOT/bin/glnxa64
+      $KARMABASE/bin
+      $HOME/app/casa/bin
+      $path)
+
+manpath=($VLFEATROOT/src
+         $manpath)
 
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
