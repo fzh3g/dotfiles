@@ -1,5 +1,4 @@
 typeset -U path
-typeset -U manpath
 
 # Go
 export GOPATH=$HOME/.go
@@ -14,20 +13,18 @@ export GEM_PATH=$GEM_HOME
 
 # VLFEAT
 export VLFEATROOT=$HOME/src/vlfeat
+export MANPATH=$MANPATH:$VLFEATROOT/src
 
 # KARMA
 export KARMABASE=/usr/local/karma
 
 path=($HOME/bin
+      $HOME/.local/bin
       $GOPATH/bin
       $HOME/.node_modules/bin
       $VLFEATROOT/bin/glnxa64
       $KARMABASE/bin
-      $HOME/app/casa/bin
       $path)
-
-manpath=($VLFEATROOT/src
-         $manpath)
 
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
