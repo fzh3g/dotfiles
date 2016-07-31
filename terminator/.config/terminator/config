@@ -8,7 +8,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = tomorrow-night
+      profile = tomorrow-night-bright
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -18,16 +18,16 @@
 [profiles]
   [[default]]
     background_image = None
-  [[tomorrow-night]]
-    background_color = "#1d1f21"
-    background_darkness = 0.93
+  [[tomorrow-night-bright]]
+    background_darkness = 0.9
     background_image = None
     background_type = transparent
     cursor_blink = False
+    cursor_color = "#eaeaea"
     font = monofur for Powerline Bold 12
-    foreground_color = "#c5c8c6"
+    foreground_color = "#eaeaea"
     login_shell = True
-    palette = "#000000:#912226:#778900:#ae7b00:#1d2594:#682a9b:#2b6651:#929593:#666666:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ecebec"
+    palette = "#000000:#d54e53:#b9ca4a:#e7c547:#7aa6da:#c397d8:#70c0b1:#ffffff:#000000:#d54e53:#b9ca4a:#e7c547:#7aa6da:#c397d8:#70c0b1:#ffffff"
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
