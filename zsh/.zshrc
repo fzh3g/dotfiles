@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="bullet-train"
 
-plugins=(archlinux zsh-syntax-highlighting)
+plugins=(archlinux zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
