@@ -20,3 +20,5 @@ alias lpo="l | peco"
 alias down='aria2c --conf-path=$HOME/.aria2/aria2.conf'
 
 alias pipup="pip freeze | grep -v '^\-e' | cut -d = -f 1  | xargs sudo pip install -U"
+
+alias cp='cp -Rv'
