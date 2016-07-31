@@ -33,7 +33,7 @@ fi
 # Fortune and cowsay
 if [[ $(which cowsay > /dev/null 2>&1) -eq 0 ]] &&
        [[ $(which fortune > /dev/null 2>&1) -eq 0 ]]; then
-    fortune | cowsay
+    fortune -s | cowsay
 fi
 
 # Alias
