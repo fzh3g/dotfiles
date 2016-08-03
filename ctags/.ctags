@@ -6,7 +6,7 @@
 --exclude=log
 --exclude=vendor
 --exclude=*.pyc
---exclude=*pyo
+--exclude=*.pyo
 --exclude=.DS_Store
 --exclude=*.min.js
 --exclude=jquery.*.js
