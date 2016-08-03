@@ -1,0 +1,97 @@
+# -*- mode: gitignore; -*-
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+$RECYCLE.BIN/
+Desktop.ini
+*.lnk
+
+# Python
+*.py[cod]
+__pycache__/
+
+
+# Emacs
+*~
+\#*\#
+.\#*
+*.elc
+flycheck_*.el
+
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+.netrwhist
+
+# Tags
+tags
+.tags
+!tags/
+gtags.files
+GTAGS
+GRTAGS
+GPATH
+TAGS
+.TAGS
+
+# Matlab
+*.m~
+*.mex*
+
+# KDE
+.directory
+
+# temporary files
+.fuse_hidden*
+
+# JetBrains
+.idea/
+*.iws
+
+# Eclipse
+.project
+.cproject
+.metadata
+.settings/
+*.tmp
+*.bak
+*.swp
+*~.nib
+bin/
+tmp/
+
+# Dropbox
+.dropbox
+.dropbox.attr
+.dropbox.cache
