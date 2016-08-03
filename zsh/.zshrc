@@ -21,6 +21,10 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
+# GNU GLOBAL
+export GTAGSLABLE=ctags
+export GTAGSCONF=$HOME/.globalrc
+
 # Enhancd
 if [ -f "$HOME/.enhancd/init.sh" ]; then
     export ENHANCD_COMMAND=ecd
