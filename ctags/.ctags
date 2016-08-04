@@ -1,5 +1,4 @@
 --recurse=yes
---append=yes
 --tag-relative=yes
 --exclude=.git
 --exclude=node_modules
