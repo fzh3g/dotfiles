@@ -18,6 +18,10 @@ export MANPATH=$MANPATH:$VLFEATROOT/src
 # KARMA
 export KARMABASE=/usr/local/karma
 
+# GNU GLOBAL
+export GTAGSLABLE=ctags
+export GTAGSCONF=$HOME/.globalrc
+
 path=($HOME/bin
       $HOME/.local/bin
       $GOPATH/bin
