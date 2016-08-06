@@ -243,11 +243,6 @@ client.unfocused        #555555 #555555 #b5d5ff #555555
 
 ## Autostart
 
-# enable touchpad tapping and natual scrolling,
-# note that xf86-input-synaptics should not be installed
-exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
-
 # swap ctrlp and capslock
 exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
 
