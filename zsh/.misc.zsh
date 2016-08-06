@@ -25,4 +25,4 @@ source $GAG_ROOT_DIR/etc/bash_profile
 export PATH=$PATH:$HOME/app/casa/bin
 
 # xidl
-alias xidl='source ~/.xrayidl.sh'
+alias xidl='source ~/bin/xrayidl.sh'
