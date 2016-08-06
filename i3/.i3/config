@@ -256,5 +256,6 @@ exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id redshift -b 1.0:0.9 -t 6500:4000 -l geoclue2
 exec --no-startup-id dunst
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
+# xf86-input-synaptics should not be installed
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
