@@ -53,7 +53,7 @@ bindsym $mod+Shift+q kill
 # j4-dmenu-desktop, a near-drop-in replacement for i3-dmenu-desktop,
 # but much faster
 
-bindsym Mod1+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#1d1f21' -nf '#b294bb' -sb '#008787' -sf '#c5c8c6' -l 16 -p 'Arch Linux >> '"
+bindsym Mod1+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#121212' -nf '#af87ff' -sb '#1080d0' -sf '#b5d5ff' -l 16 -p 'Arch Linux >> '"
 
 # change focus
 bindsym $mod+h focus left
