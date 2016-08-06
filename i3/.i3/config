@@ -106,33 +106,44 @@ bindsym $mod+m focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+set $ws1  " 1:  "
+set $ws2  " 2:  "
+set $ws3  " 3:  "
+set $ws4  " 4:  "
+set $ws5  " 5:  "
+set $ws6  " 6:  "
+set $ws7  " 7:  "
+set $ws8  " 8:  "
+set $ws9  " 9:"
+set $ws10 " 10:"
+
 # switch to workspace
-bindsym $mod+1 workspace number 1: 
-bindsym $mod+2 workspace number 2: 
-bindsym $mod+3 workspace number 3: 
-bindsym $mod+4 workspace number 4: 
-bindsym $mod+5 workspace number 5: 
-bindsym $mod+6 workspace number 6: 
-bindsym $mod+7 workspace number 7: 
-bindsym $mod+8 workspace number 8: 
-bindsym $mod+9 workspace number 9:
-bindsym $mod+0 workspace number 10:
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1: 
-bindsym $mod+Shift+2 move container to workspace number 2: 
-bindsym $mod+Shift+3 move container to workspace number 3: 
-bindsym $mod+Shift+4 move container to workspace number 4: 
-bindsym $mod+Shift+5 move container to workspace number 5: 
-bindsym $mod+Shift+6 move container to workspace number 6: 
-bindsym $mod+Shift+7 move container to workspace number 7: 
-bindsym $mod+Shift+8 move container to workspace number 8: 
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # for specific window
 for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|Goldendict|Pidgin|File-roller|Gedit|Transmission|Evince|MATLAB|Skype|Nautilus"] floating enable
@@ -142,15 +153,15 @@ for_window [title="irafterm"] floating enable
 for_window [window_role="pop-up"] floating enable, move absolute center
 
 # assign to workspace
-#assign [instance="urxvt"] "1: "
-#assign [class="Thunar"] "4: "
-#assign [class="^Emacs$"] "3: "
-assign [class="chrome"] "2: "
-assign [class="smplayer|mpv"] "5: "
-assign [title="SAOImage ds9"] "7: "
-assign [title="^IRAF$"] "7: "
-assign [class="Thunderbird"] "6: "
-assign [class="Pidgin"] "8: "
+#assign [instance="urxvt"] $ws1
+#assign [class="Thunar"] $ws4
+#assign [class="^Emacs$"] $ws3
+assign [class="chrome"] $ws2
+assign [class="smplayer|mpv"] $ws5
+assign [title="SAOImage ds9"] $ws7
+assign [title="^IRAF$"] $ws7
+assign [class="Thunderbird"] $ws6
+assign [class="Pidgin"] $ws8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
