@@ -73,35 +73,39 @@ URxvt*scrollstyle:          rxvt
 URxvt*visualBell:           false
 URxvt*saveLines:            30000
 
-! Tomorrow-Night
+! Molokai
+#define _color0 #121212
+#define _color8 #555555
 
-#define _background         #1D1F21
-#define _foreground         #C5C8C6
-#define _cursorColor        #AEAFAD
-! black
-#define _color0             #282A2E
-#define _color8             #373B41
-! red
-#define _color1             #A54242
-#define _color9             #CC6666
-! green
-#define _color2             #8C9440
-#define _color10            #B5BD68
-! yellow
-#define _color3             #DE935F
-#define _color11            #F0C674
-! blue
-#define _color4             #5F819D
-#define _color12            #81A2BE
-! magenta
-#define _color5             #85678F
-#define _color13            #B294BB
-! cyan
-#define _color6             #5E8D87
-#define _color14            #8ABEB7
-! white
-#define _color7             #707880
-#define _color15            #C5C8C6
+#define _color1 #fa2573
+#define _color9 #f6669d
+
+#define _color2 #98e123
+#define _color10 #b1e05f
+
+#define _color3 #dfd460
+#define _color11 #fff26d
+
+#define _color4 #1080d0
+#define _color12 #00afff
+
+#define _color5 #8700ff
+#define _color13 #af87ff
+
+#define _color6 #43a8d0
+#define _color14 #51ceff
+
+#define _color7 #bbbbbb
+#define _color15 #ffffff
+
+#define _background #121212
+#define _foreground #bbbbbb
+#define _cursorColor #bbbbbb
+
+#define _boldColor #ffffff
+#define _cursorTextColor #ffffff
+#define _selectedTextColor #000000
+#define _selectionColor #b5d5ff
 
 URxvt*color0:               _color0
 URxvt*color1:               _color1
@@ -119,7 +123,7 @@ URxvt*color12:              _color12
 URxvt*color13:              _color13
 URxvt*color14:              _color14
 URxvt*color15:              _color15
-URxvt*colorBD:              _colorBD
+URxvt*colorBD:              _boldColor
 URxvt*foreground:           _foreground
 URxvt*background:           _background
 !URxvt*background:           rgba:0000/0000/0200/c800
@@ -141,7 +145,30 @@ XTerm*color12:              _color12
 XTerm*color13:              _color13
 XTerm*color14:              _color14
 XTerm*color15:              _color15
-XTerm*colorBD:              _colorBD
+XTerm*colorBD:              _boldColor
 XTerm*foreground:           _foreground
 XTerm*background:           _background
 XTerm*cursorColor:          _cursorColor
+XTerm*cursorTextColor:      _cursorTextColor
+
+UXTerm*color0:               _color0
+UXTerm*color1:               _color1
+UXTerm*color2:               _color2
+UXTerm*color3:               _color3
+UXTerm*color4:               _color4
+UXTerm*color5:               _color5
+UXTerm*color6:               _color6
+UXTerm*color7:               _color7
+UXTerm*color8:               _color8
+UXTerm*color9:               _color9
+UXTerm*color10:              _color10
+UXTerm*color11:              _color11
+UXTerm*color12:              _color12
+UXTerm*color13:              _color13
+UXTerm*color14:              _color14
+UXTerm*color15:              _color15
+UXTerm*colorBD:              _boldColor
+UXTerm*foreground:           _foreground
+UXTerm*background:           _background
+UXTerm*cursorColor:          _cursorColor
+UXTerm*cursorTextColor:      _cursorTextColor

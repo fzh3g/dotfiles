@@ -8,7 +8,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = tomorrow-night-bright
+      profile = molokai
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -18,16 +18,17 @@
 [profiles]
   [[default]]
     background_image = None
-  [[tomorrow-night-bright]]
+  [[molokai]]
     background_darkness = 0.85
     background_image = None
     background_type = transparent
     cursor_blink = False
-    cursor_color = "#eaeaea"
+    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
+    background_color = "#121212"
+    cursor_color = "#bbbbbb"
+    foreground_color = "#bbbbbb"
     font = monofur for Powerline Bold 12
-    foreground_color = "#eaeaea"
     login_shell = True
-    palette = "#000000:#d54e53:#b9ca4a:#e7c547:#7aa6da:#c397d8:#70c0b1:#ffffff:#000000:#d54e53:#b9ca4a:#e7c547:#7aa6da:#c397d8:#70c0b1:#ffffff"
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
