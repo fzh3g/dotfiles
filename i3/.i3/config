@@ -42,11 +42,10 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Ctrl+g exec google-chrome-unstable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
-bindsym $mod+Shift+f exec dolphin
-bindsym $mod+Ctrl+t exec terminator
+bindsym $mod+Ctrl+d exec thunar
 
 # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Ctrl+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run -nb '#191919' -nf '#9ac0cd' -sb '#191919' -sf '#bf3f34' -p 'Arch Linux >> '
@@ -171,7 +170,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # screen locker (first move to "safe" workspace without any chat app)
-bindsym Control+$mod+l exec i3-msg workspace number 1 && i3lock -c 111111 -d
+bindsym Control+$mod+l exec i3exit lock
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -246,7 +245,7 @@ client.unfocused        #333333 #586e75 #888888 #292d2e
 ## Autostart
 exec --no-startup-id i3-msg 'rename workspace 1 to "1: "'
 exec --no-startup-id xrandr --output LVDS1 --primary
-exec --no-startup-id feh --bg-fill ~/Pictures/159924-arch-linux-wide-linux-desktop-wallpapers-27390.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/fallenleaf.jpg
 exec --no-startup-id nm-applet
 # exec --no-startup-id mpd
 exec --no-startup-id fcitx
