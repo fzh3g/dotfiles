@@ -42,7 +42,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Ctrl+g exec google-chrome-unstable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
-bindsym $mod+Shift+f exec nautilus
+bindsym $mod+Shift+f exec dolphin
 bindsym $mod+Ctrl+t exec terminator
 
 # Kill focused window
@@ -54,7 +54,7 @@ bindsym $mod+Shift+q kill
 # j4-dmenu-desktop, a near-drop-in replacement for i3-dmenu-desktop,
 # but much faster
 
-bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#1d1f21' -nf '#b294bb' -sb '#008787' -sf '#c5c8c6' -l 16 -p 'Arch Linux >> '"
+bindsym Mod1+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Ubuntu Mono:bold:pixelsize=15' -nb '#1d1f21' -nf '#b294bb' -sb '#008787' -sf '#c5c8c6' -l 16 -p 'Arch Linux >> '"
 
 # change focus
 bindsym $mod+h focus left
@@ -248,12 +248,13 @@ exec --no-startup-id i3-msg 'rename workspace 1 to "1: "'
 exec --no-startup-id xrandr --output LVDS1 --primary
 exec --no-startup-id feh --bg-fill ~/Pictures/159924-arch-linux-wide-linux-desktop-wallpapers-27390.jpg
 exec --no-startup-id nm-applet
-exec --no-startup-id mpd
+# exec --no-startup-id mpd
 exec --no-startup-id fcitx
 exec --no-startup-id megasync
-exec --no-startup-id goldendict
+# exec --no-startup-id goldendict
 exec --no-startup-id compton -b --config ~/.compton.conf
 exec --no-startup-id redshift
+exec --no-startup-id dunst
 exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
