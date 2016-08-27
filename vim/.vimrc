@@ -50,11 +50,11 @@ set nowb
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 if has('persistent_undo') && !isdirectory(expand('~').'/.cache/vim')
-  silent !mkdir ~/.cache/vim > /dev/null 2>&1
-  set undodir=~/.cache/vim
-  set undofile
-  set undolevels=1000         " Maximum number of changes that can be undone
-  set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+    silent !mkdir ~/.cache/vim > /dev/null 2>&1
+    set undodir=~/.cache/vim
+    set undofile
+    set undolevels=1000         " Maximum number of changes that can be undone
+    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
 " Indentation
@@ -103,12 +103,12 @@ set splitright                  " Puts new vsplit windows to the right of the cu
 " Relative numbering
 nnoremap <leader>rn :call NumberToggle()<cr>
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-    set number
-  else
-    set rnu
-  endif
+    if(&relativenumber == 1)
+        set nornu
+        set number
+    else
+        set rnu
+    endif
 endfunction
 
 " Visual
@@ -159,56 +159,56 @@ endif
 " ================== Plugins =========================
 " Automatic installation
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.vim/plugged')
 
 " Plugins {
-  " ctrl-p is a fuzzy file finder.
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'FelikZ/ctrlp-py-matcher'
-  " airline is a better status line and a tab-bar for nvim.
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  " nerdtree
-  Plug 'scrooloose/nerdtree'
-  Plug 'jistr/vim-nerdtree-tabs'
-  " comment
-  Plug 'scrooloose/nerdcommenter'
-  " easymotion for fast jump.
-  Plug 'easymotion/vim-easymotion'
-  " color scheme
-  Plug 'morhetz/gruvbox'
-  " surround
-  Plug 'tpope/vim-surround'
-  " auto close pairs
-  Plug 'Raimondi/delimitMate'
-  " tagbar
-  Plug 'majutsushi/tagbar'
-  " syntastic
-  Plug 'scrooloose/syntastic'
-  " trailing whitespace
-  Plug 'bronson/vim-trailing-whitespace'
-  " a solid language pack
-  Plug 'sheerun/vim-polyglot'
-  " python
-  Plug 'davidhalter/jedi-vim'
-  Plug 'hdima/python-syntax'
-  Plug 'hynek/vim-python-pep8-indent'
-  " auto complete
-  Plug 'Shougo/neocomplete.vim'
-  " snippets
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-  " Indent line
-  Plug 'Yggdroot/indentLine'
-  " fugitive, a git wrapper
-  Plug 'tpope/vim-fugitive'
-  " gitgutter
-  Plug 'airblade/vim-gitgutter'
+" ctrl-p is a fuzzy file finder.
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'FelikZ/ctrlp-py-matcher'
+" airline is a better status line and a tab-bar for nvim.
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" nerdtree
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+" comment
+Plug 'scrooloose/nerdcommenter'
+" easymotion for fast jump.
+Plug 'easymotion/vim-easymotion'
+" color scheme
+Plug 'morhetz/gruvbox'
+" surround
+Plug 'tpope/vim-surround'
+" auto close pairs
+Plug 'Raimondi/delimitMate'
+" tagbar
+Plug 'majutsushi/tagbar'
+" syntastic
+Plug 'scrooloose/syntastic'
+" trailing whitespace
+Plug 'bronson/vim-trailing-whitespace'
+" a solid language pack
+Plug 'sheerun/vim-polyglot'
+" python
+Plug 'davidhalter/jedi-vim'
+Plug 'hdima/python-syntax'
+Plug 'hynek/vim-python-pep8-indent'
+" auto complete
+Plug 'Shougo/neocomplete.vim'
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Indent line
+Plug 'Yggdroot/indentLine'
+" fugitive, a git wrapper
+Plug 'tpope/vim-fugitive'
+" gitgutter
+Plug 'airblade/vim-gitgutter'
 " }
 
 call plug#end()
@@ -287,7 +287,7 @@ let python_highlight_all = 1
 
 " fugitive
 if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
+    set statusline+=%{fugitive#statusline()}
 endif
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gd :Gvdiff<CR>
@@ -329,10 +329,10 @@ let g:neocomplete#max_list = 15
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'scheme' : $HOME.'/.gosh_completions'
+            \ }
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
@@ -387,10 +387,10 @@ let g:jedi#show_call_signatures = "0"
 
 " vim-python
 augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab colorcolumn=79
-      \ formatoptions+=croq
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+    autocmd!
+    autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab colorcolumn=79
+                \ formatoptions+=croq
+                \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
 " ================= Mapping ==========================
