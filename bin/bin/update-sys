@@ -72,8 +72,9 @@ fi
 
 # IDL
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating IDL libraries...\e[0m"
-cd ~/lib/idl/astrolib/ && git pull origin master
-cd ~/lib/idl/idl-coyote/ && git pull origin master
+cd $IDL_LIB_DIR/astrolib/ && git pull origin master
+cd $IDL_LIB_DIR/idl-coyote/ && git pull origin master
+cd ~
 
 # source .zshrc
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mSource ~/.zshrc\e[0m"
