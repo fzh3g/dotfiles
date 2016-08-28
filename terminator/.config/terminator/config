@@ -4,6 +4,20 @@
   title_hide_sizetext = True
   title_transmit_bg_color = "#008787"
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  edit_window_title = None
+  go_down = None
+  go_left = None
+  go_next = None
+  go_prev = None
+  go_right = None
+  go_up = None
+  group_all = None
+  layout_launcher = None
 [layouts]
   [[default]]
     [[[child1]]]
@@ -19,16 +33,16 @@
   [[default]]
     background_image = None
   [[molokai]]
+    background_color = "#121212"
     background_darkness = 0.85
     background_image = None
     background_type = transparent
     cursor_blink = False
-    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
-    background_color = "#121212"
     cursor_color = "#bbbbbb"
-    foreground_color = "#bbbbbb"
     font = monofur for Powerline Bold 12
+    foreground_color = "#bbbbbb"
     login_shell = True
+    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
