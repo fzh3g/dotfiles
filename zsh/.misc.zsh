@@ -14,7 +14,7 @@
 # alias ciao="source $HOME/app/ciao-4.7/bin/ciao.bash"
 
 # Miriad
-alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
+source /usr/local/miriad/miriad_cvs/miriad_start.sh
 
 # GILDAS
 export GAG_ROOT_DIR=$HOME/app/gildas-exe-apr16a
