@@ -263,7 +263,7 @@ exec_always --no-startup-id redshift -b 1.0:0.9 -t 6500:4000 -g 0.8:0.8:0.8 -l g
 exec_always --no-startup-id nm-applet
 
 # notification
-exec_always --no-startup-id dunst
+# exec_always --no-startup-id dunst
 
 # other apps
 # exec_always --no-startup-id mpd
