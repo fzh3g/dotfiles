@@ -22,7 +22,7 @@ export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
 source $GAG_ROOT_DIR/etc/bash_profile
 
 # CASA
-export PATH=$PATH:$HOME/app/casa/bin
+alias casainit="export PATH=$PATH:$HOME/app/casa/bin"
 
 # xidl
 alias xidl='source ~/bin/xrayidl.sh'
