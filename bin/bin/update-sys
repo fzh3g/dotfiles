@@ -19,7 +19,7 @@ gem cleanup
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating npm...\e[0m"
 npm-check -gu
 npm ddp -g
-cd ~/Web/blog
+cd ~/www/blog
 npm-check -uE
 npm ddp
 cd ~
