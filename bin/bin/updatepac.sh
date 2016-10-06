@@ -14,4 +14,4 @@ cd ~/src
 
 # rm -f /tmp/gfwlist.txt
 genpac -p "PROXY $PROXY" > proxy.pac
-mv proxy.pac /srv/http/proxy.pac
+sudo mv proxy.pac /srv/http/proxy.pac
