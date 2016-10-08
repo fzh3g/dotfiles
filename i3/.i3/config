@@ -238,7 +238,7 @@ bar {
 
 # Windows decoration colors
 # class                 border  backgr. text    indicator
-client.focused          #43a8d0 #43a8d0 #bbbbbb #43a8d0
+client.focused          #555555 #555555 #bbbbbb #555555
 client.unfocused        #555555 #555555 #b5d5ff #555555
 
 ## Autostart
