@@ -22,6 +22,9 @@ export KARMABASE=/usr/local/karma
 export GTAGSLABLE=ctags
 export GTAGSCONF=$HOME/.globalrc
 
+# DS9
+export XPA_METHOD=local
+
 path=($HOME/bin
       $HOME/.local/bin
       $GOPATH/bin
