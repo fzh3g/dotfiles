@@ -419,12 +419,6 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
-" Emacs like keys
-map <C-A>		<Home>
-map <C-E>		<End>
-cnoremap <C-P>  <Up>
-cnoremap <C-N>  <Down>
-
 " fast saving
 nmap <leader>w :w!<CR>
 
