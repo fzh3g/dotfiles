@@ -3,8 +3,8 @@
 echo -e "\e[38;5;226mStarting update...\e[0m"
 
 # pacman && yaourt
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating system packages...\e[0m"
-yaourt -Syua
+# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating system packages...\e[0m"
+# yaourt -Syua
 
 # pip
 # echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Python packages...\e[0m"
