@@ -181,7 +181,7 @@ Plug 'scrooloose/nerdcommenter'
 " easymotion for fast jump.
 Plug 'easymotion/vim-easymotion'
 " color scheme
-Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 " surround
 Plug 'tpope/vim-surround'
 " auto close pairs
@@ -445,7 +445,10 @@ nnoremap U <C-r>
 
 " color scheme
 try
-    let g:gruvbox_italic=1
-    colorscheme gruvbox
+    let g:jellybeans_use_term_italics = 1
+    let g:jellybeans_overrides = {
+        'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+    }
+    colorscheme jellybeans
 catch
 endtry
