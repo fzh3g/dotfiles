@@ -16,7 +16,7 @@ declare -a pkgs=(
     # 'ncmpcpp'
     'npm'
     'ssh'
-    'terminator'
+    'termite'
     'tmux'
     'vim'
     'x'
