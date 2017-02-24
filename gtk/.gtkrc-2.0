@@ -3,10 +3,10 @@
 include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
 style "user-font"
 {
-    font_name="Noto Sans Regular"
+    font_name="Noto Sans UI"
 }
 widget_class "*" style "user-font"
-gtk-font-name="Noto Sans Regular 10"
+gtk-font-name="Noto Sans UI 9"
 gtk-theme-name="Breeze"
 gtk-icon-theme-name="breeze"
 gtk-fallback-icon-theme="gnome"
@@ -14,9 +14,3 @@ gtk-cursor-theme-name="breeze_cursors"
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-menu-images=1
 gtk-button-images=1
-
-# fix vim border
-style "vimfix" {
-  bg[NORMAL] = "#282828" # this matches my gvim theme 'Normal' bg color.
-}
-widget "vim-main-window.*GtkForm" style "vimfix"
