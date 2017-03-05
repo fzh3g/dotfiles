@@ -17,7 +17,7 @@
 source /usr/local/miriad/miriad_cvs/miriad_start.sh
 
 # GILDAS
-export GAG_ROOT_DIR=$HOME/app/gildas-exe-apr16a
+export GAG_ROOT_DIR=$HOME/app/gildas-exe-feb17c
 export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
 source $GAG_ROOT_DIR/etc/bash_profile
 
