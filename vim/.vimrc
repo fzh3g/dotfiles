@@ -446,9 +446,9 @@ nnoremap U <C-r>
 " color scheme
 try
     let g:jellybeans_use_term_italics = 1
-    let g:jellybeans_overrides = {
-        'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-    }
+    " let g:jellybeans_overrides = {
+    "     'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+    " }
     colorscheme jellybeans
 catch
 endtry
