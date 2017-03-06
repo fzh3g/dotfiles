@@ -64,7 +64,7 @@ URxvt.lineSpace:            -1
 URxvt*cursorUnderline:      false
 URxvt*termName:             rxvt-unicode-256color
 URxvt.letterSpace:          -1
-URxvt*geometry:             80x20
+URxvt*geometry:             80x24
 URxvt*scrollBar:            false
 URxvt*scrollstyle:          rxvt
 !URxvt*transparent:          true
