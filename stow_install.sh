@@ -13,7 +13,6 @@ declare -a pkgs=(
     'i3'
     'idl'
     # 'mpd'
-    # 'ncmpcpp'
     'npm'
     'ssh'
     'termite'
