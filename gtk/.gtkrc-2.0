@@ -6,11 +6,15 @@ style "user-font"
     font_name="Noto Sans UI"
 }
 widget_class "*" style "user-font"
-gtk-font-name="Noto Sans UI 9"
+gtk-font-name="Noto Sans UI Regular 9"
 gtk-theme-name="Breeze"
 gtk-icon-theme-name="breeze"
 gtk-fallback-icon-theme="gnome"
 gtk-cursor-theme-name="breeze_cursors"
-gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
-gtk-menu-images=1
-gtk-button-images=1
+gtk-xft-antialias = 1
+gtk-xft-hinting = 1
+gtk-xft-hintstyle = "slight"
+gtk-xft-rgba = "rgb"
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-menu-images=0
+gtk-button-images=0
