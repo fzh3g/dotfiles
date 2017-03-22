@@ -7,6 +7,7 @@ declare -a pkgs=(
     'bin'
     'compton'
     'dunst'
+    'fontconfig'
     'gem'
     'git'
     'gtk'
