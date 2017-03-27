@@ -1,5 +1,5 @@
 # setting variables
-export PUB_DIR=$HOME/lib/pub
+export PUB_DIR=$HOME/Documents/pub
 export ZDEF=$PUB_DIR/xrayidl/def
 export ZAUX=$PUB_DIR/xrayidl/aux
 export EXPLIB=$PUB_DIR/xrayidl/exp
