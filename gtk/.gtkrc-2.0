@@ -3,10 +3,10 @@
 include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
 style "user-font"
 {
-    font_name="Noto Sans UI"
+    font_name="Ubuntu"
 }
 widget_class "*" style "user-font"
-gtk-font-name="Noto Sans UI Regular 9"
+gtk-font-name="Ubuntu Regular 10"
 gtk-theme-name="Breeze"
 gtk-icon-theme-name="breeze"
 gtk-fallback-icon-theme="gnome"
