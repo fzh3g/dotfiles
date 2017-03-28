@@ -19,7 +19,7 @@ export MANPATH=$MANPATH:$VLFEATROOT/src
 export KARMABASE=/usr/local/karma
 
 # GNU GLOBAL
-export GTAGSLABLE=ctags
+export GTAGSLABLE=pygments
 export GTAGSCONF=$HOME/.globalrc
 
 # DS9
