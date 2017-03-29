@@ -43,6 +43,7 @@ bindsym $mod+Ctrl+g exec google-chrome-unstable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
 bindsym $mod+Ctrl+d exec thunar
+bindsym $mod++d exec goldendict
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -145,7 +146,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # for specific window
-for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|Goldendict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|Okular|MATLAB|Skype|Nautilus|Thunar"] floating enable
+for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|GoldenDict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|Okular|MATLAB|Skype|Nautilus|Thunar|Viewnior"] floating enable
 for_window [title="irafterm"] floating enable
 #for_window [title="SAOImage ds9"] floating enable, move absolute right
 #for_window [title="IRAF"] floating enable, move absolute position 0 0
@@ -253,7 +254,7 @@ exec_always --no-startup-id i3-msg 'rename workspace 1 to "1: "'
 exec_always --no-startup-id xrandr --output LVDS1 --primary
 
 # wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/fallenleaf.jpg
+exec_always --no-startup-id feh --bg-fill ~/.config/Wallpapers/wallpaper.png
 
 # transparent and brightness
 exec_always --no-startup-id compton -b --config ~/.compton.conf
@@ -269,5 +270,5 @@ exec_always --no-startup-id nm-applet
 # exec_always --no-startup-id mpd
 # exec_always --no-startup-id goldendict
 exec_always --no-startup-id fcitx
-exec_always --no-startup-id megasync
+# exec_always --no-startup-id megasync
 
