@@ -262,7 +262,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
 " Airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'jellybeans'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
