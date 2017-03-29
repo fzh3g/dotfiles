@@ -232,9 +232,9 @@ bar {
         output LVDS1
         colors {
             background #121212
-            statusline #af87ff
-            focused_workspace  #121212 #51ceff
-            inactive_workspace #af87ff #121212
+            statusline #b5d5ff
+            focused_workspace  #121212 #b5d5ff
+            inactive_workspace #b5d5ff #121212
             urgent_workspace   #bbbbbb #fa2573
         }
 }
