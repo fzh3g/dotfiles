@@ -10,7 +10,7 @@ Xft.dpi:                    96
 
 ! cursor
 
-Xcursor.theme:              Breeze
+Xcursor.theme:              breeze_cursors
 
 ! Rofi
 
