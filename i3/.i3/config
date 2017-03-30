@@ -108,8 +108,8 @@ bindsym $mod+m focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $ws1  " 1:  "
-set $ws2  " 2:  "
+set $ws1  " 1:  "
+set $ws2  " 2:  "
 set $ws3  " 3:  "
 set $ws4  " 4:  "
 set $ws5  " 5:  "
@@ -162,7 +162,7 @@ for_window [class="chrome"] border 1pixel
 # for_window [window_role="pop-up"] floating enable, move absolute center
 
 # assign to workspace
-assign [class="chrome"] $ws2
+assign [class="chrome"] $ws1
 assign [class="smplayer|mpv"] $ws5
 assign [title="SAOImage ds9"] $ws7
 assign [class="Thunderbird"] $ws6
@@ -253,7 +253,7 @@ client.unfocused        #555555 #555555 #bbbbbb #555555
 exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
 
 # 1st workspace name
-exec_always --no-startup-id i3-msg 'rename workspace 1 to "1: "'
+exec_always --no-startup-id i3-msg 'rename workspace 1 to " 1:  "'
 
 # monitor
 exec_always --no-startup-id xrandr --output LVDS1 --primary
