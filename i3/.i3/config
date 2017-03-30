@@ -152,7 +152,7 @@ for_window [class="[.]*"] floating enable
 for_window [class="chrome"] floating disable
 
 # borders
-for_window [class="chrome"] border pixel 0
+for_window [class="chrome"] border 1pixel
 
 # for specific window
 # for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|GoldenDict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|Okular|Kate|MATLAB|Skype|Nautilus|Thunar|Viewnior|smplayer"] floating enable
