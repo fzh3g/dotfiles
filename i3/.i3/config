@@ -148,23 +148,21 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # float all windows by default
-for_window [class="[.]*"] floating enable
+# for_window [class="[.]*"] floating enable
 # for_window [class="chrome"] floating disable
 
 # borders
-for_window [class="chrome"] border 1pixel
+# for_window [class="chrome"] border 1pixel
 
 # for specific window
-# for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|GoldenDict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|Okular|Kate|MATLAB|Skype|Nautilus|Thunar|Viewnior|smplayer"] floating enable
-# for_window [title="irafterm"] floating enable
-#for_window [title="SAOImage ds9"] floating enable, move absolute right
-#for_window [title="IRAF"] floating enable, move absolute position 0 0
-for_window [window_role="pop-up"] move absolute center
+for_window [class="mpv|Mpalyer|Audacious|Shutter|Gimp|Eog|GoldenDict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|Okular|Kate|MATLAB|Skype|Nautilus|Thunar|Viewnior|smplayer"] floating enable
+for_window [title="<GREG"] floating enable, move absolute position 0 100
+for_window [title="class GUI|SAOImage ds9"] floating enable, move absolute position 0 20
+for_window [window_role="pop-up"] floating enable, move absolute center
 
 # assign to workspace
 assign [class="chrome"] $ws1
 assign [class="smplayer|mpv"] $ws5
-assign [title="SAOImage ds9"] $ws7
 assign [class="Thunderbird"] $ws6
 assign [class="Pidgin"] $ws8
 
