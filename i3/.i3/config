@@ -37,6 +37,8 @@ smart_borders on
 
 # start a terminal
 bindsym $mod+Return exec termite
+bindsym Mod1++Return exec --no-startup-id termite --role floating_term
+for_window [window_role=floating_term] floating enable, move absolute position 630 50
 
 # Some apps
 bindsym $mod+Ctrl+g exec google-chrome-unstable
@@ -155,7 +157,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # for_window [class="chrome"] border 1pixel
 
 # for specific window
-for_window [class="mpv|Mpalyer|smplayer|Audacious|Shutter|Gimp|Eog|GoldenDict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|Okular|kate|MATLAB|Skype|Nautilus|Thunar|Viewnior"] floating enable
+for_window [class="mpv|Mpalyer|smplayer|Audacious|Shutter|Gimp|Eog|GoldenDict|Pidgin|File-roller|Gedit|Transmission|Deluge|Evince|okular|kate|MATLAB|Skype|Nautilus|Thunar|Viewnior"] floating enable
 for_window [window_role="pop-up"] floating enable, move absolute center
 for_window [title="<GREG"] floating enable, move absolute position 0 100
 for_window [title="class GUI|SAOImage ds9"] floating enable, move absolute position 0 20
@@ -260,7 +262,7 @@ exec_always --no-startup-id i3-msg 'rename workspace 1 to " 1:  "'
 exec_always --no-startup-id xrandr --output LVDS1 --primary
 
 # wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.config/Wallpapers/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/wallpaper.png
 
 # transparent and brightness
 exec_always --no-startup-id compton -b --config ~/.compton.conf
