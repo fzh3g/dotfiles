@@ -48,3 +48,6 @@ export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/gumley'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/textoidl'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/slug_idl'
 export IDL_PATH=$IDL_PATH:+'$IDL_LIB_DIR/fx-idl'
+
+# Application theme
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
