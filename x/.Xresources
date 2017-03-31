@@ -64,38 +64,63 @@ UXTerm*metaSendsEscape:     true
 
 ! urxvt
 
-URxvt.depth:                32
-URxvt.font:                 xft:Fantasque Sans Mono:size=13
-!URxvt.boldfont:             xft:Inconsolata for Powerline:size=13:bold:antialias=true
-!URxvt.italicFont:           xft:Fantasque Sans Mono:size=13:style=italic
-!URxvt.bolditalicFont:       xft:Inconsolata for Powerline:size=13:bold:italic:antialias=true
-URxvt.loginShell:           true
-URxvt.fading:               40
-URxvt.cursorBlink:          false
-URxvt.perl-ext-common:      default,matcher,clipboard
-URxvt.matcher.button:       1
-URxvt.url-launcher:         /usr/bin/google-chrome-unstable
-URxvt.pointerBlank:         true
-URxvt.lineSpace:            -1
-URxvt*cursorUnderline:      false
-URxvt*termName:             rxvt-unicode-256color
-URxvt.letterSpace:          -1
-URxvt*geometry:             80x24
-URxvt*scrollBar:            false
-URxvt*scrollstyle:          rxvt
-! do not scroll with output
-URxvt*scrollTtyOutput:      false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer:     true
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress:    true
-!URxvt*transparent:          true
-!URxvt*shading:              50
-!URxvt*blurRadius:           5
-URxvt*visualBell:           false
-URxvt*saveLines:            30000
+! URxvt.depth:                32
+! URxvt.font:                 xft:Fantasque Sans Mono:size=13
+! !URxvt.boldfont:             xft:Inconsolata for Powerline:size=13:bold:antialias=true
+! !URxvt.italicFont:           xft:Fantasque Sans Mono:size=13:style=italic
+! !URxvt.bolditalicFont:       xft:Inconsolata for Powerline:size=13:bold:italic:antialias=true
+! URxvt.loginShell:           true
+! URxvt.fading:               40
+! URxvt.cursorBlink:          false
+! URxvt.perl-ext-common:      default,matcher,clipboard
+! URxvt.matcher.button:       1
+! URxvt.url-launcher:         /usr/bin/google-chrome-unstable
+! URxvt.pointerBlank:         true
+! URxvt.lineSpace:            -1
+! URxvt*cursorUnderline:      false
+! URxvt*termName:             rxvt-unicode-256color
+! URxvt.letterSpace:          -1
+! URxvt*geometry:             80x24
+! URxvt*scrollBar:            false
+! URxvt*scrollstyle:          rxvt
+! ! do not scroll with output
+! URxvt*scrollTtyOutput:      false
+! ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+! URxvt*scrollWithBuffer:     true
+! ! scroll back to the bottom on keypress
+! URxvt*scrollTtyKeypress:    true
+! !URxvt*transparent:          true
+! !URxvt*shading:              50
+! !URxvt*blurRadius:           5
+! URxvt*visualBell:           false
+! URxvt*saveLines:            30000
 
 ! Molokai
+*color0 #121212
+*color8 #555555
+
+*color1 #fa2573
+*color9 #f6669d
+
+*color2 #98e123
+*color10 #b1e05f
+
+*color3 #dfd460
+*color11 #fff26d
+
+*color4 #1080d0
+*color12 #00afff
+
+*color5 #8700ff
+*color13 #af87ff
+
+*color6 #43a8d0
+*color14 #51ceff
+
+*color7 #bbbbbb
+*color15 #ffffff
+
+
 #define _color0 #121212
 #define _color8 #555555
 
@@ -129,27 +154,27 @@ URxvt*saveLines:            30000
 #define _selectedTextColor #000000
 #define _selectionColor #b5d5ff
 
-URxvt*color0:               _color0
-URxvt*color1:               _color1
-URxvt*color2:               _color2
-URxvt*color3:               _color3
-URxvt*color4:               _color4
-URxvt*color5:               _color5
-URxvt*color6:               _color6
-URxvt*color7:               _color7
-URxvt*color8:               _color8
-URxvt*color9:               _color9
-URxvt*color10:              _color10
-URxvt*color11:              _color11
-URxvt*color12:              _color12
-URxvt*color13:              _color13
-URxvt*color14:              _color14
-URxvt*color15:              _color15
-URxvt*colorBD:              _boldColor
-URxvt*foreground:           _foreground
-URxvt*background:           _background
-! URxvt*background:           rgba:0000/0000/0200/c800
-URxvt*cursorColor:          _cursorColor
+! URxvt*color0:               _color0
+! URxvt*color1:               _color1
+! URxvt*color2:               _color2
+! URxvt*color3:               _color3
+! URxvt*color4:               _color4
+! URxvt*color5:               _color5
+! URxvt*color6:               _color6
+! URxvt*color7:               _color7
+! URxvt*color8:               _color8
+! URxvt*color9:               _color9
+! URxvt*color10:              _color10
+! URxvt*color11:              _color11
+! URxvt*color12:              _color12
+! URxvt*color13:              _color13
+! URxvt*color14:              _color14
+! URxvt*color15:              _color15
+! URxvt*colorBD:              _boldColor
+! URxvt*foreground:           _foreground
+! URxvt*background:           _background
+! ! URxvt*background:           rgba:0000/0000/0200/c800
+! URxvt*cursorColor:          _cursorColor
 
 XTerm*color0:               _color0
 XTerm*color1:               _color1
