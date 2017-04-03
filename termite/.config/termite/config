@@ -11,7 +11,7 @@ font = Fantasque Sans Mono 11
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
-geometry = 680x420
+# geometry = 720x420
 
 # "system", "on" or "off"
 cursor_blink = off
