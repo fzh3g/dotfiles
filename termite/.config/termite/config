@@ -7,11 +7,11 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Fantasque Sans Mono 13
+font = Fantasque Sans Mono 11
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
-#geometry = 640x480
+geometry = 680x420
 
 # "system", "on" or "off"
 cursor_blink = off
