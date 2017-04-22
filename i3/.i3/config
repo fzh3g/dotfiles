@@ -41,7 +41,7 @@ bindsym Mod1++Return exec --no-startup-id termite --role floating_term
 for_window [window_role=floating_term] floating enable, move absolute position 630 50
 
 # Some apps
-bindsym $mod+Ctrl+g exec google-chrome-unstable
+bindsym $mod+Ctrl+g exec google-chrome-stable
 bindsym $mod+Ctrl+e exec emacs
 bindsym $mod+Ctrl+f exec firefox
 bindsym $mod+Ctrl+d exec thunar
