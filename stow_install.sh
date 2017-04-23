@@ -6,7 +6,7 @@ declare -a pkgs=(
     'aria2'
     'bin'
     'compton'
-    'dunst'
+    # 'dunst'
     'fontconfig'
     'gem'
     'git'
