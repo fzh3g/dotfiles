@@ -17,7 +17,7 @@ BULLETTRAIN_PROMPT_ORDER=(
     cmd_exec_time
 )
 
-plugins=(archlinux zsh-syntax-highlighting colored-man-pages)
+plugins=(git archlinux zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
