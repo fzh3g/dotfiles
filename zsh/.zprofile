@@ -12,8 +12,8 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export GEM_PATH=$GEM_HOME
 
 # VLFEAT
-export VLFEATROOT=$HOME/src/vlfeat
-export MANPATH=$MANPATH:$VLFEATROOT/src
+# export VLFEATROOT=$HOME/src/vlfeat
+# export MANPATH=$MANPATH:$VLFEATROOT/src
 
 # KARMA
 export KARMABASE=/usr/local/karma
@@ -29,7 +29,8 @@ path=($HOME/bin
       $HOME/.local/bin
       $GOPATH/bin
       $HOME/.node_modules/bin
-      $VLFEATROOT/bin/glnxa64
+      $HOME/app/wcstools-3.9.5/bin
+      # $VLFEATROOT/bin/glnxa64
       $KARMABASE/bin
       $path)
 
