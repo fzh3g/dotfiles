@@ -3,7 +3,7 @@ export HEADAS=~/app/heasoft-6.21/x86_64-unknown-linux-gnu-libc2.25
 alias heainit=". $HEADAS/headas-init.sh"
 
 # XMM SAS
-# alias sasinit=". /usr/local/SAS/xmmsas_20141104_1833/setsas.sh"
+alias sasinit=". ~/app/sas/xmmsas_20170112_1337/setsas.sh"
 
 # CALDB
 export CALDB=$HOME/app/caldb
