@@ -233,6 +233,8 @@ let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_max_hight = 15
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_files = 1000
+let g:ctrlp_max_depth = 10
 
 
 " nerdcommenter
