@@ -1,5 +1,5 @@
-alias e="emacsclient"
-alias em="emacsclient -t"
+alias em="emacsclient"
+alias e="emacsclient -t"
 alias ev="emacsclient -c -a emacs"
 alias es="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
