@@ -1,16 +1,16 @@
 # Configs for GTK2 programs
 
-include "/usr/share/themes/Breeze/gtk-2.0/gtkrc"
+include "/usr/share/themes/Arc-Darker/gtk-2.0/gtkrc"
 style "user-font"
 {
     font_name="Sans Serif  9"
 }
 widget_class "*" style "user-font"
 gtk-font-name="Sans Serif  9"
-gtk-theme-name="Breeze"
-gtk-icon-theme-name="breeze"
+gtk-theme-name=""
+gtk-icon-theme-name="Flattr"
 gtk-fallback-icon-theme="Adwaita"
-gtk-cursor-theme-name="breeze_cursors"
+gtk-cursor-theme-name="Capitaine"
 gtk-xft-antialias = 1
 gtk-xft-hinting = 1
 gtk-xft-hintstyle = "hintslight"
