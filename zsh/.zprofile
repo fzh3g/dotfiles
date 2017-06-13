@@ -30,6 +30,8 @@ path=($HOME/bin
       $GOPATH/bin
       $HOME/.node_modules/bin
       $HOME/app/wcstools-3.9.5/bin
+      $HOME/app/Montage-5.0/bin
+      $HOME/app/swig-3.0.12/bin
       # $VLFEATROOT/bin/glnxa64
       $KARMABASE/bin
       $path)
