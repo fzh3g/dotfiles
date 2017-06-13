@@ -25,6 +25,9 @@ source $GAG_ROOT_DIR/etc/bash_profile
 # CASA
 alias casainit="export PATH=$PATH:$HOME/app/casa-release-4.7.2-el7/bin"
 
+# SPAM
+alias spam="source ~/app/spam/setup.sh"
+
 # Pub dir
 export PUB_DIR=$HOME/Documents/pub
 
