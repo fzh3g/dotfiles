@@ -253,7 +253,7 @@ client.unfocused        #555555 #555555 #bbbbbb #555555
 ## Autostart
 
 # swap ctrlp and capslock
-exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
+# exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
 
 # 1st workspace name
 exec_always --no-startup-id i3-msg 'rename workspace 1 to " 1:  "'
