@@ -46,10 +46,10 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fortune and cowsay
-if [[ $(which cowsay > /dev/null 2>&1) -eq 0 ]] &&
-       [[ $(which fortune > /dev/null 2>&1) -eq 0 ]]; then
-    fortune -s | cowsay
-fi
+# if [[ $(which cowsay > /dev/null 2>&1) -eq 0 ]] &&
+#        [[ $(which fortune > /dev/null 2>&1) -eq 0 ]]; then
+#     fortune -s | cowsay
+# fi
 
 # Alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
