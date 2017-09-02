@@ -7,9 +7,9 @@ alias v=vim
 alias vi=vim
 alias vs="SUDO_EDITOR=\"vim\" sudoedit"
 
-if [[ $(which kate > /dev/null 2>&1) -eq 0 ]]; then
-    alias gedit="kate"
-fi
+# if [[ $(which kate > /dev/null 2>&1) -eq 0 ]]; then
+#     alias gedit="kate"
+# fi
 
 alias pxc=proxychains
 
