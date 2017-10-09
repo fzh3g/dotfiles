@@ -9,3 +9,6 @@ export LC_CTYPE=zh_CN.UTF-8
 
 # qt5-styleplugins
 export QT_QPA_PLATFORMTHEME=gtk2
+
+# ds9
+export XPA_METHOD=local
