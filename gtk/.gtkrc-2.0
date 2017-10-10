@@ -7,7 +7,7 @@ style "user-font"
 }
 widget_class "*" style "user-font"
 gtk-font-name="Sans Serif  9"
-gtk-theme-name=""
+gtk-theme-name="Ark-Darker"
 gtk-icon-theme-name="Flattr"
 gtk-fallback-icon-theme="Adwaita"
 gtk-cursor-theme-name="Capitaine"
