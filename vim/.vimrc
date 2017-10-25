@@ -25,12 +25,7 @@ set mousehide                   " Hide the mouse cursor while typing
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
 set foldenable                  " Auto fold code
-
-syntax on                       " syntax highlighting
-
-" leader
-let mapleader = ','
-let g:mapleader = ','
+set colorcolumn=80              " Add a colored column at 80
 
 " Encoding
 set encoding=utf-8
@@ -38,13 +33,20 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
 
-" filetype
-filetype plugin indent on   " Automatically detect file types.
-
 " Turn Off Swap Files
 set noswapfile
 set nobackup
 set nowb
+
+" Leader
+let mapleader = ','
+let g:mapleader = ','
+
+" Syntax highlighting
+syntax on
+
+" Automatically detect file types
+filetype plugin indent on
 
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
@@ -170,7 +172,7 @@ call plug#begin('~/.vim/plugged')
 " ctrl-p is a fuzzy file finder.
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
-" airline is a better status line and a tab-bar for nvim.
+" airline is a better status line and a tab-bar for vim.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " nerdtree
@@ -192,8 +194,6 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 " trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
-" a solid language pack
-Plug 'sheerun/vim-polyglot'
 " python
 Plug 'davidhalter/jedi-vim'
 Plug 'hdima/python-syntax'
@@ -390,7 +390,7 @@ let g:jedi#show_call_signatures = "0"
 " vim-python
 augroup vimrc-python
     autocmd!
-    autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab colorcolumn=79
+    autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
                 \ formatoptions+=croq
                 \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
