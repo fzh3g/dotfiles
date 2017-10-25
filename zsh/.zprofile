@@ -22,16 +22,13 @@ export KARMABASE=/usr/local/karma
 export GTAGSLABLE=pygments
 export GTAGSCONF=$HOME/.globalrc
 
-# DS9
-export XPA_METHOD=local
-
 path=($HOME/bin
       $HOME/.local/bin
       $GOPATH/bin
       $HOME/.node_modules/bin
-      $HOME/app/wcstools-3.9.5/bin
-      $HOME/app/Montage-5.0/bin
-      $HOME/app/swig-3.0.12/bin
+      # $HOME/app/wcstools-3.9.5/bin
+      # $HOME/app/Montage-5.0/bin
+      # $HOME/app/swig-3.0.12/bin
       # $VLFEATROOT/bin/glnxa64
       $KARMABASE/bin
       $path)
