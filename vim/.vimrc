@@ -114,7 +114,7 @@ function! NumberToggle()
 endfunction
 
 " Visual
-set background=dark
+set background=light
 if &term == 'xterm' || &term == 'screen'
     set t_Co=256                    " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
 endif
@@ -174,7 +174,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 " airline is a better status line and a tab-bar for vim.
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -183,7 +182,7 @@ Plug 'scrooloose/nerdcommenter'
 " easymotion for fast jump.
 Plug 'easymotion/vim-easymotion'
 " color scheme
-Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
 " surround
 Plug 'tpope/vim-surround'
 " auto close pairs
@@ -264,7 +263,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
 " Airline
-let g:airline_theme = 'jellybeans'
+" let g:airline_theme = 'jellybeans'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -447,10 +446,7 @@ nnoremap U <C-r>
 
 " color scheme
 try
-    let g:jellybeans_use_term_italics = 1
-    let g:jellybeans_overrides = {
-        'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-    }
-    colorscheme jellybeans
+    let g:gruvbox_italic=1
+    colorscheme gruvbox
 catch
 endtry
