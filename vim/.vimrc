@@ -1,10 +1,9 @@
 " =================== General Config =================
 
 set nocompatible                " Be iMproved
-set number                      " Line numbers
-set rnu                         " Relative line numbers
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set nowrap                      " Do not wrap long lines
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
 set showmode                    " Show current mode down the bottom
@@ -26,6 +25,8 @@ set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
 set foldenable                  " Auto fold code
 set colorcolumn=80              " Add a colored column at 80
+set tabpagemax=15               " Only show 15 tabs
+
 
 " Encoding
 set encoding=utf-8
@@ -66,8 +67,6 @@ set expandtab                   " Tabs are spaces, not tabs
 set autoindent                  " Indent at the same level of the previous line
 set shiftwidth=4                " Use indents of 4 spaces
 
-set nowrap                      " Do not wrap long lines
-
 " Completion
 set wildmenu                    " Show list instead of just completing
 set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
@@ -103,6 +102,8 @@ set splitbelow                  " Puts new split windows to the bottom of the cu
 set splitright                  " Puts new vsplit windows to the right of the current
 
 " Relative numbering
+set number                      " Line numbers
+set rnu                         " Relative line numbers
 nnoremap <leader>rn :call NumberToggle()<cr>
 function! NumberToggle()
     if(&relativenumber == 1)
@@ -113,17 +114,7 @@ function! NumberToggle()
     endif
 endfunction
 
-" Visual
-set background=light
-if &term == 'xterm' || &term == 'screen'
-    set t_Co=256                    " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
-endif
-
-set tabpagemax=15               " Only show 15 tabs
-highlight clear SignColumn      " SignColumn should match background
-highlight clear LineNr          " Current line number row will have same background color in relative mode
-
-" status bar
+" Status bar
 set laststatus=2
 set statusline=%<%f\                     " Filename
 set statusline+=%w%h%m%r                 " Options
@@ -142,7 +133,7 @@ set iskeyword-=-                    " '-' is an end of word designator
 set modeline
 set modelines=10
 
-" gui
+" GUI
 if has("gui_running")
     set guioptions-=m       " Removes top menubar
     set guioptions-=T       " Removes top toolbar
@@ -150,11 +141,11 @@ if has("gui_running")
     set go-=L               " Removes left hand scroll bar
     set lines=30 columns=120
     if has("macunix")
-        set guifont=Monaco\ for\ Powerline:h12
+        set guifont=Fantasque\ Sans\ Mono:h13
     elseif has("win32") || has("win64")
-        set guifont=Monaco_for_Powerline:h12:cANSI
+        set guifont=Fantasque_Sans_Mono:h13:cANSI
     elseif has("unix") && !has("macunix") && !has("win32unix")
-        set guifont=Monaco\ for\ Powerline\ 10
+        set guifont=Fantasque\ Sans\ Mono\ 11
     endif
 endif
 
@@ -307,7 +298,7 @@ let NERDTreeHighlightCursorline=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeWinSize = 28
 let g:nerdtree_tabs_open_on_console_startup=0
-let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 map <F3> :NERDTreeToggle<CR>
 map <F3> <plug>NERDTreeTabsToggle<CR>
@@ -444,7 +435,11 @@ map <Leader>sa ggVG"
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 
-" color scheme
+" Visual
+set termguicolors               " True color in terminal
+set background=light            " Light or dark theme
+
+" Color scheme
 try
     let g:gruvbox_italic=1
     colorscheme gruvbox
