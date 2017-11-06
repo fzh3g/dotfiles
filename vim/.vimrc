@@ -2,7 +2,7 @@
 
 set nocompatible                " Be iMproved
 set backspace=indent,eol,start  " Allow backspace in insert mode
-set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set whichwrap+=h,l,<,>,[,]      " Backspace and cursor keys wrap too
 set nowrap                      " Do not wrap long lines
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
