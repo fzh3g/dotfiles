@@ -43,9 +43,6 @@ set nowb
 let mapleader = ','
 let g:mapleader = ','
 
-" Syntax highlighting
-syntax on
-
 " Automatically detect file types
 filetype plugin indent on
 
@@ -132,22 +129,6 @@ set iskeyword-=-                    " '-' is an end of word designator
 " Use modeline overrides
 set modeline
 set modelines=10
-
-" GUI
-if has("gui_running")
-    set guioptions-=m       " Removes top menubar
-    set guioptions-=T       " Removes top toolbar
-    set guioptions-=r       " Removes right hand scroll bar
-    set go-=L               " Removes left hand scroll bar
-    set lines=30 columns=120
-    if has("macunix")
-        set guifont=Fantasque\ Sans\ Mono:h13
-    elseif has("win32") || has("win64")
-        set guifont=Fantasque_Sans_Mono:h13:cANSI
-    elseif has("unix") && !has("macunix") && !has("win32unix")
-        set guifont=Fantasque\ Sans\ Mono\ 11
-    endif
-endif
 
 " ================== Plugins =========================
 " Automatic installation
@@ -435,11 +416,36 @@ map <Leader>sa ggVG"
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
 
-" Visual
-set termguicolors               " True color in terminal
-set background=light            " Light or dark theme
+" Syntax highlighting
+syntax on
+
+" GUI
+if has("gui_running")
+    set guioptions-=m       " Removes top menubar
+    set guioptions-=T       " Removes top toolbar
+    set guioptions-=r       " Removes right hand scroll bar
+    set go-=L               " Removes left hand scroll bar
+    set lines=30 columns=120
+    if has("macunix")
+        set guifont=Fantasque\ Sans\ Mono:h13
+    elseif has("win32") || has("win64")
+        set guifont=Fantasque_Sans_Mono:h13:cANSI
+    elseif has("unix") && !has("macunix") && !has("win32unix")
+        set guifont=Fantasque\ Sans\ Mono\ 11
+    endif
+else
+    set t_Co=256
+    if has('termguicolors')
+        set termguicolors       " True color
+    endif
+endif
 
 " Color scheme
+if strftime('%H') >= 21 || strftime('%H') <= 9
+    set background=dark
+else
+    set background=light
+endif
 try
     let g:gruvbox_italic=1
     colorscheme gruvbox
