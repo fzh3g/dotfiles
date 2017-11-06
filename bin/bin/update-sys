@@ -23,7 +23,6 @@ cd ~/www/blog
 npm-check -uE
 npm ddp
 cd ~
-npm cache clean
 
 # oh-my-zsh
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating oh-my-zsh...\e[0m"
