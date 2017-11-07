@@ -90,7 +90,7 @@ if has('clipboard')
 endif
 
 " Clean search (highlight)
-nnoremap <silent> <leader>/ :noh<cr>
+nnoremap <silent> <leader>/ :noh<CR>
 
 " Scrolling
 " redraw only when we need to
@@ -210,15 +210,15 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 " Easymotion
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-map <Leader><Leader>l <Plug>(easymotion-lineforward)
-map <leader><Leader>j <Plug>(easymotion-j)
-map <leader><Leader>k <Plug>(easymotion-k)
-map <Leader><Leader>h <Plug>(easymotion-linebackward)
-map <Leader><Leader>. <Plug>(easymotion-repeat)
+map <leader><leader>l <Plug>(easymotion-lineforward)
+map <leader><leader>j <Plug>(easymotion-j)
+map <leader><leader>k <Plug>(easymotion-k)
+map <leader><leader>h <Plug>(easymotion-linebackward)
+map <leader><leader>. <Plug>(easymotion-repeat)
 let g:Easymotion_smartcase = 1
 
 " trailingwhitespace
-map <leader><space> :FixWhitespace<cr>
+map <leader><space> :FixWhitespace<CR>
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -255,8 +255,8 @@ let python_highlight_all = 1
 if exists("*fugitive#statusline")
     set statusline+=%{fugitive#statusline()}
 endif
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gd :Gvdiff<CR>
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gd :Gvdiff<CR>
 
 " gitgutter
 let g:gitgutter_map_keys = 0
@@ -279,7 +279,7 @@ map <F3> <plug>NERDTreeTabsToggle<CR>
 nmap <leader>nt :NERDTreeFind<CR>
 
 " snippets
-let g:UltiSnipsExpandTrigger="<c-cr>"
+let g:UltiSnipsExpandTrigger="<c-CR>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
@@ -392,22 +392,25 @@ nmap <leader>w :w!<CR>
 nmap <leader>q :q!<CR>
 
 " Buffer nav
-nnoremap <leader>bp :bprevious<cr>
-nnoremap <leader>bn :bnext<cr>
+nnoremap <leader>bp :bprevious<CR>
+nnoremap <leader>bn :bnext<CR>
 noremap <left> :bprevious<CR>
 noremap <right> :bnext<CR>
 
 " Close the current buffer
-map <leader>bd :bd<cr>
+map <leader>bd :bd<CR>
 
 " Close all the buffers
-map <leader>ba :bufdo bd<cr>
+map <leader>ba :bufdo bd<CR>
 
 " select all
-map <Leader>sa ggVG"
+map <leader>sa ggVG"
 
 " remap U to <C-r> for easier redo
 nnoremap U <C-r>
+
+" Source vim config file
+nnoremap <silent><leader>s :so $MYVIMRC<CR>
 
 " Syntax highlighting
 syntax on
