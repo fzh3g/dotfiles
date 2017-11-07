@@ -66,6 +66,7 @@ set softtabstop=4               " Let backspace delete indent
 set expandtab                   " Tabs are spaces, not tabs
 set autoindent                  " Indent at the same level of the previous line
 set shiftwidth=4                " Use indents of 4 spaces
+set shiftround
 
 " Completion
 set wildmenu                    " Show list instead of just completing
