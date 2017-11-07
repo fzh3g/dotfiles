@@ -138,12 +138,10 @@ call plug#begin('~/.vim/plugged')
 " Plugins {
 " ctrl-p is a fuzzy file finder.
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
 " airline is a better status line and a tab-bar for vim.
 Plug 'vim-airline/vim-airline'
 " nerdtree
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 " comment
 Plug 'scrooloose/nerdcommenter'
 " easymotion for fast jump.
