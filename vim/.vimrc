@@ -37,7 +37,7 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
 
-" Turn Off Swap Files
+" Turn off swap files and backup files
 set noswapfile
 set nobackup
 set nowb
