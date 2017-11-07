@@ -27,6 +27,9 @@ set foldenable                  " Auto fold code
 set colorcolumn=80              " Add a colored column at 80
 set tabpagemax=15               " Only show 15 tabs
 
+" No visual bell
+set novisualbell
+set visualbell t_vb=
 
 " Encoding
 set encoding=utf-8
