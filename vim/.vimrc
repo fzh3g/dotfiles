@@ -222,7 +222,7 @@ let g:Easymotion_smartcase = 1
 " trailingwhitespace
 map <leader><space> :FixWhitespace<CR>
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:▸\ ,trail:•,extends:#,nbsp:. " Highlight whitespace
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
