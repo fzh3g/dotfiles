@@ -26,12 +26,15 @@ set mousehide                   " Hide the mouse cursor while typing
 set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
 set foldenable                  " Auto fold code
+set cursorline                  " Highlight current line
 set colorcolumn=80              " Add a colored column at 80
 set tabpagemax=15               " Only show 15 tabs
 
-" No visual bell
-set novisualbell
-set visualbell t_vb=
+syntax on                       " Turn syntax highlighting on
+filetype plugin indent on       " Automatically detect file types
+
+set novisualbell                " Turn off visual bell
+set visualbell t_vb=            " Turn off error beep/flash
 
 " Encoding
 set encoding=utf-8
