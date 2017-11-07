@@ -1,15 +1,17 @@
 " =================== General Config =================
 
 set nocompatible                " Be iMproved
+set t_RV=                       " http://bugs.debian.org/608242
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set whichwrap+=h,l,<,>,[,]      " Backspace and cursor keys wrap too
 set nowrap                      " Do not wrap long lines
 set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
 set showmode                    " Show current mode down the bottom
+set showmatch                   " Show matching brackets/parenthesis
+set matchtime=1                 " Tenths of a second to show the matching parenthesis
 set gcr=a:blinkon0              " Disable cursor blink
 set autoread                    " Reload files changed outside vim
-set cursorline                  " highlight current line
 set ruler                       " Always show current position
 set noerrorbells                " No beeps.
 set modeline                    " Enable modeline.
