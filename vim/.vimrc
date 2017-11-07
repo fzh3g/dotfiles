@@ -200,9 +200,11 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_files = 1000
 let g:ctrlp_max_depth = 10
 
-
 " nerdcommenter
-let g:NERDSpaceDelims=1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDTrimTrailingWhitespace = 1
 
 " delimitMate
 au FileType python let b:delimitMate_nesting_quotes = ['"']
