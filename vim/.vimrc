@@ -51,9 +51,6 @@ set nowb
 let mapleader = ','
 let g:mapleader = ','
 
-" Automatically detect file types
-filetype plugin indent on
-
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
@@ -80,7 +77,6 @@ set wildmode=list:longest,full  " command <Tab> completion, list matches, then l
 set completeopt=longest,menu
 
 " Search
-set showmatch                   " Show matching brackets/parenthesis
 set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
 set incsearch                   " Find as you type search
@@ -99,8 +95,7 @@ endif
 nnoremap <silent> <leader>/ :noh<CR>
 
 " Scrolling
-" redraw only when we need to
-set lazyredraw
+set lazyredraw                  " Redraw only when we need to
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 
@@ -419,9 +414,6 @@ nnoremap U <C-r>
 
 " Source vim config file
 nnoremap <silent><leader>s :so $MYVIMRC<CR>
-
-" Syntax highlighting
-syntax on
 
 " GUI
 if has("gui_running")
