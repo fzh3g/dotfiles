@@ -434,11 +434,7 @@ else
 endif
 
 " Color scheme
-if strftime('%H') >= 21 || strftime('%H') <= 9
-    set background=dark
-else
-    set background=light
-endif
+set background=light
 try
     let g:gruvbox_italic=1
     colorscheme gruvbox
