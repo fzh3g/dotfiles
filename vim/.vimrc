@@ -105,15 +105,6 @@ set splitright                  " Puts new vsplit windows to the right of the cu
 " Relative numbering
 set number                      " Line numbers
 set rnu                         " Relative line numbers
-nnoremap <leader>rn :call NumberToggle()<cr>
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set nornu
-        set number
-    else
-        set rnu
-    endif
-endfunction
 
 " Status bar
 set laststatus=2
