@@ -46,7 +46,7 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # node.js
-export npm_config_prefix=$HOME/.node_modules
+export NPM_CONFIG_PREFIX=$HOME/.node_modules
 
 # Ruby gem
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
