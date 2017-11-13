@@ -45,11 +45,20 @@ fi
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Fortune and cowsay
-# if [[ $(which cowsay > /dev/null 2>&1) -eq 0 ]] &&
-#        [[ $(which fortune > /dev/null 2>&1) -eq 0 ]]; then
-#     fortune -s | cowsay
-# fi
+# Go
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+
+# node.js
+export npm_config_prefix=$HOME/.node_modules
+
+# Ruby gem
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_PATH=$GEM_HOME
+
+# GNU GLOBAL
+export GTAGSLABLE=pygments
+export GTAGSCONF=$HOME/.globalrc
 
 # Alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh

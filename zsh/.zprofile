@@ -1,27 +1,5 @@
 typeset -U path
 
-# Go
-export GOPATH=$HOME/.go
-export GOBIN=$GOPATH/bin
-
-# node.js
-export npm_config_prefix=$HOME/.node_modules
-
-# Ruby gem
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export GEM_PATH=$GEM_HOME
-
-# VLFEAT
-# export VLFEATROOT=$HOME/src/vlfeat
-# export MANPATH=$MANPATH:$VLFEATROOT/src
-
-# KARMA
-export KARMABASE=/usr/local/karma
-
-# GNU GLOBAL
-export GTAGSLABLE=pygments
-export GTAGSCONF=$HOME/.globalrc
-
 path=($HOME/bin
       $HOME/.local/bin
       $GOPATH/bin
@@ -29,7 +7,6 @@ path=($HOME/bin
       # $HOME/app/wcstools-3.9.5/bin
       # $HOME/app/Montage-5.0/bin
       # $HOME/app/swig-3.0.12/bin
-      # $VLFEATROOT/bin/glnxa64
       $KARMABASE/bin
       $path)
 
