@@ -13,10 +13,6 @@ path=($HOME/bin
       # $HOME/app/swig-3.0.12/bin
       $path)
 
-# GNU GLOBAL
-export GTAGSLABLE=pygments
-export GTAGSCONF=$HOME/.globalrc
-
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
 # export IDL_DIR=/usr/local/exelis/idl

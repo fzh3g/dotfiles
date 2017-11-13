@@ -52,6 +52,10 @@ export npm_config_prefix=$HOME/.node_modules
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export GEM_PATH=$GEM_HOME
 
+# GNU GLOBAL
+export GTAGSLABLE=pygments
+export GTAGSCONF=$HOME/.globalrc
+
 # Alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
 
