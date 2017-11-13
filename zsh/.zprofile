@@ -1,5 +1,9 @@
 typeset -U path
 
+# Go
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+
 path=($HOME/bin
       $HOME/.local/bin
       $GOPATH/bin
@@ -7,8 +11,11 @@ path=($HOME/bin
       # $HOME/app/wcstools-3.9.5/bin
       # $HOME/app/Montage-5.0/bin
       # $HOME/app/swig-3.0.12/bin
-      $KARMABASE/bin
       $path)
+
+# GNU GLOBAL
+export GTAGSLABLE=pygments
+export GTAGSCONF=$HOME/.globalrc
 
 # IDL
 # source /usr/local/itt/idl/bin/idl_setup.bash
