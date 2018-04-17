@@ -155,8 +155,8 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 " tagbar
 Plug 'majutsushi/tagbar'
-" syntastic
-Plug 'scrooloose/syntastic'
+" ale
+Plug 'w0rp/ale'
 " trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
 " python
@@ -232,7 +232,7 @@ let g:tagbar_width = 28
 
 " Airline
 " let g:airline_theme = 'jellybeans'
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -240,16 +240,15 @@ let g:airline#extensions#virtualenv#enabled = 1
 let g:airline_detected_modified = 1
 let g:airline_powerline_fonts = 1
 
-" syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers=['pyflakes', 'pep8']
-let g:syntastic_python_pep8_args='--ignore=E501,E225,E124,E712'
+" ale
+let g:ale_lint_on_enter = 1
+let g:ale_completion_enabled = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+nmap <leader>sk <Plug>(ale_previous_wrap)
+nmap <leader>sj <Plug>(ale_next_wrap)
+nmap <leader>st :ALEToggle<CR>
+nmap <Leader>sd :ALEDetail<CR>
 
 " pythonsyntax
 let python_highlight_all = 1
