@@ -412,7 +412,7 @@ map <leader>sa ggVG"
 nnoremap U <C-r>
 
 " Source vim config file
-nnoremap <silent><leader>s :so $MYVIMRC<CR>
+nnoremap <silent><leader>r :so $MYVIMRC<CR>
 
 " GUI
 if has("gui_running")
