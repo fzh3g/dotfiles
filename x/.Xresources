@@ -12,39 +12,39 @@ Xft.rgba:                   rgb
 
 Xcursor.theme:              Capitaine
 
-! xterm
+! ! xterm
 
-XTerm*faceName:             Fantasque Sans Mono
-XTerm*faceNameDoublesize:   WenQuanYi Micro Hei Mono
-XTerm*locale:               true
-XTerm*utf8:                 1
-XTerm*faceSize:             13
-XTerm*letterSpace:          -1
-XTerm*vt100*geometry:       80x20
-XTerm*saveLines:            30000
-XTerm*loginShell:           true
-XTerm*charClass:            33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-XTerm*termName:             xterm-256color
-XTerm*eightBitInput:        false
-XTerm*borderWidth:          0
-XTerm*metaSendsEscape:      true
+! XTerm*faceName:             Fantasque Sans Mono
+! XTerm*faceNameDoublesize:   WenQuanYi Micro Hei Mono
+! XTerm*locale:               true
+! XTerm*utf8:                 1
+! XTerm*faceSize:             13
+! XTerm*letterSpace:          -1
+! XTerm*vt100*geometry:       80x20
+! XTerm*saveLines:            30000
+! XTerm*loginShell:           true
+! XTerm*charClass:            33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+! XTerm*termName:             xterm-256color
+! XTerm*eightBitInput:        false
+! XTerm*borderWidth:          0
+! XTerm*metaSendsEscape:      true
 
-! uxterm
+! ! uxterm
 
-UXTerm*faceName:            Fantasque Sans Mono
-UXTerm*faceNameDoublesize:  WenQuanYi Micro Hei Mono
-UXTerm*locale:              true
-UXTerm*utf8:                1
-UXTerm*faceSize:            13
-UXTerm*letterSpace:         -1
-UXTerm*vt100*geometry:      80x20
-UXTerm*saveLines:           30000
-UXTerm*loginShell:          true
-UXTerm*charClass:           33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-UXTerm*termName:            xterm-256color
-UXTerm*eightBitInput:       false
-UXTerm*borderWidth:         0
-UXTerm*metaSendsEscape:     true
+! UXTerm*faceName:            Fantasque Sans Mono
+! UXTerm*faceNameDoublesize:  WenQuanYi Micro Hei Mono
+! UXTerm*locale:              true
+! UXTerm*utf8:                1
+! UXTerm*faceSize:            13
+! UXTerm*letterSpace:         -1
+! UXTerm*vt100*geometry:      80x20
+! UXTerm*saveLines:           30000
+! UXTerm*loginShell:          true
+! UXTerm*charClass:           33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+! UXTerm*termName:            xterm-256color
+! UXTerm*eightBitInput:       false
+! UXTerm*borderWidth:         0
+! UXTerm*metaSendsEscape:     true
 
 ! Molokai
 
@@ -73,79 +73,79 @@ UXTerm*metaSendsEscape:     true
 *color15 #ffffff
 
 
-#define _color0 #121212
-#define _color8 #555555
+! #define _color0 #121212
+! #define _color8 #555555
 
-#define _color1 #fa2573
-#define _color9 #f6669d
+! #define _color1 #fa2573
+! #define _color9 #f6669d
 
-#define _color2 #98e123
-#define _color10 #b1e05f
+! #define _color2 #98e123
+! #define _color10 #b1e05f
 
-#define _color3 #dfd460
-#define _color11 #fff26d
+! #define _color3 #dfd460
+! #define _color11 #fff26d
 
-#define _color4 #1080d0
-#define _color12 #00afff
+! #define _color4 #1080d0
+! #define _color12 #00afff
 
-#define _color5 #8700ff
-#define _color13 #af87ff
+! #define _color5 #8700ff
+! #define _color13 #af87ff
 
-#define _color6 #43a8d0
-#define _color14 #51ceff
+! #define _color6 #43a8d0
+! #define _color14 #51ceff
 
-#define _color7 #bbbbbb
-#define _color15 #ffffff
+! #define _color7 #bbbbbb
+! #define _color15 #ffffff
 
-#define _background #121212
-#define _foreground #bbbbbb
-#define _cursorColor #bbbbbb
+! #define _background #121212
+! #define _foreground #bbbbbb
+! #define _cursorColor #bbbbbb
 
-#define _boldColor #ffffff
-#define _cursorTextColor #ffffff
-#define _selectedTextColor #000000
-#define _selectionColor #b5d5ff
+! #define _boldColor #ffffff
+! #define _cursorTextColor #ffffff
+! #define _selectedTextColor #000000
+! #define _selectionColor #b5d5ff
 
-XTerm*color0:               _color0
-XTerm*color1:               _color1
-XTerm*color2:               _color2
-XTerm*color3:               _color3
-XTerm*color4:               _color4
-XTerm*color5:               _color5
-XTerm*color6:               _color6
-XTerm*color7:               _color7
-XTerm*color8:               _color8
-XTerm*color9:               _color9
-XTerm*color10:              _color10
-XTerm*color11:              _color11
-XTerm*color12:              _color12
-XTerm*color13:              _color13
-XTerm*color14:              _color14
-XTerm*color15:              _color15
-XTerm*colorBD:              _boldColor
-XTerm*foreground:           _foreground
-XTerm*background:           _background
-XTerm*cursorColor:          _cursorColor
-XTerm*cursorTextColor:      _cursorTextColor
+! XTerm*color0:               _color0
+! XTerm*color1:               _color1
+! XTerm*color2:               _color2
+! XTerm*color3:               _color3
+! XTerm*color4:               _color4
+! XTerm*color5:               _color5
+! XTerm*color6:               _color6
+! XTerm*color7:               _color7
+! XTerm*color8:               _color8
+! XTerm*color9:               _color9
+! XTerm*color10:              _color10
+! XTerm*color11:              _color11
+! XTerm*color12:              _color12
+! XTerm*color13:              _color13
+! XTerm*color14:              _color14
+! XTerm*color15:              _color15
+! XTerm*colorBD:              _boldColor
+! XTerm*foreground:           _foreground
+! XTerm*background:           _background
+! XTerm*cursorColor:          _cursorColor
+! XTerm*cursorTextColor:      _cursorTextColor
 
-UXTerm*color0:               _color0
-UXTerm*color1:               _color1
-UXTerm*color2:               _color2
-UXTerm*color3:               _color3
-UXTerm*color4:               _color4
-UXTerm*color5:               _color5
-UXTerm*color6:               _color6
-UXTerm*color7:               _color7
-UXTerm*color8:               _color8
-UXTerm*color9:               _color9
-UXTerm*color10:              _color10
-UXTerm*color11:              _color11
-UXTerm*color12:              _color12
-UXTerm*color13:              _color13
-UXTerm*color14:              _color14
-UXTerm*color15:              _color15
-UXTerm*colorBD:              _boldColor
-UXTerm*foreground:           _foreground
-UXTerm*background:           _background
-UXTerm*cursorColor:          _cursorColor
-UXTerm*cursorTextColor:      _cursorTextColor
+! UXTerm*color0:               _color0
+! UXTerm*color1:               _color1
+! UXTerm*color2:               _color2
+! UXTerm*color3:               _color3
+! UXTerm*color4:               _color4
+! UXTerm*color5:               _color5
+! UXTerm*color6:               _color6
+! UXTerm*color7:               _color7
+! UXTerm*color8:               _color8
+! UXTerm*color9:               _color9
+! UXTerm*color10:              _color10
+! UXTerm*color11:              _color11
+! UXTerm*color12:              _color12
+! UXTerm*color13:              _color13
+! UXTerm*color14:              _color14
+! UXTerm*color15:              _color15
+! UXTerm*colorBD:              _boldColor
+! UXTerm*foreground:           _foreground
+! UXTerm*background:           _background
+! UXTerm*cursorColor:          _cursorColor
+! UXTerm*cursorTextColor:      _cursorTextColor
