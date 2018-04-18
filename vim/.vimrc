@@ -195,13 +195,13 @@ noremap <leader>f :CtrlPMRU<CR>
 noremap <leader>l :CtrlPLine<CR>
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 else
   let g:ctrlp_clear_cache_on_exit = 0
-  let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 endif
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_mruf_max = 500
