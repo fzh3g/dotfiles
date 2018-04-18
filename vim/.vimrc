@@ -275,19 +275,20 @@ let g:gitgutter_highlight_lines = 0
 nnoremap <leader>gg :GitGutterToggle<CR>
 
 " NERDTree
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.o$', '\.so$', '\.pyo$', '^\.git$', '^\.svn$', '^\.hg$', '__pycache__']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let NERDTreeHighlightCursorline=1
-let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.o$', '\.so$', '\.pyo$', '^\.git$', '^\.svn$', '^\.hg$', '__pycache__']
+let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks = 1
+let NERDTreeHighlightCursorline = 1
+let g:nerdtree_tabs_focus_on_files = 1
 let g:NERDTreeWinSize = 28
-let g:nerdtree_tabs_open_on_console_startup=0
-let g:nerdtree_tabs_open_on_gui_startup=0
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+let g:nerdtree_tabs_open_on_console_startup = 0
+let g:nerdtree_tabs_open_on_gui_startup = 0
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.db,*.sqlite
 map <F3> :NERDTreeToggle<CR>
-map <F3> <plug>NERDTreeTabsToggle<CR>
-nmap <leader>nt :NERDTreeFind<CR>
+nmap <leader>nf :NERDTreeFind<CR>
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<C-j>"
@@ -296,7 +297,13 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 let g:UltiSnipsEditSplit = "vertical"
 let g:ulti_expand_or_jump_res = 0
 
-" vim-python
+" Completor
+let g:completor_set_options = 0
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+" Python
 augroup vimrc-python
     autocmd!
     autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
