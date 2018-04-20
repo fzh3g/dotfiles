@@ -9,17 +9,17 @@ set history=1000                " Store lots of :cmdline history
 set showcmd                     " Show incomplete cmds down the bottom
 set showmode                    " Show current mode down the bottom
 set showmatch                   " Show matching brackets/parenthesis
-set matchtime=1                 " Tenths of a second to show the matching parenthesis
+set matchtime=1                 " 0.1 second to show the matching parenthesis
 set gcr=a:blinkon0              " Disable cursor blink
 set autoread                    " Reload files changed outside vim
 set ruler                       " Always show current position
 set noerrorbells                " No beeps.
 set modeline                    " Enable modeline.
 set esckeys                     " Cursor keys in insert mode.
-set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
-set hidden                      " Buffers can exist in the background without being in a window.
+set nojoinspaces                " No two spaces after punctuation on a join (J)
+set hidden                      " Buffers can exist in the background
 set ffs=unix,dos,mac            " Use Unix as the standard file type
-set acd                         " Change the current working directory whenever you open a file
+set acd                         " Change the CWD whenever open a file
 set confirm                     " Get a dialog when :q, :w, or :wq fails
 set mouse=a                     " Automatically enable mouse usage
 set mousehide                   " Hide the mouse cursor while typing
@@ -29,12 +29,13 @@ set foldenable                  " Auto fold code
 set cursorline                  " Highlight current line
 set colorcolumn=80              " Add a colored column at 80
 set tabpagemax=15               " Only show 15 tabs
+set shortmess+=filmnrxoOtT      " Abbrev. of messages (avoids 'hit enter')
+set virtualedit=onemore         " Allow for cursor beyond last character
+set novisualbell                " Turn off visual bell
+set visualbell t_vb=            " Turn off error beep/flash
 
 syntax on                       " Turn syntax highlighting on
 filetype plugin indent on       " Automatically detect file types
-
-set novisualbell                " Turn off visual bell
-set visualbell t_vb=            " Turn off error beep/flash
 
 " Encoding
 set encoding=utf-8
@@ -90,15 +91,12 @@ set hlsearch                    " Highlight search terms
 
 " Clipboard
 if has('clipboard')
-    if has('unnamedplus')  " When possible use + register for copy-paste
+    if has('unnamedplus')       " When possible use + register for copy-paste
         set clipboard=unnamed,unnamedplus
-    else         " On mac and Windows, use * register for copy-paste
+    else                        " On mac and Windows, use * register for copy-paste
         set clipboard=unnamed
     endif
 endif
-
-" Clean search (highlight)
-nnoremap <silent> <leader>/ :noh<CR>
 
 " Scrolling
 set lazyredraw                  " Redraw only when we need to
@@ -112,25 +110,6 @@ set splitright                  " Puts new vsplit windows to the right of the cu
 " Relative numbering
 set number                      " Line numbers
 set rnu                         " Relative line numbers
-
-" Status bar
-set laststatus=2
-set statusline=%<%f\                     " Filename
-set statusline+=%w%h%m%r                 " Options
-set statusline+=\ [%{&ff}/%Y]            " Filetype
-set statusline+=\ [%{getcwd()}]          " Current dir
-set statusline+=%=%-14.(%l,%c%V%)\ %P    " Right aligned file nav info
-
-set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
-set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
-set virtualedit=onemore             " Allow for cursor beyond last character
-set iskeyword-=.                    " '.' is an end of word designator
-set iskeyword-=#                    " '#' is an end of word designator
-set iskeyword-=-                    " '-' is an end of word designator
-
-" Use modeline overrides
-set modeline
-set modelines=10
 
 " ================== Plugins =========================
 " Automatic installation
@@ -286,8 +265,6 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.db,*.sqlite
 map <F3> :NERDTreeToggle<CR>
 nmap <leader>nf :NERDTreeFind<CR>
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger = "<C-k>"
@@ -311,10 +288,6 @@ augroup vimrc-python
 augroup END
 
 " ================= Mapping ==========================
-
-" Split
-noremap <leader>h :<C-u>split<CR>
-noremap <leader>v :<C-u>vsplit<CR>
 
 " use ; for commands.
 nnoremap ; :
@@ -345,8 +318,6 @@ nmap <leader>q :q!<CR>
 " Buffer nav
 nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader>bn :bnext<CR>
-noremap <left> :bprevious<CR>
-noremap <right> :bnext<CR>
 
 " Close the current buffer
 map <leader>bd :bd<CR>
