@@ -155,8 +155,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 " color scheme
 Plug 'morhetz/gruvbox'
-" surround
-Plug 'tpope/vim-surround'
 " auto close pairs
 Plug 'Raimondi/delimitMate'
 " tagbar
