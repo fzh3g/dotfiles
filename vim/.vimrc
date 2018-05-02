@@ -54,13 +54,12 @@ let g:mapleader = ','
 
 " Persistent Undo
 " Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo') && !isdirectory(expand('~').'/.cache/vim')
-    silent !mkdir ~/.cache/vim > /dev/null 2>&1
-    set undodir=~/.cache/vim
+if has('persistent_undo')
+    if !isdirectory(expand('~').'/.vim/undodir')
+        silent !mkdir -p ~/.vim/undodir > /dev/null 2>&1
+    endif
+    set undodir=~/.vim/undodir
     set undofile
-    set undolevels=1000         " Maximum number of changes that can be undone
-    set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 endif
 
 " Indentation
