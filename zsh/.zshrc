@@ -39,14 +39,9 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
-# Enhancd
-if [ -f "$HOME/.enhancd/init.sh" ]; then
-    export ENHANCD_COMMAND=ecd
-    source "$HOME/.enhancd/init.sh"
-fi
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Miniconda3
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] &&
+    source /opt/miniconda3/etc/profile.d/conda.sh
 
 # node.js
 export NPM_CONFIG_PREFIX=$HOME/.node_modules
@@ -58,6 +53,15 @@ export GEM_PATH=$GEM_HOME
 # GNU GLOBAL
 export GTAGSLABLE=pygments
 export GTAGSCONF=$HOME/.globalrc
+
+# Enhancd
+if [ -f "$HOME/.enhancd/init.sh" ]; then
+    export ENHANCD_COMMAND=ecd
+    source "$HOME/.enhancd/init.sh"
+fi
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
