@@ -20,7 +20,8 @@ alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
 # GILDAS
 export GAG_ROOT_DIR=$HOME/app/gildas-exe-feb17c
 export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
-source $GAG_ROOT_DIR/etc/bash_profile
+alias gildasinit="source $GAG_ROOT_DIR/etc/bash_profile"
+
 # KARMA
 export KARMABASE=/usr/local/karma
 alias karmainit="export PATH=$PATH:$KARMABASE/bin"
