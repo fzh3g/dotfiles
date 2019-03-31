@@ -57,7 +57,7 @@ export GTAGSCONF=$HOME/.globalrc
 
 # Enhancd
 if [ -f "$HOME/.enhancd/init.sh" ]; then
-    export ENHANCD_COMMAND=ecd
+    export ENHANCD_COMMAND=cd
     source "$HOME/.enhancd/init.sh"
 fi
 
