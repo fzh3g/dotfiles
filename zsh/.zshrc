@@ -40,8 +40,8 @@ export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
 # Miniconda3
-if [ -f ~/app/miniconda3/etc/profile.d/conda.sh ]; then
-    source ~/app/miniconda3/etc/profile.d/conda.sh
+if [ -f ~/app/miniconda2/etc/profile.d/conda.sh ]; then
+    source ~/app/miniconda2/etc/profile.d/conda.sh
 fi
 
 # node.js
