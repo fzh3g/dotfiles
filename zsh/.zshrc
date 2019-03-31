@@ -39,7 +39,7 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
-# Miniconda3
+# Miniconda
 if [ -f ~/app/miniconda2/etc/profile.d/conda.sh ]; then
     source ~/app/miniconda2/etc/profile.d/conda.sh
 fi
