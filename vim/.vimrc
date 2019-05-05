@@ -133,8 +133,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 " color scheme
 Plug 'morhetz/gruvbox'
-" auto close pairs
-Plug 'Raimondi/delimitMate'
+" quoting and parenthesizing
+Plug 'tpope/vim-surround'
 " tagbar
 Plug 'majutsushi/tagbar'
 " ale
@@ -191,9 +191,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
-
-" delimitMate
-au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 " Easymotion
 map / <Plug>(easymotion-sn)
