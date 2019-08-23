@@ -3,7 +3,7 @@
 # GFWLIST=https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 PROXY=10.42.0.1:8118
 
-cd ~/src
+# cd ~/src
 # echo "Downloading gfwlist from $GFWLIST"
 # curl "$GFWLIST" > /tmp/gfwlist.txt
 

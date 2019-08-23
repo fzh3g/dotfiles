@@ -13,7 +13,6 @@ set matchtime=1                 " 0.1 second to show the matching parenthesis
 set gcr=a:blinkon0              " Disable cursor blink
 set autoread                    " Reload files changed outside vim
 set ruler                       " Always show current position
-set noerrorbells                " No beeps.
 set modeline                    " Enable modeline.
 set esckeys                     " Cursor keys in insert mode.
 set nojoinspaces                " No two spaces after punctuation on a join (J)
@@ -27,15 +26,20 @@ set linespace=0                 " No extra spaces between rows
 set winminheight=0              " Windows can be 0 line high
 set foldenable                  " Auto fold code
 set cursorline                  " Highlight current line
-set colorcolumn=80              " Add a colored column at 80
 set tabpagemax=15               " Only show 15 tabs
 set shortmess+=filmnrxoOtT      " Abbrev. of messages (avoids 'hit enter')
 set virtualedit=onemore         " Allow for cursor beyond last character
+set noerrorbells                " No beeps.
 set novisualbell                " Turn off visual bell
 set visualbell t_vb=            " Turn off error beep/flash
 
 syntax on                       " Turn syntax highlighting on
 filetype plugin indent on       " Automatically detect file types
+
+" Add a colored column at 80
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
 
 " Encoding
 set encoding=utf-8
@@ -78,9 +82,6 @@ set completeopt-=longest
 set completeopt+=menuone
 set completeopt-=menu
 set completeopt-=preview
-if &completeopt !~# 'noinsert\|noselect'
-  set completeopt+=noselect
-endif
 
 " Search
 set ignorecase                  " Case insensitive search
@@ -108,7 +109,9 @@ set splitright                  " Puts new vsplit windows to the right of the cu
 
 " Relative numbering
 set number                      " Line numbers
-set rnu                         " Relative line numbers
+if exists('+relativenumber')    " Relative line numbers
+  set rnu
+endif
 
 " ================== Plugins =========================
 " Automatic installation
@@ -133,8 +136,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 " color scheme
 Plug 'morhetz/gruvbox'
-" auto close pairs
-Plug 'Raimondi/delimitMate'
+" quoting and parenthesizing
+Plug 'tpope/vim-surround'
 " tagbar
 Plug 'majutsushi/tagbar'
 " ale
@@ -191,9 +194,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
-
-" delimitMate
-au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 " Easymotion
 map / <Plug>(easymotion-sn)
@@ -355,9 +355,10 @@ else
 endif
 
 " Color scheme
-set background=light
+set background=dark
 try
     let g:gruvbox_italic=1
     colorscheme gruvbox
+    " colorscheme pablo
 catch
 endtry
