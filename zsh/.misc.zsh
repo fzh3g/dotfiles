@@ -14,26 +14,26 @@
 # # CIAO
 # alias ciao="source $HOME/app/ciao-4.9/bin/ciao.bash"
 
-# Miriad
-alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
+# # CASA
+# alias casainit="export PATH=$PATH:$HOME/app/casa-release-4.7.2-el7/bin"
 
-# GILDAS
-export GAG_ROOT_DIR=$HOME/app/gildas-exe-feb17c
-export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
-alias gildasinit="source $GAG_ROOT_DIR/etc/bash_profile"
+# # SPAM
+# alias spam="source ~/app/spam/setup.sh"
 
-# KARMA
-export KARMABASE=/usr/local/karma
-alias karmainit="export PATH=$PATH:$KARMABASE/bin"
+# # GILDAS
+# export GAG_ROOT_DIR=$HOME/app/gildas-exe-feb17c
+# export GAG_EXEC_SYSTEM=x86_64-arch-gfortran
+# alias gildasinit="source $GAG_ROOT_DIR/etc/bash_profile"
 
-# CASA
-alias casainit="export PATH=$PATH:$HOME/app/casa-release-4.7.2-el7/bin"
+# # Miriad
+# alias miriadinit="source /usr/local/miriad/miriad_cvs/miriad_start.sh"
 
-# SPAM
-alias spam="source ~/app/spam/setup.sh"
+# # KARMA
+# export KARMABASE=/usr/local/karma
+# alias karmainit="export PATH=$PATH:$KARMABASE/bin"
 
-# Pub dir
-export PUB_DIR=$HOME/Documents/pub
+# # Pub dir
+# export PUB_DIR=$HOME/Documents/pub
 
-# xidl
-alias xidl='source ~/bin/xrayidl.sh'
+# # xidl
+# alias xidl='source ~/bin/xrayidl.sh'

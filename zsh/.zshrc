@@ -68,7 +68,7 @@ fi
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
 
 # Misc
-# [ -f ~/.misc.zsh ] && source ~/.misc.zsh
+[ -f ~/.misc.zsh ] && source ~/.misc.zsh
 
 # Local
 [ -f ~/.local.zsh ] && source ~/.local.zsh
