@@ -126,14 +126,12 @@ call plug#begin('~/.vim/plugged')
 " Plugins {
 " ctrl-p is a fuzzy file finder.
 Plug 'ctrlpvim/ctrlp.vim'
-" airline is a better status line and a tab-bar for vim.
-Plug 'vim-airline/vim-airline'
+" lightline
+Plug 'itchyny/lightline.vim'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 " comment
 Plug 'scrooloose/nerdcommenter'
-" easymotion for fast jump.
-Plug 'easymotion/vim-easymotion'
 " color scheme
 Plug 'morhetz/gruvbox'
 " quoting and parenthesizing
@@ -195,16 +193,6 @@ let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
-" Easymotion
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map <leader><leader>l <Plug>(easymotion-lineforward)
-map <leader><leader>j <Plug>(easymotion-j)
-map <leader><leader>k <Plug>(easymotion-k)
-map <leader><leader>h <Plug>(easymotion-linebackward)
-map <leader><leader>. <Plug>(easymotion-repeat)
-let g:Easymotion_smartcase = 1
-
 " trailingwhitespace
 map <leader><space> :FixWhitespace<CR>
 set list
@@ -215,15 +203,18 @@ nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_width = 28
 
-" Airline
-" let g:airline_theme = 'jellybeans'
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline_detected_modified = 1
-let g:airline_powerline_fonts = 1
+" lightline
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'deus',
+      \ 'active': {
+      \     'left':[ [ 'mode', 'paste' ],
+      \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \ }
+      \ }
 
 " ale
 let g:ale_lint_on_enter = 1
@@ -239,9 +230,6 @@ nmap <Leader>sd :ALEDetail<CR>
 let python_highlight_all = 1
 
 " fugitive
-if exists("*fugitive#statusline")
-    set statusline+=%{fugitive#statusline()}
-endif
 noremap <leader>gs :Gstatus<CR>
 noremap <leader>gd :Gvdiff<CR>
 
@@ -350,7 +338,9 @@ if has("gui_running")
 else
     set t_Co=256
     if has('termguicolors')
-        set termguicolors       " True color
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        set termguicolors
     endif
 endif
 
@@ -358,7 +348,8 @@ endif
 set background=dark
 try
     let g:gruvbox_italic=1
+    let g:gruvbox_contrast_dark="hard"
     colorscheme gruvbox
-    " colorscheme pablo
+    " clorscheme elflord
 catch
 endtry
