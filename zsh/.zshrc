@@ -43,6 +43,11 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs"
 
+# Tmux display over ssh
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    export DISPLAY="`tmux show-env | sed -n 's/^DISPLAY=//p'`"
+fi
+
 # Miniconda
 if [ -f ~/app/miniconda2/etc/profile.d/conda.sh ]; then
     source ~/app/miniconda2/etc/profile.d/conda.sh
