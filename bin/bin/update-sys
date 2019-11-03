@@ -2,43 +2,39 @@
 
 echo -e "\e[38;5;226mStarting update...\e[0m"
 
-# pacman && yaourt
-# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating system packages...\e[0m"
-# yaourt -Syua
+# # ruby gems
+# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Ruby gems...\e[0m"
+# gem update
+# gem cleanup
 
-# pip
-# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Python packages...\e[0m"
-pip freeze --user | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user
-
-# ruby gems
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Ruby gems...\e[0m"
-gem update
-gem cleanup
-
-# npm
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating npm...\e[0m"
-npm-check -gu
-npm ddp -g
-cd ~/www/blog
-npm-check -uE
-npm ddp
-cd ~
+# # npm
+# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating npm...\e[0m"
+# npm-check -gu
+# npm ddp -g
+# cd ~/www/blog
+# npm-check -uE
+# npm ddp
+# cd ~
 
 # oh-my-zsh
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating oh-my-zsh...\e[0m"
-if [ ! -d ~/.oh-my-zsh ]; then
+if [ ! -d ~/.oh-my-zsh/ ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 else
     cd ~/.oh-my-zsh && git pull origin master
 fi
 
-# bullet-train theme
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating bullet-train-zsh-theme...\e[0m"
-if [ -f ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme ]; then
-    rm ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme
+# spaceship zsh theme
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating spaceship zsh-theme...\e[0m"
+if [ ! -d ~/.oh-my-zsh/custom/themes/spaceship-prompt/ ]; then
+    git clone https://github.com/denysdovhan/spaceship-prompt.git \
+        ~/.oh-my-zsh/custom/themes/spaceship-prompt
+    ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme \
+        ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+else
+    cd ~/.oh-my-zsh/custom/themes/spaceship-prompt/ && \
+        git pull origin master
 fi
-curl https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme > \
-     ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme
 
 # zsh-syntax-highlighting
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating zsh-syntax-highlighting...\e[0m"
@@ -70,9 +66,14 @@ fi
 
 # IDL
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating IDL libraries...\e[0m"
-cd $IDL_LIB_DIR/astrolib/ && git pull origin master
-cd $IDL_LIB_DIR/idl-coyote/ && git pull origin master
-cd ~
+if [ ! -d $IDL_LIB_DIR/astrolib/ ]; then
+    cd $IDL_LIB_DIR/astrolib/ && git pull origin master
+    cd ~
+fi
+if [ ! -d $IDL_LIB_DIR/idl-coyote/ ]; then
+    cd $IDL_LIB_DIR/idl-coyote/ && git pull origin master
+    cd ~
+fi
 
 # source .zshrc
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mSource ~/.zshrc\e[0m"
