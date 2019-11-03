@@ -4,25 +4,7 @@
 # Oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="bullet-train"
-
-BULLETTRAIN_PROMPT_ORDER=(
-    time
-    status
-    custom
-    context
-    dir
-    screen
-    perl
-    ruby
-    virtualenv
-    aws
-    go
-    elixir
-    git
-    hg
-    cmd_exec_time
-)
+ZSH_THEME="spaceship"
 
 plugins=(archlinux zsh-syntax-highlighting colored-man-pages)
 
