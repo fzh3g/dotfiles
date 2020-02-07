@@ -44,7 +44,10 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 
-plugins=(archlinux zsh-syntax-highlighting colored-man-pages)
+plugins=(archlinux
+         zsh-syntax-highlighting
+         zsh-autosuggestions
+         colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 

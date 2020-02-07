@@ -46,6 +46,16 @@ else
         git pull origin master
 fi
 
+# zsh-autosuggestions
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating zsh-autosuggestions...\e[0m"
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/ ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions \
+        ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+else
+    cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions && \
+        git pull origin master
+fi
+
 # enhancd
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Enhancd...\e[0m"
 if [ ! -d ~/.enhancd/ ]; then
