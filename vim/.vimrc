@@ -206,7 +206,7 @@ let g:tagbar_width = 28
 " lightline
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
