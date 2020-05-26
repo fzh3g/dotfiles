@@ -17,7 +17,7 @@ SPACESHIP_PROMPT_ORDER=(
   hg            # Mercurial section (hg_branch  + hg_status)
   # package     # Package version
   node          # Node.js section
-  ruby          # Ruby section
+  # ruby        # Ruby section
   elixir        # Elixir section
   # xcode       # Xcode section
   swift         # Swift section
@@ -75,8 +75,8 @@ fi
 export NPM_CONFIG_PREFIX=$HOME/.node_modules
 
 # Ruby gem
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export GEM_PATH=$GEM_HOME
+# export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+# export GEM_PATH=$GEM_HOME
 
 # GNU GLOBAL
 export GTAGSLABLE=pygments
