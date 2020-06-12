@@ -47,7 +47,7 @@ echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Enhancd...\e[0m"
 if [ ! -d ~/.enhancd/ ]; then
     git clone https://github.com/b4b4r07/enhancd ~/.enhancd
 else
-    cd ~/.enhancd/ && git pull origin master
+    cd ~/.enhancd/ && git pull origin master --no-rebase
 fi
 source ~/.enhancd/init.sh
 
