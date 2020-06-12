@@ -3,17 +3,19 @@
 echo -e "\e[38;5;226mInstalling dotfiles...\e[0m"
 
 declare -a pkgs=(
-    'aria2'
     'bin'
     # 'compton'
+    'ctags'
     # 'dunst'
     'fontconfig'
-    'gem'
+    # 'gem'
     'git'
     # 'i3'
-    'idl'
+    # 'idl'
+    'libinput-gestures'
     # 'mpd'
-    'npm'
+    # 'npm'
+    'pip'
     'ssh'
     'termite'
     'tmux'
