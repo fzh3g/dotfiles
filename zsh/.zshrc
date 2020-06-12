@@ -89,7 +89,9 @@ if [ -f "$HOME/.enhancd/init.sh" ]; then
 fi
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] &&
+    source /usr/share/fzf/key-bindings.zsh
 
 # Alias
 [ -f ~/.alias.zsh ] && source ~/.alias.zsh
@@ -98,4 +100,4 @@ fi
 [ -f ~/.misc.zsh ] && source ~/.misc.zsh
 
 # Local
-[ -f ~/.local.zsh ] && source ~/.local.zsh
+# [ -f ~/.local.zsh ] && source ~/.local.zsh
