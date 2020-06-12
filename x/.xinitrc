@@ -4,6 +4,9 @@
 #
 # Executed by startx (run your window manager from here)
 
+# merge ~/.Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
+
 # fcitx
 export LC_CTYPE=zh_CN.UTF-8
 export GTK_IM_MODULE=fcitx
