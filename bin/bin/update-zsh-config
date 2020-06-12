@@ -1,20 +1,6 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 echo -e "\e[38;5;226mStarting update...\e[0m"
-
-# # ruby gems
-# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating Ruby gems...\e[0m"
-# gem update
-# gem cleanup
-
-# # npm
-# echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating npm...\e[0m"
-# npm-check -gu
-# npm ddp -g
-# cd ~/www/blog
-# npm-check -uE
-# npm ddp
-# cd ~
 
 # oh-my-zsh
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating oh-my-zsh...\e[0m"
@@ -64,26 +50,6 @@ else
     cd ~/.enhancd/ && git pull origin master
 fi
 source ~/.enhancd/init.sh
-
-# fzf
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating fzf...\e[0m"
-if [ ! -d ~/.fzf/ ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-else
-    cd ~/.fzf/ && git pull origin master
-fi
-~/.fzf/install --all
-
-# IDL
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mUpdating IDL libraries...\e[0m"
-if [ ! -d $IDL_LIB_DIR/astrolib/ ]; then
-    cd $IDL_LIB_DIR/astrolib/ && git pull origin master
-    cd ~
-fi
-if [ ! -d $IDL_LIB_DIR/idl-coyote/ ]; then
-    cd $IDL_LIB_DIR/idl-coyote/ && git pull origin master
-    cd ~
-fi
 
 # source .zshrc
 echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mSource ~/.zshrc\e[0m"
