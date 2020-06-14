@@ -1,0 +1,10 @@
+# This is a user config file of MPV.
+# Refer to https://mpv.io/manual/stable/ for more options.
+
+# Hardware decoding with AMDGPU and VA-API
+vo=gpu
+hwdec=vaapi
+gpu-context=x11egl
+
+# HDR
+tone-mapping=reinhard
